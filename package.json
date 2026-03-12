@@ -1,6 +1,6 @@
 {
   "name": "clarity-institute",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,6 @@
     "next": "14.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@supabase/supabase-js": "2.43.4",
-    "@supabase/auth-helpers-nextjs": "0.10.0"
+    "firebase": "10.12.0"
   }
 }

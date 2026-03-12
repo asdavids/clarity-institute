@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { supabase } from '../lib/supabase'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { doc, setDoc } from 'firebase/firestore'
+import { auth, db } from '../lib/firebase'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Auth.module.css'
 
@@ -15,18 +17,25 @@ export default function Register() {
     e.preventDefault()
     setLoading(true)
     setStatus(null)
-    const { error } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-      options: {
-        data: { full_name: form.name, program: form.program }
+    try {
+      const { user } = await createUserWithEmailAndPassword(auth, form.email, form.password)
+      await updateProfile(user, { displayName: form.name })
+      await setDoc(doc(db, 'profiles', user.uid), {
+        full_name: form.name,
+        email: form.email,
+        program: form.program,
+        enrolled_at: new Date().toISOString(),
+        progress: 0
+      })
+      setStatus({ type: 'success', message: 'Account created! Taking you to your dashboard...' })
+      setTimeout(() => router.push('/dashboard'), 1500)
+    } catch (error) {
+      const messages = {
+        'auth/email-already-in-use': 'An account with this email already exists.',
+        'auth/weak-password': 'Password must be at least 6 characters.',
+        'auth/invalid-email': 'Please enter a valid email address.',
       }
-    })
-    if (error) {
-      setStatus({ type: 'error', message: error.message })
-    } else {
-      setStatus({ type: 'success', message: 'Account created! Check your email to confirm, then sign in.' })
-      setTimeout(() => router.push('/login'), 3000)
+      setStatus({ type: 'error', message: messages[error.code] || 'Something went wrong. Please try again.' })
     }
     setLoading(false)
   }
@@ -54,7 +63,7 @@ export default function Register() {
             </div>
             <div className="form-group">
               <label>Password</label>
-              <input type="password" required placeholder="Min 8 characters" minLength={8}
+              <input type="password" required placeholder="Min 6 characters" minLength={6}
                 value={form.password} onChange={e => setForm({...form, password: e.target.value})} />
             </div>
             <div className="form-group">

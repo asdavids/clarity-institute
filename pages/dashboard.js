@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { supabase } from '../lib/supabase'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { doc, getDoc } from 'firebase/firestore'
+import { auth, db } from '../lib/firebase'
 import Navbar from '../components/Navbar'
+import BookingSection from '../components/BookingSection'
 import styles from '../styles/Dashboard.module.css'
 
 const COURSES = [
@@ -50,18 +53,31 @@ const COURSES = [
 
 export default function Dashboard() {
   const [user, setUser] = useState(null)
+  const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)
   const [activeModule, setActiveModule] = useState(0)
   const [activeLesson, setActiveLesson] = useState(null)
   const router = useRouter()
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) { router.push('/login'); return }
-      setUser(session.user)
+    const unsub = onAuthStateChanged(auth, async (u) => {
+      if (!u) { router.push('/login'); return }
+      setUser(u)
+      try {
+        const snap = await getDoc(doc(db, 'profiles', u.uid))
+        if (snap.exists()) setProfile(snap.data())
+      } catch (e) {}
       setLoading(false)
     })
+    return () => unsub()
   }, [])
+
+  // Check for payment success
+  useEffect(() => {
+    if (router.query.payment === 'success') {
+      alert('🎉 Payment received! Welcome to The Clarity Institute!')
+    }
+  }, [router.query])
 
   if (loading) return (
     <div className={styles.loading}>
@@ -70,8 +86,8 @@ export default function Dashboard() {
     </div>
   )
 
-  const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'Seeker'
-  const progress = 28
+  const userName = user?.displayName || profile?.full_name || user?.email?.split('@')[0] || 'Seeker'
+  const progress = profile?.progress || 28
 
   return (
     <>
@@ -83,7 +99,7 @@ export default function Dashboard() {
             <div className={styles.avatar}>{userName[0].toUpperCase()}</div>
             <div>
               <div className={styles.profileName}>{userName}</div>
-              <div className={styles.profileProgram}>Clarity Cohort</div>
+              <div className={styles.profileProgram}>{profile?.program || 'Clarity Cohort'}</div>
             </div>
           </div>
           <div className={styles.progressSection}>
@@ -108,10 +124,8 @@ export default function Dashboard() {
             ))}
           </nav>
           <div className={styles.sidebarLinks}>
-            <Link href="#" className={styles.sidebarLink}>📅 Upcoming Sessions</Link>
-            <Link href="#" className={styles.sidebarLink}>👥 Community</Link>
-            <Link href="#" className={styles.sidebarLink}>📚 Resource Library</Link>
             <Link href="/#mentorship" className={styles.sidebarLink}>✨ Upgrade to Mentorship</Link>
+            <Link href="/#contact" className={styles.sidebarLink}>💬 Contact Support</Link>
           </div>
         </aside>
 
@@ -126,12 +140,14 @@ export default function Dashboard() {
             <div className={styles.nextSession}>
               <div className={styles.nextSessionLabel}>Next Live Session</div>
               <div className={styles.nextSessionDate}>Saturday, April 5 · 10am EST</div>
-              <a href="#" className="btn-primary" style={{fontSize:'0.78rem',padding:'0.6rem 1.4rem'}}>Join Zoom</a>
             </div>
           </div>
 
+          {/* Zoom + Calendar Booking */}
+          <BookingSection />
+
           {/* Active Module */}
-          <div className={styles.moduleSection}>
+          <div className={styles.moduleSection} style={{marginTop:'2rem'}}>
             <div className={styles.moduleSectionHeader}>
               <div>
                 <p className={styles.moduleSectionWeek}>{COURSES[activeModule].week}</p>
@@ -150,9 +166,7 @@ export default function Dashboard() {
                     <div className={styles.lessonTitle}>{lesson.title}</div>
                     <div className={styles.lessonMeta}>{lesson.type} · {lesson.duration}</div>
                   </div>
-                  {activeLesson === lesson.id && (
-                    <span className={styles.lessonPlayBtn}>Open</span>
-                  )}
+                  {activeLesson === lesson.id && <span className={styles.lessonPlayBtn}>Open</span>}
                 </div>
               ))}
             </div>

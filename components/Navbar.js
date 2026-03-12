@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { supabase } from '../lib/supabase'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth } from '../lib/firebase'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -9,17 +10,12 @@ export default function Navbar() {
   const router = useRouter()
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-    })
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
-      setUser(session?.user ?? null)
-    })
-    return () => subscription.unsubscribe()
+    const unsub = onAuthStateChanged(auth, (u) => setUser(u))
+    return () => unsub()
   }, [])
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut()
+    await signOut(auth)
     router.push('/')
   }
 

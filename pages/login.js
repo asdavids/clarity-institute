@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { supabase } from '../lib/supabase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../lib/firebase'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Auth.module.css'
 
@@ -16,11 +17,17 @@ export default function Login() {
     e.preventDefault()
     setLoading(true)
     setStatus(null)
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
-    if (error) {
-      setStatus({ type: 'error', message: error.message })
-    } else {
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
       router.push('/dashboard')
+    } catch (error) {
+      const messages = {
+        'auth/user-not-found': 'No account found with this email.',
+        'auth/wrong-password': 'Incorrect password. Please try again.',
+        'auth/invalid-email': 'Please enter a valid email address.',
+        'auth/too-many-requests': 'Too many attempts. Please try again later.',
+      }
+      setStatus({ type: 'error', message: messages[error.code] || 'Something went wrong. Please try again.' })
     }
     setLoading(false)
   }
@@ -34,7 +41,7 @@ export default function Login() {
             <p className="section-label">Welcome Back</p>
             <h1 className={styles.authTitle}>Sign In to Your<br /><em>Sacred Space</em></h1>
           </div>
-          {status && <div className={`alert-${status.type}`}>{status.message}</div>}
+          {status && <div className={status.type === 'success' ? 'alert-success' : 'alert-error'}>{status.message}</div>}
           <form onSubmit={handleLogin}>
             <div className="form-group">
               <label>Email Address</label>
