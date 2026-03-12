@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Course — The Clarity Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5EFE4;--sand:#E8D9C0;--warm-white:#FAF7F2;--brown:#6B4A2A;--green:#3D5A3E;--green-light:#5A7D5B;--green-muted:#8FA98F;--burnt-orange:#C1581A;--burnt-orange-light:#D97C3A;--text-dark:#2C1F12;--text-mid:#5A4433;--text-light:#8A7060}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text-dark);min-height:100vh;display:flex;flex-direction:column}
+.topbar{background:var(--green);padding:1rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
+.topbar-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:white;text-decoration:none}
+.topbar-logo span{color:var(--burnt-orange-light)}
+.topbar-back{color:rgba(255,255,255,.7);text-decoration:none;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;transition:color .2s}
+.topbar-back:hover{color:white}
+.topbar-title{color:white;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;margin-left:auto;opacity:.75}
+.course-layout{display:flex;flex:1;overflow:hidden;height:calc(100vh - 60px)}
+.sidebar{width:320px;background:var(--cream);border-right:1px solid var(--sand);overflow-y:auto;flex-shrink:0}
+.sidebar-head{padding:1.5rem;border-bottom:1px solid var(--sand);position:sticky;top:0;background:var(--cream);z-index:2}
+.sidebar-head h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--text-dark);margin-bottom:.4rem}
+.sidebar-progress{display:flex;align-items:center;gap:.7rem}
+.prog-bar{flex:1;height:4px;background:var(--sand);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--green);border-radius:2px;transition:width .5s}
+.prog-text{font-size:.75rem;color:var(--text-light);white-space:nowrap}
+.week-group{padding:1.2rem 1.5rem .5rem}
+.week-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);font-weight:500;margin-bottom:.6rem}
+.lesson-item{display:flex;align-items:center;gap:.8rem;padding:.75rem 1.5rem;cursor:pointer;transition:background .15s;border-radius:3px;margin:0 .5rem .2rem;text-decoration:none}
+.lesson-item:hover{background:var(--sand)}
+.lesson-item.active{background:rgba(61,90,62,.12)}
+.lesson-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;border:1.5px solid var(--sand);background:var(--warm-white)}
+.lesson-item.completed .lesson-icon{background:var(--green);border-color:var(--green);color:white}
+.lesson-item.locked .lesson-icon{opacity:.4}
+.lesson-info{flex:1;min-width:0}
+.lesson-title{font-size:.88rem;color:var(--text-dark);font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lesson-item.active .lesson-title{color:var(--green);font-weight:500}
+.lesson-meta{font-size:.72rem;color:var(--text-light);font-weight:300}
+.lesson-lock{font-size:.75rem;color:var(--text-light)}
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.video-area{background:#1a1a1a;aspect-ratio:16/9;max-height:55vh;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.video-placeholder{text-align:center;color:rgba(255,255,255,.5)}
+.video-placeholder .play-btn{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 1rem;cursor:pointer;transition:background .2s;border:2px solid rgba(255,255,255,.2)}
+.video-placeholder .play-btn:hover{background:rgba(255,255,255,.25)}
+.video-placeholder p{font-size:.88rem;font-weight:300}
+.locked-overlay{position:absolute;inset:0;background:rgba(44,31,18,.7);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:white;text-align:center;padding:2rem}
+.locked-overlay h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300}
+.locked-overlay p{font-size:.9rem;color:rgba(255,255,255,.7);max-width:400px;font-weight:300}
+.lesson-content{padding:2rem 2.5rem;max-width:760px}
+.lesson-content h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--text-dark);margin-bottom:.5rem}
+.lesson-content .lc-meta{font-size:.78rem;color:var(--text-light);margin-bottom:1.5rem;display:flex;gap:1rem}
+.lesson-content .lc-body{font-size:.96rem;font-weight:300;color:var(--text-mid);line-height:1.85}
+.lesson-actions{display:flex;gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--sand)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;border-radius:2px;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all .2s}
+.btn-primary{background:var(--green);color:white}.btn-primary:hover{background:var(--green-light)}
+.btn-outline{background:transparent;color:var(--text-mid);border:1.5px solid var(--sand)}.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.free-badge{display:inline-block;background:rgba(61,90,62,.12);color:var(--green);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:2px;margin-left:.7rem;font-weight:500}
+.loading{display:flex;align-items:center;justify-content:center;padding:3rem;color:var(--text-light);font-size:.9rem}
+.spinner{width:18px;height:18px;border:2px solid var(--sand);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite;margin-right:.7rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/" class="topbar-logo">The <span>Clarity</span> Institute</a>
+  <a href="/dashboard.html" class="topbar-back">← Dashboard</a>
+  <div class="topbar-title" id="topbar-title">Loading…</div>
+</div>
+
+<div class="course-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <h3 id="sidebar-program-title">Your Course</h3>
+      <div class="sidebar-progress">
+        <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+        <span class="prog-text" id="prog-text">0%</span>
+      </div>
+    </div>
+    <div id="lesson-list"><div class="loading"><div class="spinner"></div>Loading…</div></div>
+  </aside>
+
+  <div class="main" id="main-content">
+    <div class="loading"><div class="spinner"></div>Select a lesson to begin</div>
+  </div>
+</div>
+
+<script type="module">
+import { supabase, getUser, getLessons, getPrograms, getUserEnrollments, markLessonComplete, getLessonProgress } from './src/lib/supabase.js'
+
+let currentUser = null
+let allLessons = []
+let completedIds = new Set()
+let currentLesson = null
+let isEnrolled = false
+let programId = null
+
+async function init() {
+  currentUser = await getUser()
+  if (!currentUser) { window.location.href = '/index.html'; return }
+
+  const params = new URLSearchParams(window.location.search)
+  programId = params.get('program')
+
+  // Check enrollment
+  const { data: enrollments } = await getUserEnrollments(currentUser.id)
+  isEnrolled = enrollments?.some(e => e.program_id === programId)
+
+  // Get program info
+  const { data: programs } = await getPrograms()
+  const program = programId ? programs?.find(p => p.id === programId) : programs?.[0]
+  if (!programId && programs?.length) programId = programs[0].id
+
+  document.getElementById('topbar-title').textContent = program?.title || 'Course'
+  document.getElementById('sidebar-program-title').textContent = program?.title || 'Your Course'
+
+  // Load lessons
+  const { data: lessons } = await getLessons(programId)
+  allLessons = lessons || []
+
+  // Load progress
+  const { data: progress } = await getLessonProgress(currentUser.id, programId)
+  completedIds = new Set((progress || []).map(p => p.lesson_id))
+
+  renderSidebar()
+
+  // Auto-open first incomplete lesson
+  const firstLesson = allLessons.find(l => !completedIds.has(l.id)) || allLessons[0]
+  if (firstLesson) openLesson(firstLesson)
+}
+
+function renderSidebar() {
+  const accessible = allLessons.filter(l => isEnrolled || l.is_free_preview).length
+  const pct = allLessons.length ? Math.round((completedIds.size / allLessons.length) * 100) : 0
+  document.getElementById('prog-fill').style.width = pct + '%'
+  document.getElementById('prog-text').textContent = pct + '%'
+
+  // Group by week
+  const weeks = {}
+  allLessons.forEach(l => {
+    const w = l.week_number || 1
+    if (!weeks[w]) weeks[w] = []
+    weeks[w].push(l)
+  })
+
+  let html = ''
+  Object.keys(weeks).sort((a,b) => a-b).forEach(w => {
+    html += `<div class="week-group"><div class="week-label">Week ${w}</div>`
+    weeks[w].forEach(lesson => {
+      const done = completedIds.has(lesson.id)
+      const canAccess = isEnrolled || lesson.is_free_preview
+      const isActive = currentLesson?.id === lesson.id
+      html += `
+        <div class="lesson-item ${done?'completed':''} ${isActive?'active':''} ${!canAccess?'locked':''}"
+             onclick="${canAccess ? `openLesson(${JSON.stringify(lesson).replace(/"/g,"'")})` : "showUpgrade()"}">
+          <div class="lesson-icon">${done ? '✓' : !canAccess ? '🔒' : lesson.sort_order}</div>
+          <div class="lesson-info">
+            <div class="lesson-title">${lesson.title}${lesson.is_free_preview?'<span class="free-badge">Free</span>':''}</div>
+            <div class="lesson-meta">${lesson.duration_minutes || 20} min</div>
+          </div>
+        </div>`
+    })
+    html += '</div>'
+  })
+  document.getElementById('lesson-list').innerHTML = html
+}
+
+window.openLesson = function(lesson) {
+  currentLesson = lesson
+  const canAccess = isEnrolled || lesson.is_free_preview
+  renderSidebar()
+
+  const main = document.getElementById('main-content')
+  main.innerHTML = `
+    <div class="video-area">
+      ${!canAccess ? `
+        <div class="locked-overlay">
+          <div style="font-size:2.5rem">🔒</div>
+          <h3>This lesson is locked</h3>
+          <p>Enroll in this program to access all lessons, guided meditations, and the full course experience.</p>
+          <a href="/index.html#pricing" class="btn" style="background:var(--burnt-orange);color:white">Enroll Now</a>
+        </div>` : ''}
+      <div class="video-placeholder">
+        <div class="play-btn" onclick="alert('Video player coming soon — add your video URLs in Supabase!')">▶</div>
+        <p>${lesson.title}</p>
+      </div>
+    </div>
+    <div class="lesson-content">
+      <h2>${lesson.title}</h2>
+      <div class="lc-meta">
+        <span>Week ${lesson.week_number}</span>
+        <span>${lesson.duration_minutes || 20} minutes</span>
+        ${completedIds.has(lesson.id) ? '<span style="color:var(--green)">✓ Completed</span>' : ''}
+      </div>
+      <div class="lc-body">
+        <p>${lesson.description || 'Welcome to this lesson. When you\'re ready, press play to begin your practice. Take a moment to settle into a comfortable position, and allow yourself to arrive fully in this space.'}</p>
+        ${canAccess ? `<br><p>After completing this lesson, mark it complete below to track your progress through the program.</p>` : ''}
+      </div>
+      <div class="lesson-actions">
+        ${canAccess ? `<button class="btn btn-primary" onclick="completeLesson('${lesson.id}')" id="complete-btn" ${completedIds.has(lesson.id)?'disabled':''}>
+          ${completedIds.has(lesson.id) ? '✓ Completed' : 'Mark as Complete'}
+        </button>` : ''}
+        <button class="btn btn-outline" onclick="nextLesson()">Next Lesson →</button>
+      </div>
+    </div>`
+}
+
+window.completeLesson = async function(lessonId) {
+  const btn = document.getElementById('complete-btn')
+  btn.disabled = true
+  btn.textContent = 'Saving…'
+  await markLessonComplete(currentUser.id, lessonId)
+  completedIds.add(lessonId)
+  btn.textContent = '✓ Completed'
+  renderSidebar()
+}
+
+window.nextLesson = function() {
+  const idx = allLessons.findIndex(l => l.id === currentLesson?.id)
+  const next = allLessons[idx + 1]
+  if (next) openLesson(next)
+}
+
+window.showUpgrade = function() {
+  window.location.href = '/index.html#pricing'
+}
+
+init()
+</script>
+</body>
+</html>

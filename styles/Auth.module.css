@@ -1,0 +1,30 @@
+.authPage {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 1rem 3rem;
+  background:
+    radial-gradient(ellipse 60% 60% at 30% 40%, rgba(61,90,62,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 70%, rgba(193,88,26,0.06) 0%, transparent 60%),
+    var(--warm-white);
+}
+.authCard {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 3rem;
+  width: 100%; max-width: 460px;
+  box-shadow: 0 20px 60px rgba(44,31,18,0.1);
+}
+.authHeader { margin-bottom: 2rem; }
+.authTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 300; line-height: 1.15;
+  color: var(--text-dark);
+}
+.authTitle em { font-style: italic; color: var(--green); }
+.authBtn { width: 100%; margin-top: 0.5rem; text-align: center; }
+.authFooter {
+  margin-top: 1.5rem; text-align: center;
+  font-size: 0.88rem; color: var(--text-light); font-weight: 300;
+}
+.authFooter a { color: var(--green); font-weight: 400; }
+.authFooter a:hover { color: var(--burnt-orange); }

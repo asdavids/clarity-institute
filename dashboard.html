@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Dashboard — The Clarity Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5EFE4;--sand:#E8D9C0;--warm-white:#FAF7F2;--brown:#6B4A2A;--green:#3D5A3E;--green-light:#5A7D5B;--green-muted:#8FA98F;--burnt-orange:#C1581A;--burnt-orange-light:#D97C3A;--text-dark:#2C1F12;--text-mid:#5A4433;--text-light:#8A7060}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text-dark);min-height:100vh;display:flex}
+.sidebar{width:260px;background:var(--green);min-height:100vh;display:flex;flex-direction:column;padding:2rem 1.5rem;flex-shrink:0}
+.sidebar-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;margin-bottom:2.5rem;text-decoration:none}
+.sidebar-logo span{color:var(--burnt-orange-light)}
+.sidebar-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:500;margin-bottom:.8rem;margin-top:1.5rem}
+.sidebar-nav{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.sidebar-nav a{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border-radius:3px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.88rem;font-weight:400;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a.active{background:rgba(255,255,255,.12);color:white}
+.sidebar-nav .icon{font-size:1rem;width:1.2rem;text-align:center}
+.sidebar-bottom{margin-top:auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.sidebar-user{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+.user-avatar{width:38px;height:38px;border-radius:50%;background:var(--burnt-orange);display:flex;align-items:center;justify-content:center;color:white;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;flex-shrink:0}
+.user-name{font-size:.88rem;color:white;font-weight:400}
+.user-role{font-size:.72rem;color:rgba(255,255,255,.5)}
+.sidebar-signout{width:100%;background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.6);padding:.6rem;border-radius:2px;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.sidebar-signout:hover{background:rgba(255,255,255,.15);color:white}
+.main{flex:1;overflow-y:auto}
+.topbar{background:var(--warm-white);border-bottom:1px solid var(--sand);padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--text-dark)}
+.topbar-right{display:flex;align-items:center;gap:1rem}
+.content{padding:2.5rem}
+.welcome-banner{background:linear-gradient(120deg,var(--green),#2D4520);border-radius:6px;padding:2.2rem 2.5rem;color:white;margin-bottom:2rem;position:relative;overflow:hidden}
+.welcome-banner::before{content:'👁';position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-size:5rem;opacity:.08}
+.welcome-banner h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.5rem}
+.welcome-banner p{font-size:.9rem;color:rgba(255,255,255,.72);font-weight:300;max-width:500px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:2rem}
+.stat-card{background:var(--cream);border-radius:4px;padding:1.5rem;text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--text-dark);line-height:1}
+.stat-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-top:.4rem}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem}
+.section-head h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--text-dark)}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2.5rem}
+.course-card{background:var(--cream);border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.course-card:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(44,31,18,.1)}
+.course-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.thumb-1{background:linear-gradient(135deg,#3D5A3E,#2D4520)}
+.thumb-2{background:linear-gradient(135deg,#6B4A2A,#4A2E10)}
+.thumb-3{background:linear-gradient(135deg,#C1581A,#8A3A0A)}
+.course-badge{position:absolute;top:.8rem;right:.8rem;background:var(--burnt-orange);color:white;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px}
+.course-body{padding:1.4rem}
+.course-tag{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--burnt-orange);font-weight:500;margin-bottom:.5rem}
+.course-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--text-dark);margin-bottom:.5rem}
+.course-meta{font-size:.78rem;color:var(--text-light);font-weight:300}
+.progress-bar-wrap{margin-top:1rem}
+.progress-bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-light);margin-bottom:.4rem}
+.progress-bar{height:4px;background:var(--sand);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:2px;transition:width .5s}
+.empty-state{text-align:center;padding:3rem 2rem;background:var(--cream);border-radius:4px}
+.empty-state h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--text-dark);margin-bottom:.6rem}
+.empty-state p{font-size:.9rem;color:var(--text-light);font-weight:300;margin-bottom:1.5rem}
+.btn{display:inline-block;padding:.75rem 1.8rem;border-radius:2px;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all .2s}
+.btn-primary{background:var(--burnt-orange);color:white}.btn-primary:hover{background:var(--burnt-orange-light)}
+.btn-sm{padding:.55rem 1.2rem;font-size:.72rem}
+.loading{display:flex;align-items:center;justify-content:center;padding:3rem;color:var(--text-light);font-size:.9rem}
+.spinner{width:18px;height:18px;border:2px solid var(--sand);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite;margin-right:.7rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:768px){body{flex-direction:column}.sidebar{width:100%;min-height:auto;padding:1rem}.content{padding:1.2rem}.stats-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <a href="/" class="sidebar-logo">The <span>Clarity</span> Institute</a>
+  <div class="sidebar-label">Menu</div>
+  <ul class="sidebar-nav">
+    <li><a href="/dashboard.html" class="active"><span class="icon">🏠</span>Dashboard</a></li>
+    <li><a href="/course.html"><span class="icon">📚</span>My Courses</a></li>
+    <li><a href="#"><span class="icon">🧘</span>Meditations</a></li>
+    <li><a href="#"><span class="icon">📓</span>Journal</a></li>
+    <li><a href="#"><span class="icon">👥</span>Community</a></li>
+  </ul>
+  <div class="sidebar-label">Account</div>
+  <ul class="sidebar-nav">
+    <li><a href="#"><span class="icon">⚙️</span>Settings</a></li>
+    <li><a href="/index.html#pricing"><span class="icon">✨</span>Upgrade</a></li>
+  </ul>
+  <div class="sidebar-bottom">
+    <div class="sidebar-user">
+      <div class="user-avatar" id="user-avatar">?</div>
+      <div><div class="user-name" id="user-name">Loading…</div><div class="user-role">Student</div></div>
+    </div>
+    <button class="sidebar-signout" onclick="handleSignOut()">Sign Out</button>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="page-title" id="topbar-greeting">Welcome back 🌿</div>
+    <div class="topbar-right">
+      <a href="/index.html#pricing" class="btn btn-primary btn-sm">Enroll in a Program</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="welcome-banner">
+      <h2 id="banner-title">Good to see you.</h2>
+      <p>Your path to clarity continues. Pick up where you left off or explore new practices below.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num" id="stat-courses">—</div><div class="stat-label">Courses Enrolled</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-lessons">—</div><div class="stat-label">Lessons Completed</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">Day Streak</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-progress">—</div><div class="stat-label">Avg Progress</div></div>
+    </div>
+
+    <div class="section-head"><h3>My Courses</h3></div>
+    <div id="courses-container"><div class="loading"><div class="spinner"></div>Loading your courses…</div></div>
+  </div>
+</div>
+
+<script type="module">
+import { supabase, signOut, getUser, getProfile, getUserEnrollments, getLessonProgress } from './src/lib/supabase.js'
+
+async function init() {
+  const user = await getUser()
+  if (!user) { window.location.href = '/index.html'; return }
+
+  // Update UI with user info
+  const name = user.user_metadata?.full_name || user.email.split('@')[0]
+  const initial = name.charAt(0).toUpperCase()
+  document.getElementById('user-avatar').textContent = initial
+  document.getElementById('user-name').textContent = name
+  document.getElementById('topbar-greeting').textContent = `Welcome back, ${name.split(' ')[0]} 🌿`
+  document.getElementById('banner-title').textContent = `Good to see you, ${name.split(' ')[0]}.`
+
+  // Load enrollments
+  const { data: enrollments, error } = await getUserEnrollments(user.id)
+  document.getElementById('stat-courses').textContent = enrollments?.length || 0
+
+  if (!enrollments || enrollments.length === 0) {
+    document.getElementById('courses-container').innerHTML = `
+      <div class="empty-state">
+        <h3>Your journey begins here</h3>
+        <p>You haven't enrolled in any programs yet. Explore what The Clarity Institute has to offer.</p>
+        <a href="/index.html#pricing" class="btn btn-primary">Browse Programs</a>
+      </div>`
+    document.getElementById('stat-lessons').textContent = '0'
+    document.getElementById('stat-progress').textContent = '0%'
+    return
+  }
+
+  // Load progress
+  const { data: progress } = await getLessonProgress(user.id)
+  const completedIds = new Set((progress || []).map(p => p.lesson_id))
+  document.getElementById('stat-lessons').textContent = completedIds.size
+
+  // Build course cards
+  const thumbs = ['thumb-1', 'thumb-2', 'thumb-3']
+  const icons = ['👁', '🌿', '🔥']
+  let totalPct = 0
+
+  const cards = enrollments.map((enr, i) => {
+    const prog = enr.programs
+    const totalLessons = 10 // approximate; ideally fetch from lessons count
+    const pct = Math.min(100, Math.round((completedIds.size / totalLessons) * 100))
+    totalPct += pct
+    return `
+      <a href="/course.html?program=${enr.program_id}" class="course-card">
+        <div class="course-thumb ${thumbs[i % 3]}">
+          <span>${icons[i % 3]}</span>
+          ${enr.status === 'active' ? '<div class="course-badge">Active</div>' : ''}
+        </div>
+        <div class="course-body">
+          <div class="course-tag">Online Program</div>
+          <div class="course-title">${prog?.title || 'Your Program'}</div>
+          <div class="course-meta">${prog?.duration_weeks || 8} weeks · ${prog?.description?.substring(0,60) || ''}…</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-label"><span>Progress</span><span>${pct}%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+          </div>
+        </div>
+      </a>`
+  }).join('')
+
+  document.getElementById('courses-container').innerHTML = `<div class="courses-grid">${cards}</div>`
+  document.getElementById('stat-progress').textContent = Math.round(totalPct / enrollments.length) + '%'
+}
+
+window.handleSignOut = async () => {
+  await signOut()
+  window.location.href = '/index.html'
+}
+
+init()
+</script>
+</body>
+</html>

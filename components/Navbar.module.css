@@ -1,0 +1,45 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 5%;
+  background: rgba(250,247,242,0.93);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(107,74,42,0.12);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--green); letter-spacing: 0.04em;
+}
+.logo span { color: var(--burnt-orange); }
+.links {
+  display: flex; gap: 2rem; list-style: none;
+  align-items: center;
+}
+.links a {
+  font-size: 0.82rem; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-mid); transition: color 0.25s;
+}
+.links a:hover { color: var(--burnt-orange); }
+.cta {
+  background: var(--green) !important;
+  color: var(--cream) !important;
+  padding: 0.55rem 1.4rem !important;
+  border-radius: 2px;
+}
+.cta:hover { background: var(--green-light) !important; }
+.login {
+  color: var(--green) !important;
+}
+.signout {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem; letter-spacing: 0.12em;
+  text-transform: uppercase; background: none;
+  border: none; cursor: pointer; color: var(--text-light);
+  transition: color 0.25s;
+}
+.signout:hover { color: var(--burnt-orange); }
+@media (max-width: 900px) {
+  .links { display: none; }
+}
