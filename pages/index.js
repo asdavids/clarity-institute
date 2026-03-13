@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 
-const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1Vr9OmYHRounjmG4gXaUu0j2mh9EoK9A9'
+const PDF_LINK = https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz
 
 export default function Home() {
   const [waitlistEmail, setWaitlistEmail] = useState('')
