@@ -94,7 +94,7 @@ export default function Home() {
             <span className={styles.pdfIcon}>📄</span>
             <span className={styles.pdfText}>
               <span className={styles.pdfLabel}>Free Download</span>
-              <span className={styles.pdfTitle}>The Eye That Sees</span>
+              <span className={styles.pdfTitle}>THE THIRD EYE EBOOK</span>
             </span>
             <span className={styles.pdfArrow}>↓</span>
           </a>
