@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 
-const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz'
+const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1Vr9OmYHRounjmG4gXaUu0j2mh9EoK9A9'
 
 export default function Home() {
   const [waitlistEmail, setWaitlistEmail] = useState('')
@@ -94,7 +94,7 @@ export default function Home() {
             <span className={styles.pdfIcon}>📄</span>
             <span className={styles.pdfText}>
               <span className={styles.pdfLabel}>Free Download</span>
-              <span className={styles.pdfTitle}>THE THIRD EYE EBOOK</span>
+              <span className={styles.pdfTitle}>The Eye That Sees</span>
             </span>
             <span className={styles.pdfArrow}>↓</span>
           </a>
