@@ -279,3 +279,8 @@
 .pdfLabel { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--burnt-orange); font-weight: 500; }
 .pdfTitle { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; color: var(--text-dark); }
 .pdfArrow { font-size: 1.2rem; color: var(--green); font-weight: 300; flex-shrink: 0; }
+.pricingTier { font-size: 0.75rem; font-weight: 500; color: #C1581A; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem; }
+.pricingOriginal { font-size: 1rem; color: #aaa; text-decoration: line-through; display: block; margin-bottom: 0.1rem; }
+.popularBadge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #C1581A; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.3rem 1.1rem; border-radius: 999px; white-space: nowrap; }
+.pricingCardFeatured { position: relative; border-color: #C1581A !important; box-shadow: 0 8px 32px rgba(193,88,26,0.15) !important; transform: translateY(-6px); }
+.pricingBtnFeatured { background: #C1581A !important; color: white !important; border-color: #C1581A !important; }
