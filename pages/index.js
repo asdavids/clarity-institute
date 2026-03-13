@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
+
+const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1Vr9OmYHRounjmG4gXaUu0j2mh9EoK9A9'
 
 export default function Home() {
   const [waitlistEmail, setWaitlistEmail] = useState('')
@@ -11,7 +13,6 @@ export default function Home() {
   const [loadingWaitlist, setLoadingWaitlist] = useState(false)
   const [loadingContact, setLoadingContact] = useState(false)
 
-  // Scroll reveal
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver((entries) => {
@@ -87,6 +88,17 @@ export default function Home() {
             <Link href="#pricing" className="btn-primary">Join the Cohort</Link>
             <Link href="#mentorship" className="btn-outline">Explore Mentorship</Link>
           </div>
+
+          {/* ─── FREE PDF DOWNLOAD ─── */}
+          <a href={PDF_LINK} target="_blank" rel="noopener noreferrer" className={styles.pdfBtn}>
+            <span className={styles.pdfIcon}>📄</span>
+            <span className={styles.pdfText}>
+              <span className={styles.pdfLabel}>Free Download</span>
+              <span className={styles.pdfTitle}>The Eye That Sees</span>
+            </span>
+            <span className={styles.pdfArrow}>↓</span>
+          </a>
+
           {/* Waitlist signup */}
           <div className={styles.waitlistBox}>
             <p className={styles.waitlistLabel}>Next cohort opens soon — save your spot</p>
