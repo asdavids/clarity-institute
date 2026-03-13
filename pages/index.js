@@ -1,422 +1,393 @@
-import { useState, useEffect } from 'react'
+// pages/index.js
+import { useState } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
-import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 
-const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1Vr9OmYHRounjmG4gXaUu0j2mh9EoK9A9'
+const WHATSAPP_NUMBER = '27817904941'
+const GOOGLE_DRIVE_PDF = 'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz'
 
 export default function Home() {
   const [waitlistEmail, setWaitlistEmail] = useState('')
-  const [waitlistStatus, setWaitlistStatus] = useState(null)
-  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '', interest: 'cohort' })
-  const [contactStatus, setContactStatus] = useState(null)
-  const [loadingWaitlist, setLoadingWaitlist] = useState(false)
-  const [loadingContact, setLoadingContact] = useState(false)
-
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80)
-          observer.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.1 })
-    reveals.forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+  const [waitlistStatus, setWaitlistStatus] = useState('')
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+  const [contactStatus, setContactStatus] = useState('')
 
   const handleWaitlist = async (e) => {
     e.preventDefault()
-    setLoadingWaitlist(true)
-    setWaitlistStatus(null)
+    if (!waitlistEmail) return
     try {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: waitlistEmail })
+        body: JSON.stringify({ email: waitlistEmail }),
       })
-      const data = await res.json()
       if (res.ok) {
-        setWaitlistStatus({ type: 'success', message: 'You\'re on the list! We\'ll be in touch soon.' })
+        setWaitlistStatus('success')
         setWaitlistEmail('')
       } else {
-        setWaitlistStatus({ type: 'error', message: data.error || 'Something went wrong.' })
+        setWaitlistStatus('error')
       }
     } catch {
-      setWaitlistStatus({ type: 'error', message: 'Network error. Please try again.' })
+      setWaitlistStatus('error')
     }
-    setLoadingWaitlist(false)
   }
 
   const handleContact = async (e) => {
     e.preventDefault()
-    setLoadingContact(true)
-    setContactStatus(null)
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contactForm)
+        body: JSON.stringify(contactForm),
       })
-      const data = await res.json()
       if (res.ok) {
-        setContactStatus({ type: 'success', message: 'Message received. We\'ll respond within 48 hours.' })
-        setContactForm({ name: '', email: '', message: '', interest: 'cohort' })
+        setContactStatus('success')
+        setContactForm({ name: '', email: '', message: '' })
       } else {
-        setContactStatus({ type: 'error', message: data.error || 'Something went wrong.' })
+        setContactStatus('error')
       }
     } catch {
-      setContactStatus({ type: 'error', message: 'Network error. Please try again.' })
+      setContactStatus('error')
     }
-    setLoadingContact(false)
   }
 
   return (
     <>
-      <Navbar />
+      <Head>
+        <title>The Clarity Institute — Awaken Your Third Eye</title>
+        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort, mentorship programs, and immersive spiritual learning experiences." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
-      {/* ─── HERO ─── */}
-      <section className={styles.hero}>
-        <div className={styles.heroBg}></div>
-        <div className={styles.heroLeft}>
-          <p className={`${styles.heroEyebrow} section-label`}>Open Your Third Eye</p>
-          <h1 className={styles.heroTitle}>Awaken Your<br /><em>Inner Vision</em></h1>
-          <p className={styles.heroSubtitle}>A transformative online learning experience for seekers ready to expand consciousness, unlock intuition, and step into their highest clarity. Join our intimate cohort or walk the path one-on-one.</p>
-          <div className={styles.heroActions}>
-            <Link href="#pricing" className="btn-primary">Join the Cohort</Link>
-            <Link href="#mentorship" className="btn-outline">Explore Mentorship</Link>
-          </div>
-
-          {/* ─── FREE PDF DOWNLOAD ─── */}
-          <a href={PDF_LINK} target="_blank" rel="noopener noreferrer" className={styles.pdfBtn}>
-            <span className={styles.pdfIcon}>📄</span>
-            <span className={styles.pdfText}>
-              <span className={styles.pdfLabel}>Free Download</span>
-              <span className={styles.pdfTitle}>The Eye That Sees</span>
-            </span>
-            <span className={styles.pdfArrow}>↓</span>
-          </a>
-
-          {/* Waitlist signup */}
-          <div className={styles.waitlistBox}>
-            <p className={styles.waitlistLabel}>Next cohort opens soon — save your spot</p>
-            <form onSubmit={handleWaitlist} className={styles.waitlistForm}>
-              <input
-                type="email" required placeholder="your@email.com"
-                value={waitlistEmail}
-                onChange={e => setWaitlistEmail(e.target.value)}
-                className={styles.waitlistInput}
-              />
-              <button type="submit" className="btn-primary" disabled={loadingWaitlist}>
-                {loadingWaitlist ? 'Saving...' : 'Notify Me'}
-              </button>
-            </form>
-            {waitlistStatus && (
-              <p className={waitlistStatus.type === 'success' ? 'alert-success' : 'alert-error'}
-                style={{marginTop:'0.8rem'}}>
-                {waitlistStatus.message}
-              </p>
-            )}
-          </div>
+      {/* ── Navbar ── */}
+      <nav className={styles.navbar}>
+        <div className={styles.navBrand}>The Clarity Institute</div>
+        <div className={styles.navLinks}>
+          <a href="#about">About</a>
+          <a href="#cohort">The Cohort</a>
+          <a href="#mentorship">Mentorship</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div className={styles.heroRight}>
+        <div className={styles.navActions}>
+          <Link href="/login" className={styles.navLogin}>Sign In</Link>
+          <a href="#pricing" className={styles.navCta}>Enroll Now</a>
+        </div>
+      </nav>
+
+      <main>
+
+        {/* ── Hero ── */}
+        <section className={styles.hero}>
+          <div className={styles.heroContent}>
+            <span className={styles.heroLabel}>Begin Your Awakening</span>
+            <h1 className={styles.heroTitle}>
+              See Beyond<br />
+              <em>What You've Been Told</em>
+            </h1>
+            <p className={styles.heroSubtitle}>
+              An 8-week journey to activate your third eye, sharpen your intuition,
+              and step into the life you've always sensed was possible.
+            </p>
+            <div className={styles.heroBtns}>
+              <a href="#pricing" className={styles.heroBtnPrimary}>Begin Your Journey</a>
+              <a href={GOOGLE_DRIVE_PDF} target="_blank" rel="noopener noreferrer" className={styles.heroBtnSecondary}>
+                THE THIRD EYE EBOOK ↓
+              </a>
+            </div>
+          </div>
           <div className={styles.heroVisual}>
-            <div className={styles.heroCardMain}>
-              <p className={styles.heroCardText}>"The eye through which I see the universe is the same eye through which it sees me."</p>
+            <div className={styles.eyeSymbol}>👁</div>
+          </div>
+        </section>
+
+        {/* ── About ── */}
+        <section id="about" className={styles.aboutSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>About</span>
+            <h2 className={styles.sectionTitle}>What Is The Clarity Institute?</h2>
+          </div>
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutText}>
+              <p>The Clarity Institute is a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within you.</p>
+              <p>Founded by David, a spiritual guide with over a decade of practice in third eye activation, intuitive development, and consciousness expansion, The Clarity Institute brings together ancient wisdom and practical tools for modern seekers.</p>
+              <p>Whether you're just beginning to sense there's more, or you've been walking this path for years, there's a place for you here.</p>
             </div>
-            <div className={styles.heroCardSmall}>
-              <div className={styles.heroStat}>200+</div>
-              <div className={styles.heroStatLabel}>Lives Transformed</div>
+            <div className={styles.aboutStats}>
+              <div className={styles.statCard}>
+                <span className={styles.statNumber}>500+</span>
+                <span className={styles.statLabel}>Students Awakened</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statNumber}>8</span>
+                <span className={styles.statLabel}>Weeks to Transform</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statNumber}>52</span>
+                <span className={styles.statLabel}>Days of Guided Practice</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statNumber}>∞</span>
+                <span className={styles.statLabel}>Community Support</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ─── ABOUT ─── */}
-      <section id="about" className={styles.about}>
-        <div className={`${styles.aboutLeft} reveal`}>
-          <p className="section-label">Who We Are</p>
-          <h2 className="section-title">Grounded in <em>Ancient Wisdom</em>, Guided for Today</h2>
-          <div className="divider"></div>
-          <p className="section-body">The Clarity Institute is a sacred online space for those called to deepen their intuitive gifts and awaken the third eye — the seat of inner knowing. Through our structured cohort program and intimate mentorship offerings, we bridge timeless spiritual teachings with the grounded rhythms of modern life.</p>
-          <div className={styles.pillars}>
+        {/* ── Cohort ── */}
+        <section id="cohort" className={styles.cohortSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>The Program</span>
+            <h2 className={styles.sectionTitle}>The 8-Week Cohort</h2>
+            <p className={styles.sectionSubtitle}>A complete journey from Foundation to Embodiment — 52 days of guided awakening.</p>
+          </div>
+          <div className={styles.weekGrid}>
             {[
-              { icon: '👁', title: 'Third Eye Activation', text: 'Practices to open and strengthen your intuitive center.' },
-              { icon: '🌿', title: 'Embodied Learning', text: 'Grounded methods that integrate mind, body & spirit.' },
-              { icon: '🔥', title: 'Community', text: 'A warm circle of seekers walking the path together.' },
-              { icon: '🌱', title: 'Ongoing Growth', text: 'Tools and practices that evolve with your journey.' },
-            ].map((p, i) => (
-              <div key={i} className={styles.pillar}>
-                <div className={styles.pillarIcon}>{p.icon}</div>
-                <div className={styles.pillarTitle}>{p.title}</div>
-                <div className={styles.pillarText}>{p.text}</div>
+              { weeks: 'Weeks 1–2', title: 'Foundation', desc: 'Establish your practice, understand the third eye, and begin daily activation rituals.' },
+              { weeks: 'Weeks 3–5', title: 'Activation & Expansion', desc: 'Open the Ajna chakra, develop your intuitive gifts, and explore the subtle realms.' },
+              { weeks: 'Weeks 6–8', title: 'Integration & Embodiment', desc: 'Ground your gifts into daily life, relationships, and your unique soul purpose.' },
+            ].map((w) => (
+              <div key={w.weeks} className={styles.weekCard}>
+                <span className={styles.weekLabel}>{w.weeks}</span>
+                <h3 className={styles.weekTitle}>{w.title}</h3>
+                <p className={styles.weekDesc}>{w.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-        <div className={`${styles.aboutRight} reveal`}>
-          <div className={styles.aboutImgFrame}></div>
-          <div className={styles.aboutBadge}>
-            <div className={styles.aboutBadgeNum}>7</div>
-            <div className={styles.aboutBadgeText}>Years of Practice</div>
+        </section>
+
+        {/* ── Mentorship ── */}
+        <section id="mentorship" className={styles.mentorshipSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>1:1 Work</span>
+            <h2 className={styles.sectionTitle}>Private Mentorship</h2>
+            <p className={styles.sectionSubtitle}>For those who seek deeper, more personal guidance on their journey.</p>
           </div>
-        </div>
-      </section>
-
-      {/* ─── COHORT ─── */}
-      <section id="cohort" className={styles.cohort}>
-        <div className={`${styles.cohortHeader} reveal`}>
-          <p className="section-label">The Program</p>
-          <h2 className="section-title">The <em>Clarity Cohort</em></h2>
-          <div className="divider"></div>
-          <p className="section-body">An intimate 8-week online program for those ready to unlock their intuitive intelligence. Live sessions, guided practices, and a soulful community — all in one transformative container.</p>
-        </div>
-        <div className={styles.cohortGrid}>
-          {[
-            { num: '01', weeks: 'Weeks 1–2', title: 'Foundation & Stillness', desc: 'Establish your daily practice, learn the anatomy of intuition, and cultivate deep inner listening through meditation and breathwork.', featured: false },
-            { num: '02', weeks: 'Weeks 3–5', title: 'Activation & Expansion', desc: 'Third eye activation techniques, energy clearing, dream journaling, and accessing the subtle realms of perception.', featured: true },
-            { num: '03', weeks: 'Weeks 6–8', title: 'Integration & Embodiment', desc: 'Ground your gifts into daily life, receive feedback on your practice, and step forward with clarity as a confident intuitive.', featured: false },
-          ].map((c, i) => (
-            <div key={i} className={`${styles.cohortCard} ${c.featured ? styles.featured : ''} reveal`}>
-              <div className={styles.cohortCardNum}>{c.num}</div>
-              <div className={styles.cohortCardWeek}>{c.weeks}</div>
-              <h3 className={styles.cohortCardTitle}>{c.title}</h3>
-              <p className={styles.cohortCardDesc}>{c.desc}</p>
+          <div className={styles.mentorGrid}>
+            <div className={styles.mentorCard}>
+              <div className={styles.mentorIcon}>🕯</div>
+              <h3>Single Clarity Session</h3>
+              <p>A powerful 60-minute one-on-one session to address a specific block, receive intuitive guidance, or deepen a particular practice.</p>
+              <span className={styles.mentorTag}>One-time session</span>
+              <Link href="/clarity-session" className={styles.mentorBtn}>Book a Session</Link>
             </div>
-          ))}
-        </div>
-        <div className={`${styles.cohortIncludes} reveal`}>
-          {['8 Live Group Sessions','Video Library Access','Workbooks & Journals','Private Community','Guided Meditations','Certificate of Completion'].map((item, i) => (
-            <div key={i} className={styles.includeItem}>
-              <div className={styles.includeDot}></div>
-              {item}
+            <div className={styles.mentorCard}>
+              <div className={styles.mentorIcon}>🌀</div>
+              <h3>Monthly Mentorship</h3>
+              <p>Ongoing 1:1 support with bi-weekly calls, voice message access, and a custom practice plan tailored to your path.</p>
+              <span className={styles.mentorTag}>Ongoing support</span>
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi David, I am interested in Monthly Mentorship.')}`} target="_blank" rel="noopener noreferrer" className={styles.mentorBtn}>Enquire Now</a>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── MENTORSHIP ─── */}
-      <section id="mentorship" className={styles.mentorship}>
-        <div className="reveal">
-          <p className="section-label" style={{color:'var(--burnt-orange-light)'}}>1-on-1 Support</p>
-          <h2 className="section-title" style={{color:'white'}}>Walk the Path with a <em style={{color:'var(--burnt-orange-light)'}}>Guide</em></h2>
-          <div className="divider" style={{background:'var(--burnt-orange-light)'}}></div>
-          <p className="section-body" style={{color:'rgba(255,255,255,0.72)'}}>For those who desire a deeply personal journey, our mentorship offerings provide direct, tailored guidance to accelerate your awakening.</p>
-        </div>
-        <div className={styles.mentorshipGrid}>
-          {[
-            { icon: '🌕', title: 'Single Clarity Session', desc: 'A powerful 60-minute one-on-one session to address a specific block, receive intuitive guidance, or deepen a particular practice.', price: 'One-time session' },
-            { icon: '🌿', title: 'Monthly Mentorship', desc: 'Four sessions per month, email support between calls, and personalized practice recommendations for consistent breakthroughs.', price: 'Per month' },
-            { icon: '🔥', title: '90-Day Immersion', desc: 'The deepest container offered. Bi-weekly calls, unlimited messaging, custom curriculum, and a complete third eye activation journey.', price: '3-month container' },
-            { icon: '👁', title: 'Cohort + Mentorship Bundle', desc: 'Combine the group cohort with monthly one-on-one sessions for the most complete transformation available.', price: 'Best value' },
-          ].map((m, i) => (
-            <div key={i} className={`${styles.mentorshipCard} reveal`}>
-              <div className={styles.mentorshipIcon}>{m.icon}</div>
-              <h3 className={styles.mentorshipTitle}>{m.title}</h3>
-              <p className={styles.mentorshipDesc}>{m.desc}</p>
-              <div className={styles.mentorshipPrice}>{m.price}</div>
+            <div className={styles.mentorCard}>
+              <div className={styles.mentorIcon}>👁</div>
+              <h3>90-Day Immersion</h3>
+              <p>A complete transformation container with bi-weekly sessions, unlimited messaging, a custom curriculum, and lifetime community access.</p>
+              <span className={styles.mentorTag}>Deep transformation</span>
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi David, I am interested in the 90-Day Immersion.')}`} target="_blank" rel="noopener noreferrer" className={styles.mentorBtn}>Apply Now</a>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section id="testimonials" className={styles.testimonials}>
-        <div className="reveal">
-          <p className="section-label">Student Stories</p>
-          <h2 className="section-title">Words of <em>Transformation</em></h2>
-          <div className="divider"></div>
-        </div>
-        <div className={styles.testimonialsGrid}>
-          {[
-            { text: 'The Clarity Institute completely rewired how I perceive my own intuition. Within weeks I was receiving downloads I had never experienced before.', name: 'Amara O.', role: 'Cohort Graduate · Cycle 3', initial: 'A' },
-            { text: 'I came in skeptical and left with an open third eye and a daily practice that has changed every area of my life. The community alone is worth it.', name: 'Jordan T.', role: 'Mentorship Client', initial: 'J' },
-            { text: 'Warm, soulful, and deeply effective. The 90-day immersion was the most transformative thing I\'ve ever done. I found myself — truly.', name: 'Nia W.', role: '90-Day Immersion · 2024', initial: 'N' },
-          ].map((t, i) => (
-            <div key={i} className={`${styles.testimonialCard} reveal`}>
-              <span className={styles.testimonialQuote}>"</span>
-              <p className={styles.testimonialText}>{t.text}</p>
-              <div className={styles.testimonialAuthor}>
-                <div className={styles.testimonialAvatar}>{t.initial}</div>
-                <div>
-                  <div className={styles.testimonialName}>{t.name}</div>
-                  <div className={styles.testimonialRole}>{t.role}</div>
+        {/* ── Testimonials ── */}
+        <section className={styles.testimonialsSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Stories</span>
+            <h2 className={styles.sectionTitle}>What Students Say</h2>
+          </div>
+          <div className={styles.testimonialGrid}>
+            {[
+              { quote: "I had been searching for years. The Clarity Institute gave me the tools, the community, and the courage to actually trust what I've always known inside.", name: 'Amara T.', location: 'Nairobi, Kenya' },
+              { quote: "David's guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there.", name: 'James M.', location: 'Johannesburg, South Africa' },
+              { quote: "The 8-week cohort changed the way I move through every single day. I am clearer, calmer, and more myself than I've ever been.", name: 'Priya S.', location: 'London, UK' },
+            ].map((t) => (
+              <div key={t.name} className={styles.testimonialCard}>
+                <p className={styles.testimonialQuote}>"{t.quote}"</p>
+                <div className={styles.testimonialAuthor}>
+                  <strong>{t.name}</strong>
+                  <span>{t.location}</span>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── PRICING ─── */}
-      <section id="pricing" className={styles.pricing}>
-        <div className="reveal">
-          <p className="section-label">Investment</p>
-          <h2 className="section-title">Choose Your <em>Path</em></h2>
-          <div className="divider"></div>
-          <p className="section-body">Every offering is an investment in your highest self. Payment plans available — reach out to discuss what works for you.</p>
-        </div>
-        <div className={styles.pricingGrid}>
-          {[
-            { tier: 'Essentials', name: 'The Cohort', amount: '$444', period: '8-week program', features: ['8 live group sessions','Full video library','Workbooks & journals','Private community access','Guided meditations'], highlighted: false },
-            { tier: 'Most Popular', name: 'Cohort + Mentorship', amount: '$777', period: '8 weeks + monthly calls', features: ['Everything in The Cohort','2 private 1:1 sessions','Email support access','Custom practice plan','Priority enrollment next cycle'], highlighted: true },
-            { tier: 'Deep Dive', name: '90-Day Immersion', amount: '$1,444', period: '3-month container', features: ['Bi-weekly 1:1 sessions','Unlimited messaging','Custom curriculum','Full library + community','Lifetime resource access'], highlighted: false },
-          ].map((p, i) => (
-            <div key={i} className={`${styles.pricingCard} ${p.highlighted ? styles.pricingHighlighted : ''} reveal`}>
-              <div className={styles.pricingHeader}>
-                <div className={styles.pricingTier}>{p.tier}</div>
-                <div className={styles.pricingName}>{p.name}</div>
-                <div className={styles.pricingAmount}>{p.amount}</div>
-                <div className={styles.pricingPeriod}>{p.period}</div>
-              </div>
-              <div className={styles.pricingBody}>
-                <ul className={styles.pricingFeatures}>
-                  {p.features.map((f, j) => <li key={j}>{f}</li>)}
-                </ul>
-                <Link href="/register" className={`${p.highlighted ? 'btn-primary' : 'btn-outline'} ${styles.btnFull}`}>
-                  {p.tier === 'Deep Dive' ? 'Apply Now' : 'Enroll Now'}
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── BLOG ─── */}
-      <section id="blog" className={styles.blog}>
-        <div className="reveal">
-          <p className="section-label">The Journal</p>
-          <h2 className="section-title">Resources & <em>Reflections</em></h2>
-          <div className="divider"></div>
-        </div>
-        <div className={styles.blogGrid}>
-          {[
-            { color: styles.blogImg1, icon: '👁', tag: 'Practice', title: '5 Signs Your Third Eye Is Opening', excerpt: 'Subtle shifts in perception, vivid dreams, and heightened sensitivity are all part of the awakening process.', read: '8 min', date: 'Mar 2025' },
-            { color: styles.blogImg2, icon: '🌿', tag: 'Ritual', title: 'A Morning Ritual for Deep Intuitive Clarity', excerpt: 'How you begin the day sets the tone for everything. This 20-minute practice trains your inner eye before the noise begins.', read: '6 min', date: 'Feb 2025' },
-            { color: styles.blogImg3, icon: '🔥', tag: 'Community', title: 'What Cohort Learning Does That Solo Study Can\'t', excerpt: 'There\'s a reason ancient wisdom was passed through circles. The mirrors and energy of community accelerate everything.', read: '5 min', date: 'Jan 2025' },
-          ].map((b, i) => (
-            <div key={i} className={`${styles.blogCard} reveal`}>
-              <div className={`${styles.blogImg} ${b.color}`}>
-                <div className={styles.blogImgPattern}>{b.icon}</div>
-              </div>
-              <div className={styles.blogBody}>
-                <div className={styles.blogTag}>{b.tag}</div>
-                <h3 className={styles.blogTitle}>{b.title}</h3>
-                <p className={styles.blogExcerpt}>{b.excerpt}</p>
-                <div className={styles.blogMeta}><span>{b.read} read</span><span>{b.date}</span></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── CONTACT ─── */}
-      <section id="contact" className={styles.contact}>
-        <div className={styles.contactGrid}>
-          <div className="reveal">
-            <p className="section-label">Get in Touch</p>
-            <h2 className="section-title">Ready to Begin Your <em>Journey?</em></h2>
-            <div className="divider"></div>
-            <p className="section-body">Have questions about the cohort, mentorship, or which path is right for you? We'd love to connect.</p>
-            <div className={styles.contactInfo}>
-              <div className={styles.contactInfoItem}>
-                <span className={styles.contactIcon}>✉</span>
-                <span>hello@clarityinstitute.com</span>
-              </div>
-              <div className={styles.contactInfoItem}>
-                <span className={styles.contactIcon}>📍</span>
-                <span>Online — Worldwide</span>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className={`${styles.contactForm} reveal`}>
-            {contactStatus && (
-              <div className={contactStatus.type === 'success' ? 'alert-success' : 'alert-error'}>
-                {contactStatus.message}
+        </section>
+
+        {/* ── Pricing ── */}
+        <section id="pricing" className={styles.pricingSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Investment</span>
+            <h2 className={styles.sectionTitle}>Choose Your Path</h2>
+            <p className={styles.sectionSubtitle}>Every path leads to the same destination — clarity, presence, and an awakened inner life.</p>
+          </div>
+
+          <div className={styles.pricingGrid}>
+
+            {/* Essentials */}
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingTop}>
+                <span className={styles.pricingTier}>Essentials</span>
+                <h3 className={styles.pricingName}>The Cohort</h3>
+                <div className={styles.pricingPrice}>
+                  <span className={styles.pricingOriginal}>$444</span>
+                  <span className={styles.pricingAmount}>$99</span>
+                  <span className={styles.pricingPer}>8-week program</span>
+                </div>
               </div>
+              <ul className={styles.pricingFeatures}>
+                <li>✦ 8 live group sessions</li>
+                <li>✦ Full video library</li>
+                <li>✦ Workbooks &amp; journals</li>
+                <li>✦ Private community access</li>
+                <li>✦ Guided meditations</li>
+              </ul>
+              <a href="https://www.paypal.com/paypalme/davidmuyunda/99" target="_blank" rel="noopener noreferrer" className={styles.pricingBtn}>
+                Enroll Now
+              </a>
+            </div>
+
+            {/* Most Popular */}
+            <div className={`${styles.pricingCard} ${styles.pricingCardFeatured}`}>
+              <div className={styles.popularBadge}>Most Popular</div>
+              <div className={styles.pricingTop}>
+                <span className={styles.pricingTier}>Most Popular</span>
+                <h3 className={styles.pricingName}>Cohort + Mentorship</h3>
+                <div className={styles.pricingPrice}>
+                  <span className={styles.pricingOriginal}>$777</span>
+                  <span className={styles.pricingAmount}>$199</span>
+                  <span className={styles.pricingPer}>8 weeks + monthly calls</span>
+                </div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>✦ Everything in The Cohort</li>
+                <li>✦ 2 private 1:1 sessions</li>
+                <li>✦ Email support access</li>
+                <li>✦ Custom practice plan</li>
+                <li>✦ Priority enrollment next cycle</li>
+              </ul>
+              <a href="https://www.paypal.com/paypalme/davidmuyunda/199" target="_blank" rel="noopener noreferrer" className={`${styles.pricingBtn} ${styles.pricingBtnFeatured}`}>
+                Enroll Now
+              </a>
+            </div>
+
+            {/* Deep Dive */}
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingTop}>
+                <span className={styles.pricingTier}>Deep Dive</span>
+                <h3 className={styles.pricingName}>90-Day Immersion</h3>
+                <div className={styles.pricingPrice}>
+                  <span className={styles.pricingOriginal}>$1,444</span>
+                  <span className={styles.pricingAmount}>$299</span>
+                  <span className={styles.pricingPer}>3-month container</span>
+                </div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>✦ Bi-weekly 1:1 sessions</li>
+                <li>✦ Unlimited messaging</li>
+                <li>✦ Custom curriculum</li>
+                <li>✦ Full library + community</li>
+                <li>✦ Lifetime resource access</li>
+              </ul>
+              <a href="https://www.paypal.com/paypalme/davidmuyunda/299" target="_blank" rel="noopener noreferrer" className={styles.pricingBtn}>
+                Apply Now
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── Waitlist ── */}
+        <section className={styles.waitlistSection}>
+          <div className={styles.waitlistInner}>
+            <h2 className={styles.waitlistTitle}>Join the Waitlist</h2>
+            <p className={styles.waitlistSubtitle}>Be first to know when the next cohort opens. No spam, ever.</p>
+            {waitlistStatus === 'success' ? (
+              <p className={styles.successMsg}>✦ You're on the list. We'll be in touch.</p>
+            ) : (
+              <form onSubmit={handleWaitlist} className={styles.waitlistForm}>
+                <input
+                  type="email"
+                  value={waitlistEmail}
+                  onChange={(e) => setWaitlistEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                  className={styles.waitlistInput}
+                />
+                <button type="submit" className={styles.waitlistBtn}>Join Waitlist</button>
+              </form>
             )}
-            <form onSubmit={handleContact}>
-              <div className="form-group">
-                <label>Your Name</label>
-                <input type="text" required placeholder="Full name" value={contactForm.name}
-                  onChange={e => setContactForm({...contactForm, name: e.target.value})} />
-              </div>
-              <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" required placeholder="your@email.com" value={contactForm.email}
-                  onChange={e => setContactForm({...contactForm, email: e.target.value})} />
-              </div>
-              <div className="form-group">
-                <label>I'm interested in</label>
-                <select value={contactForm.interest}
-                  onChange={e => setContactForm({...contactForm, interest: e.target.value})}>
-                  <option value="cohort">The Cohort Program</option>
-                  <option value="mentorship">1:1 Mentorship</option>
-                  <option value="immersion">90-Day Immersion</option>
-                  <option value="bundle">Cohort + Mentorship Bundle</option>
-                  <option value="other">General Inquiry</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label>Message</label>
-                <textarea rows="4" required placeholder="Tell us a little about where you are on your journey..."
-                  value={contactForm.message}
-                  onChange={e => setContactForm({...contactForm, message: e.target.value})}></textarea>
-              </div>
-              <button type="submit" className="btn-primary" disabled={loadingContact}>
-                {loadingContact ? 'Sending...' : 'Send Message'}
-              </button>
+            {waitlistStatus === 'error' && <p className={styles.errorMsg}>Something went wrong. Try again or message us on WhatsApp.</p>}
+          </div>
+        </section>
+
+        {/* ── Contact ── */}
+        <section id="contact" className={styles.contactSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Get in Touch</span>
+            <h2 className={styles.sectionTitle}>We'd Love to Hear From You</h2>
+          </div>
+          <div className={styles.contactGrid}>
+            <div className={styles.contactInfo}>
+              <p>Have questions about the cohort, mentorship, or which path is right for you? Reach out — David personally responds to every message.</p>
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}>
+                💬 Message on WhatsApp
+              </a>
+            </div>
+            <form onSubmit={handleContact} className={styles.contactForm}>
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={contactForm.name}
+                onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                required
+                className={styles.contactInput}
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={contactForm.email}
+                onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                required
+                className={styles.contactInput}
+              />
+              <textarea
+                placeholder="Your message..."
+                value={contactForm.message}
+                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                required
+                rows={5}
+                className={styles.contactTextarea}
+              />
+              {contactStatus === 'success' && <p className={styles.successMsg}>✦ Message sent. David will be in touch soon.</p>}
+              {contactStatus === 'error' && <p className={styles.errorMsg}>Something went wrong. Please try WhatsApp instead.</p>}
+              <button type="submit" className={styles.contactBtn}>Send Message</button>
             </form>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ─── FOOTER ─── */}
+      </main>
+
+      {/* ── Footer ── */}
       <footer className={styles.footer}>
-        <div className={styles.footerTop}>
-          <div>
-            <div className={styles.footerBrand}>The <span>Clarity</span> Institute</div>
-            <p className={styles.footerTagline}>A sacred space for awakening the third eye and living from the inside out. Rooted in ancient wisdom. Built for your modern life.</p>
+        <div className={styles.footerInner}>
+          <div className={styles.footerBrand}>
+            <span className={styles.footerLogo}>The Clarity Institute</span>
+            <p>Awakening minds. Transforming lives.</p>
           </div>
-          <div>
-            <div className={styles.footerColTitle}>Programs</div>
-            <ul className={styles.footerLinks}>
-              <li><Link href="#cohort">The Cohort</Link></li>
-              <li><Link href="#mentorship">1:1 Mentorship</Link></li>
-              <li><Link href="#mentorship">90-Day Immersion</Link></li>
-              <li><Link href="#pricing">Pricing</Link></li>
-            </ul>
+          <div className={styles.footerLinks}>
+            <a href="#about">About</a>
+            <a href="#cohort">The Cohort</a>
+            <a href="#mentorship">Mentorship</a>
+            <a href="#pricing">Pricing</a>
+            <Link href="/login">Student Login</Link>
           </div>
-          <div>
-            <div className={styles.footerColTitle}>Resources</div>
-            <ul className={styles.footerLinks}>
-              <li><Link href="#blog">The Journal</Link></li>
-              <li><Link href="/dashboard">Student Portal</Link></li>
-              <li><Link href="#contact">Contact</Link></li>
-              <li><Link href="/register">Join Waitlist</Link></li>
-            </ul>
-          </div>
-          <div>
-            <div className={styles.footerColTitle}>Account</div>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/login">Student Login</Link></li>
-              <li><Link href="/register">Create Account</Link></li>
-              <li><Link href="#contact">Newsletter</Link></li>
-            </ul>
+          <div className={styles.footerContact}>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <span>© 2025 The Clarity Institute. All rights reserved.</span>
-          <span>Made with intention.</span>
+          <p>© {new Date().getFullYear()} The Clarity Institute. All rights reserved.</p>
         </div>
       </footer>
-
-      <style jsx global>{`
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-      `}</style>
     </>
   )
 }
