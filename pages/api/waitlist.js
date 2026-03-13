@@ -31,7 +31,7 @@ export default async function handler(req, res) {
 
     // 2. Notify David
     await resend.emails.send({
-      from: 'The Clarity Institute <notifications@theclarityinstitute.vercel.app>',
+      from: 'The Clarity Institute <david@theclarityinstitute.guru>',
       to: 'davidmuyunda@gmail.com',
       subject: `✦ New Waitlist Signup — ${email}`,
       html: `
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
     // 3. Welcome email to new signup
     await resend.emails.send({
-      from: 'David at The Clarity Institute <notifications@theclarityinstitute.vercel.app>',
+      from: 'David at The Clarity Institute <david@theclarityinstitute.guru>',
       to: email,
       subject: `You're on the waitlist ✦ The Clarity Institute`,
       html: `
