@@ -126,7 +126,7 @@ export default function AdminDashboard() {
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
 
         {/* ── Top nav ── */}
-        <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+        <nav className="admin-nav" style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
           <div style={{ display:'flex', alignItems:'center', gap:'1.5rem' }}>
             <Link href="/" style={{ fontFamily:serif, fontSize:'1.2rem', color:C.green, textDecoration:'none', fontWeight:600 }}>
               The Clarity Institute
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* ── Tabs ── */}
-          <div style={{ display:'flex', gap:'0.5rem', marginBottom:'2rem', flexWrap:'wrap', borderBottom:`1px solid ${C.border}`, paddingBottom:'0' }}>
+          <div className="admin-tabs" style={{ display:'flex', gap:'0.5rem', marginBottom:'2rem', flexWrap:'wrap', borderBottom:`1px solid ${C.border}`, paddingBottom:'0' }}>
             {TABS.map(t => (
               <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
                 padding:'0.65rem 1.25rem', borderRadius:'8px 8px 0 0',
@@ -212,7 +212,7 @@ export default function AdminDashboard() {
               </div>
 
               {/* Recent activity */}
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.5rem' }}>
+              <div className="grid-admin-activity" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.5rem' }}>
                 {/* Recent signups */}
                 <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:14, padding:'1.5rem' }}>
                   <h3 style={{ fontFamily:serif, fontSize:'1.2rem', color:C.green, fontWeight:400, margin:'0 0 1rem' }}>Recent Signups</h3>
@@ -266,7 +266,7 @@ export default function AdminDashboard() {
                 {students.length === 0 ? (
                   <p style={{ padding:'2rem', textAlign:'center', color:C.muted }}>No students yet.</p>
                 ) : students.map((s, i) => (
-                  <div key={s.id} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'1rem 1.25rem', borderBottom: i < students.length-1 ? `1px solid ${C.border}` : 'none', flexWrap:'wrap', gap:'0.5rem' }}>
+                  <div key={s.id} className="admin-row" style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'1rem 1.25rem', borderBottom: i < students.length-1 ? `1px solid ${C.border}` : 'none', flexWrap:'wrap', gap:'0.5rem' }}>
                     <div>
                       <div style={{ fontWeight:500, color:C.text, marginBottom:'0.15rem' }}>{s.name || 'No name'}</div>
                       <div style={{ fontSize:'0.85rem', color:C.muted }}>{s.email}</div>
@@ -309,7 +309,7 @@ export default function AdminDashboard() {
                         {s.preferredDate && <div style={{ fontSize:'0.8rem', color:C.muted }}>📅 {s.preferredDate} {s.preferredTime && `at ${s.preferredTime}`} {s.timezone && `(${s.timezone})`}</div>}
                         {s.intention && <div style={{ fontSize:'0.8rem', color:C.muted, fontStyle:'italic', marginTop:'0.4rem', maxWidth:500 }}>"{s.intention?.slice(0,120)}{s.intention?.length > 120 ? '...' : ''}"</div>}
                       </div>
-                      <div style={{ display:'flex', flexDirection:'column', gap:'0.5rem', alignItems:'flex-end' }}>
+                      <div className="session-actions" style={{ display:'flex', flexDirection:'column', gap:'0.5rem', alignItems:'flex-end' }}>
                         <div style={{ fontSize:'0.75rem', color:C.muted }}>{fmt(s.createdAt)}</div>
                         <div style={{ display:'flex', gap:'0.4rem', flexWrap:'wrap' }}>
                           {['pending','confirmed','completed','cancelled'].map(st => (

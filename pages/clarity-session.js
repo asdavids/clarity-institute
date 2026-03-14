@@ -98,7 +98,7 @@ export default function ClaritySessionPage() {
 
         {/* Feature cards */}
         <div style={{maxWidth:'900px',margin:'0 auto',padding:'2rem 2rem 3rem'}}>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'1.5rem'}}>
+          <div className="session-features" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'1.5rem'}}>
             {[['🔓','Break Through Blocks',"Identify and release what's holding you back from clarity, purpose, or peace."],['🌀','Intuitive Guidance','Receive direct, grounded guidance tailored to your unique situation and energy.'],['🕯','Deepen Your Practice','Get personalised tools, meditations, and practices to take into your daily life.']].map(([icon,title,desc])=>(
               <div key={title} style={{background:'white',border:`1px solid ${C.border}`,borderRadius:'12px',padding:'1.75rem 1.5rem',textAlign:'center'}}>
                 <div style={{fontSize:'2rem',marginBottom:'0.75rem'}}>{icon}</div>
@@ -125,10 +125,10 @@ export default function ClaritySessionPage() {
 
         {/* STEP 1 */}
         {step===1&&(
-          <div style={crd}>
+          <div className="session-card" style={crd}>
             <h2 style={ttl}>Tell us about yourself</h2>
             <p style={sub}>David reads your intention before your session — be as open as you like.</p>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.25rem'}}>
+            <div className="grid-session-datetime" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.25rem'}}>
               <div style={fld}><label style={lbl}>Full Name *</label><input style={inp} name="name" value={form.name} onChange={handle} placeholder="Your name" /></div>
               <div style={fld}><label style={lbl}>Email Address *</label><input style={inp} name="email" type="email" value={form.email} onChange={handle} placeholder="your@email.com" /></div>
               <div style={fld}><label style={lbl}>WhatsApp / Phone</label><input style={inp} name="phone" value={form.phone} onChange={handle} placeholder="+27 81 790 4941" /></div>
@@ -146,7 +146,7 @@ export default function ClaritySessionPage() {
 
         {/* STEP 2 */}
         {step===2&&(
-          <div style={crd}>
+          <div className="session-card" style={crd}>
             <h2 style={ttl}>Secure your session</h2>
             <p style={sub}>Complete payment via PayPal, then paste your confirmation below.</p>
             <div style={{background:'linear-gradient(135deg,#f0f4f0,#faf6f0)',border:`1px solid ${C.border}`,borderRadius:'12px',padding:'2rem',textAlign:'center',marginBottom:'1.5rem'}}>
@@ -173,7 +173,7 @@ export default function ClaritySessionPage() {
 
         {/* STEP 3 */}
         {step===3&&(
-          <div style={crd}>
+          <div className="session-card" style={crd}>
             <h2 style={ttl}>Review your booking</h2>
             <p style={sub}>Confirm everything looks correct before submitting.</p>
             <div style={{border:`1px solid ${C.border}`,borderRadius:'10px',overflow:'hidden',marginBottom:'1.5rem'}}>
@@ -198,7 +198,7 @@ export default function ClaritySessionPage() {
 
         {/* STEP 4 SUCCESS */}
         {step===4&&(
-          <div style={{...crd,textAlign:'center',maxWidth:'560px'}}>
+          <div className="session-card" style={{...crd,textAlign:'center',maxWidth:'560px'}}>
             <div style={{fontSize:'3.5rem',marginBottom:'1.25rem'}}>👁</div>
             <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'2rem',fontWeight:'400',color:C.green,margin:'0 0 0.75rem'}}>Your session is booked, {form.name.split(' ')[0]}.</h2>
             <p style={{color:C.muted,fontSize:'1rem',lineHeight:'1.7',margin:'0 0 2rem'}}>David has received your intention and will confirm your session time within <strong>24 hours</strong>.</p>

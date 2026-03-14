@@ -117,14 +117,19 @@ export default function Home() {
           <div style={{ fontFamily: serif, fontSize: '1.4rem', color: C.green, fontWeight: 600, letterSpacing: '0.01em' }}>
             The Clarity Institute
           </div>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            <span style={menuOpen ? { transform: 'rotate(45deg) translateY(7px)' } : {}} />
+            <span style={menuOpen ? { opacity: 0 } : {}} />
+            <span style={menuOpen ? { transform: 'rotate(-45deg) translateY(-7px)' } : {}} />
+          </button>
+          <div className={`nav-links${menuOpen ? ' open' : ''}`}>
             {['#about', '#cohort', '#mentorship', '#pricing', '#contact'].map((href, i) => (
-              <a key={href} href={href} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>
+              <a key={href} href={href} onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>
                 {['About', 'Cohort', 'Mentorship', 'Pricing', 'Contact'][i]}
               </a>
             ))}
-            <Link href="/login" style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
-            <a href="#pricing" style={{
+            <Link href="/login" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
+            <a href="#pricing" onClick={() => setMenuOpen(false)} style={{
               background: C.green, color: C.white, padding: '0.5rem 1.25rem',
               borderRadius: 6, fontSize: '0.875rem', fontWeight: 500,
               textDecoration: 'none', letterSpacing: '0.02em',
@@ -142,8 +147,8 @@ export default function Home() {
           <div style={{ position: 'absolute', top: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: `radial-gradient(circle, ${C.orange}15 0%, transparent 70%)`, pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', bottom: '5%', left: '0%', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${C.green}10 0%, transparent 70%)`, pointerEvents: 'none' }} />
 
-          <div style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-            <div>
+          <div className="grid-hero" style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div className="hero-text">
               <span style={{ ...sectionLabel, textAlign: 'left' }}>Begin Your Awakening</span>
               <h1 style={{
                 fontFamily: serif, fontSize: 'clamp(3rem, 6vw, 5rem)',
@@ -156,7 +161,7 @@ export default function Home() {
                 An 8-week journey to activate your third eye, sharpen your intuition,
                 and step into the life you've always sensed was possible.
               </p>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="#pricing" style={{
                   background: C.green, color: C.white, padding: '0.9rem 2rem',
                   borderRadius: 8, fontSize: '1rem', fontWeight: 500,
@@ -172,7 +177,7 @@ export default function Home() {
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div style={{
+              <div className="hero-eye" style={{
                 width: 320, height: 320, borderRadius: '50%',
                 background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
                 border: `1px solid ${C.border}`,
@@ -197,7 +202,7 @@ export default function Home() {
         {/* ── ABOUT ── */}
         <section id="about" style={sectionWrap(C.white)}>
           <div style={inner}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div className="grid-about" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div>
                 <span style={sectionLabel}>About</span>
                 <h2 style={sectionTitle}>What Is The Clarity Institute?</h2>
@@ -358,7 +363,7 @@ export default function Home() {
               <h2 style={sectionTitle}>Choose Your Path</h2>
               <p style={sectionSub}>Every path leads to the same destination — clarity, presence, and an awakened inner life.</p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+            <div className="grid-pricing" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
               {[
                 {
                   tier: 'Essentials', name: 'The Cohort',
@@ -435,7 +440,7 @@ export default function Home() {
             {waitlistStatus === 'success' ? (
               <p style={{ color: C.green, fontWeight: 500, fontSize: '1rem' }}>✦ You're on the list. We'll be in touch.</p>
             ) : (
-              <form onSubmit={handleWaitlist} style={{ display: 'flex', gap: '0.75rem', maxWidth: 420, margin: '0 auto' }}>
+              <form onSubmit={handleWaitlist} className="waitlist-form" style={{ display: 'flex', gap: '0.75rem', maxWidth: 420, margin: '0 auto' }}>
                 <input
                   type="email" value={waitlistEmail}
                   onChange={e => setWaitlistEmail(e.target.value)}
@@ -455,7 +460,7 @@ export default function Home() {
 
         {/* ── CONTACT ── */}
         <section id="contact" style={sectionWrap(C.white)}>
-          <div style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+          <div className="grid-contact" style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
             <div>
               <span style={sectionLabel}>Get in Touch</span>
               <h2 style={sectionTitle}>We'd Love to Hear From You</h2>
@@ -492,7 +497,7 @@ export default function Home() {
 
         {/* ── FOOTER ── */}
         <footer style={{ background: C.text, color: 'rgba(255,255,255,0.7)', padding: '3rem 2rem' }}>
-          <div style={{ ...inner, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
+          <div className="footer-inner" style={{ ...inner, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
             <div>
               <div style={{ fontFamily: serif, fontSize: '1.4rem', color: C.white, fontWeight: 400, marginBottom: '0.5rem' }}>The Clarity Institute</div>
               <p style={{ fontSize: '0.875rem', margin: 0, opacity: 0.6 }}>Awakening minds. Transforming lives.</p>
