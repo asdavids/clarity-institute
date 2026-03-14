@@ -1,0 +1,516 @@
+// pages/index.js — The Clarity Institute
+// Fully self-contained, zero external CSS dependencies
+
+import { useState, useEffect } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+
+const WHATSAPP = '27817904941'
+const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz'
+
+const C = {
+  green:  '#3D5A3E',
+  green2: '#2e4530',
+  brown:  '#6B4A2A',
+  orange: '#C1581A',
+  cream:  '#FAF6F0',
+  cream2: '#F2EBE0',
+  text:   '#2C1F14',
+  muted:  '#7A6A5A',
+  border: '#E0D5C5',
+  white:  '#ffffff',
+}
+
+const serif  = "'Cormorant Garamond', serif"
+const sans   = "'Jost', sans-serif"
+
+export default function Home() {
+  const [waitlistEmail, setWaitlistEmail] = useState('')
+  const [waitlistStatus, setWaitlistStatus] = useState('')
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+  const [contactStatus, setContactStatus] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const handleWaitlist = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: waitlistEmail }),
+      })
+      setWaitlistStatus(res.ok ? 'success' : 'error')
+      if (res.ok) setWaitlistEmail('')
+    } catch { setWaitlistStatus('error') }
+  }
+
+  const handleContact = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactForm),
+      })
+      setContactStatus(res.ok ? 'success' : 'error')
+      if (res.ok) setContactForm({ name: '', email: '', message: '' })
+    } catch { setContactStatus('error') }
+  }
+
+  // ── Shared style helpers ──
+  const inp = {
+    display: 'block', width: '100%', padding: '0.8rem 1rem',
+    border: `1.5px solid ${C.border}`, borderRadius: 8,
+    fontFamily: sans, fontSize: '0.95rem', color: C.text,
+    background: C.cream, outline: 'none', boxSizing: 'border-box',
+    marginBottom: '1rem',
+  }
+  const sectionWrap = (bg = C.cream) => ({
+    padding: '5rem 1.5rem', background: bg,
+  })
+  const inner = { maxWidth: 1100, margin: '0 auto' }
+  const sectionLabel = {
+    display: 'block', fontSize: '0.75rem', fontWeight: 600,
+    letterSpacing: '0.15em', textTransform: 'uppercase',
+    color: C.orange, marginBottom: '0.75rem',
+  }
+  const sectionTitle = {
+    fontFamily: serif, fontSize: 'clamp(2rem, 4vw, 3rem)',
+    fontWeight: 300, color: C.green, margin: '0 0 1rem', lineHeight: 1.15,
+  }
+  const sectionSub = {
+    fontSize: '1.05rem', color: C.muted, lineHeight: 1.7,
+    maxWidth: 560, margin: '0 auto 3rem',
+  }
+  const centeredHeader = { textAlign: 'center', marginBottom: '3rem' }
+
+  return (
+    <>
+      <Head>
+        <title>The Clarity Institute — Awaken Your Third Eye</title>
+        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+      </Head>
+
+      <div style={{ fontFamily: sans, color: C.text, background: C.cream }}>
+
+        {/* ── NAVBAR ── */}
+        <nav style={{
+          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: '1rem 2rem',
+          background: scrolled ? 'rgba(250,246,240,0.97)' : 'transparent',
+          borderBottom: scrolled ? `1px solid ${C.border}` : 'none',
+          transition: 'all 0.3s ease',
+          backdropFilter: scrolled ? 'blur(8px)' : 'none',
+        }}>
+          <div style={{ fontFamily: serif, fontSize: '1.4rem', color: C.green, fontWeight: 600, letterSpacing: '0.01em' }}>
+            The Clarity Institute
+          </div>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            {['#about', '#cohort', '#mentorship', '#pricing', '#contact'].map((href, i) => (
+              <a key={href} href={href} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>
+                {['About', 'Cohort', 'Mentorship', 'Pricing', 'Contact'][i]}
+              </a>
+            ))}
+            <Link href="/login" style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
+            <a href="#pricing" style={{
+              background: C.green, color: C.white, padding: '0.5rem 1.25rem',
+              borderRadius: 6, fontSize: '0.875rem', fontWeight: 500,
+              textDecoration: 'none', letterSpacing: '0.02em',
+            }}>Enroll Now</a>
+          </div>
+        </nav>
+
+        {/* ── HERO ── */}
+        <section style={{
+          minHeight: '100vh', display: 'flex', alignItems: 'center',
+          background: `linear-gradient(160deg, ${C.white} 0%, ${C.cream} 50%, ${C.cream2} 100%)`,
+          padding: '8rem 2rem 5rem', position: 'relative', overflow: 'hidden',
+        }}>
+          {/* Decorative circles */}
+          <div style={{ position: 'absolute', top: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: `radial-gradient(circle, ${C.orange}15 0%, transparent 70%)`, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', bottom: '5%', left: '0%', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${C.green}10 0%, transparent 70%)`, pointerEvents: 'none' }} />
+
+          <div style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <span style={{ ...sectionLabel, textAlign: 'left' }}>Begin Your Awakening</span>
+              <h1 style={{
+                fontFamily: serif, fontSize: 'clamp(3rem, 6vw, 5rem)',
+                fontWeight: 300, color: C.green, margin: '0 0 1.5rem', lineHeight: 1.1,
+                letterSpacing: '-0.01em',
+              }}>
+                See Beyond<br /><em style={{ color: C.brown }}>What You've<br />Been Told</em>
+              </h1>
+              <p style={{ fontSize: '1.1rem', color: C.muted, lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: 480 }}>
+                An 8-week journey to activate your third eye, sharpen your intuition,
+                and step into the life you've always sensed was possible.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="#pricing" style={{
+                  background: C.green, color: C.white, padding: '0.9rem 2rem',
+                  borderRadius: 8, fontSize: '1rem', fontWeight: 500,
+                  textDecoration: 'none', letterSpacing: '0.02em',
+                  boxShadow: `0 4px 20px ${C.green}40`,
+                }}>Begin Your Journey</a>
+                <a href={PDF_LINK} target="_blank" rel="noopener noreferrer" style={{
+                  border: `1.5px solid ${C.brown}`, color: C.brown, padding: '0.9rem 2rem',
+                  borderRadius: 8, fontSize: '0.9rem', fontWeight: 500,
+                  textDecoration: 'none', letterSpacing: '0.05em',
+                  background: 'transparent',
+                }}>FREE EBOOK ↓</a>
+              </div>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <div style={{
+                width: 320, height: 320, borderRadius: '50%',
+                background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
+                border: `1px solid ${C.border}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '8rem', boxShadow: `0 20px 80px ${C.brown}20`,
+                position: 'relative',
+              }}>
+                👁
+                <div style={{
+                  position: 'absolute', inset: -20, borderRadius: '50%',
+                  border: `1px dashed ${C.brown}30`,
+                }} />
+                <div style={{
+                  position: 'absolute', inset: -40, borderRadius: '50%',
+                  border: `1px dashed ${C.brown}15`,
+                }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── ABOUT ── */}
+        <section id="about" style={sectionWrap(C.white)}>
+          <div style={inner}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+              <div>
+                <span style={sectionLabel}>About</span>
+                <h2 style={sectionTitle}>What Is The Clarity Institute?</h2>
+                <p style={{ color: C.muted, lineHeight: 1.8, marginBottom: '1rem' }}>
+                  The Clarity Institute is a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within you.
+                </p>
+                <p style={{ color: C.muted, lineHeight: 1.8, marginBottom: '1rem' }}>
+                  Founded by David, a spiritual guide with over a decade of practice in third eye activation, intuitive development, and consciousness expansion.
+                </p>
+                <p style={{ color: C.muted, lineHeight: 1.8 }}>
+                  Whether you're just beginning to sense there's more, or you've been walking this path for years — there's a place for you here.
+                </p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                {[
+                  { num: '500+', label: 'Students Awakened' },
+                  { num: '8',    label: 'Weeks to Transform' },
+                  { num: '52',   label: 'Days of Practice' },
+                  { num: '∞',    label: 'Community Support' },
+                ].map(s => (
+                  <div key={s.label} style={{
+                    background: C.cream, border: `1px solid ${C.border}`,
+                    borderRadius: 12, padding: '1.75rem 1.5rem', textAlign: 'center',
+                  }}>
+                    <div style={{ fontFamily: serif, fontSize: '2.5rem', color: C.green, fontWeight: 300, lineHeight: 1 }}>{s.num}</div>
+                    <div style={{ fontSize: '0.8rem', color: C.muted, marginTop: '0.4rem', lineHeight: 1.4 }}>{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── COHORT ── */}
+        <section id="cohort" style={sectionWrap(C.cream)}>
+          <div style={inner}>
+            <div style={centeredHeader}>
+              <span style={sectionLabel}>The Program</span>
+              <h2 style={sectionTitle}>The 8-Week Cohort</h2>
+              <p style={sectionSub}>A complete journey from Foundation to Embodiment — 52 days of guided awakening.</p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {[
+                { weeks: 'Weeks 1–2', title: 'Foundation', emoji: '🌱', desc: 'Establish your practice, understand the third eye anatomy, and begin daily activation rituals that prepare the ground.' },
+                { weeks: 'Weeks 3–5', title: 'Activation & Expansion', emoji: '🔥', desc: 'Open the Ajna chakra, develop your intuitive gifts, explore the subtle realms and discover your unique channel.' },
+                { weeks: 'Weeks 6–8', title: 'Integration & Embodiment', emoji: '🌿', desc: 'Ground your gifts into daily life, relationships, vocation, and your unique soul purpose going forward.' },
+              ].map((w, i) => (
+                <div key={w.title} style={{
+                  background: C.white, border: `1px solid ${C.border}`,
+                  borderRadius: 14, padding: '2rem',
+                  borderTop: `3px solid ${[C.green, C.orange, C.brown][i]}`,
+                }}>
+                  <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{w.emoji}</div>
+                  <div style={{ fontSize: '0.75rem', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.4rem' }}>{w.weeks}</div>
+                  <h3 style={{ fontFamily: serif, fontSize: '1.5rem', color: C.green, fontWeight: 400, margin: '0 0 0.75rem' }}>{w.title}</h3>
+                  <p style={{ color: C.muted, lineHeight: 1.7, fontSize: '0.9rem', margin: 0 }}>{w.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── MENTORSHIP ── */}
+        <section id="mentorship" style={sectionWrap(C.white)}>
+          <div style={inner}>
+            <div style={centeredHeader}>
+              <span style={sectionLabel}>1:1 Work</span>
+              <h2 style={sectionTitle}>Private Mentorship</h2>
+              <p style={sectionSub}>For those who seek deeper, more personal guidance on their journey.</p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {[
+                {
+                  icon: '🕯', title: 'Single Clarity Session',
+                  desc: 'A powerful 60-minute one-on-one session to address a specific block, receive intuitive guidance, or deepen a particular practice.',
+                  tag: 'One-time session', href: '/clarity-session', btnLabel: 'Book a Session', isLink: true,
+                },
+                {
+                  icon: '🌀', title: 'Monthly Mentorship',
+                  desc: 'Ongoing 1:1 support with bi-weekly calls, voice message access, and a custom practice plan tailored to your path.',
+                  tag: 'Ongoing support',
+                  href: `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I am interested in Monthly Mentorship.')}`,
+                  btnLabel: 'Enquire Now', isLink: false,
+                },
+                {
+                  icon: '👁', title: '90-Day Immersion',
+                  desc: 'A complete transformation container with bi-weekly sessions, unlimited messaging, custom curriculum, and lifetime community access.',
+                  tag: 'Deep transformation',
+                  href: `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I am interested in the 90-Day Immersion.')}`,
+                  btnLabel: 'Apply Now', isLink: false,
+                },
+              ].map(m => (
+                <div key={m.title} style={{
+                  background: C.cream, border: `1px solid ${C.border}`,
+                  borderRadius: 14, padding: '2rem', display: 'flex',
+                  flexDirection: 'column',
+                }}>
+                  <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{m.icon}</div>
+                  <h3 style={{ fontFamily: serif, fontSize: '1.4rem', color: C.green, fontWeight: 400, margin: '0 0 0.75rem' }}>{m.title}</h3>
+                  <p style={{ color: C.muted, lineHeight: 1.7, fontSize: '0.9rem', flex: 1, margin: '0 0 1.25rem' }}>{m.desc}</p>
+                  <span style={{
+                    display: 'inline-block', background: `${C.green}15`, color: C.green,
+                    fontSize: '0.75rem', fontWeight: 500, padding: '0.25rem 0.75rem',
+                    borderRadius: 999, marginBottom: '1.25rem', letterSpacing: '0.05em',
+                  }}>{m.tag}</span>
+                  {m.isLink ? (
+                    <Link href={m.href} style={{
+                      display: 'block', textAlign: 'center',
+                      background: C.green, color: C.white, padding: '0.8rem',
+                      borderRadius: 8, textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500,
+                    }}>{m.btnLabel}</Link>
+                  ) : (
+                    <a href={m.href} target="_blank" rel="noopener noreferrer" style={{
+                      display: 'block', textAlign: 'center',
+                      background: C.green, color: C.white, padding: '0.8rem',
+                      borderRadius: 8, textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500,
+                    }}>{m.btnLabel}</a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ── */}
+        <section style={{ ...sectionWrap(C.green), color: C.white }}>
+          <div style={inner}>
+            <div style={{ ...centeredHeader }}>
+              <span style={{ ...sectionLabel, color: `${C.orange}` }}>Stories</span>
+              <h2 style={{ ...sectionTitle, color: C.white }}>What Students Say</h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {[
+                { quote: "I had been searching for years. The Clarity Institute gave me the tools, the community, and the courage to actually trust what I've always known inside.", name: 'Amara T.', location: 'Nairobi, Kenya' },
+                { quote: "David's guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there.", name: 'James M.', location: 'Johannesburg, South Africa' },
+                { quote: "The 8-week cohort changed the way I move through every single day. I am clearer, calmer, and more myself than I've ever been.", name: 'Priya S.', location: 'London, UK' },
+              ].map(t => (
+                <div key={t.name} style={{
+                  background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: 14, padding: '2rem',
+                }}>
+                  <p style={{ fontFamily: serif, fontSize: '1.15rem', fontStyle: 'italic', lineHeight: 1.8, color: 'rgba(255,255,255,0.9)', margin: '0 0 1.5rem' }}>"{t.quote}"</p>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: C.white }}>{t.name}</div>
+                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.2rem' }}>{t.location}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── PRICING ── */}
+        <section id="pricing" style={sectionWrap(C.cream)}>
+          <div style={inner}>
+            <div style={centeredHeader}>
+              <span style={sectionLabel}>Investment</span>
+              <h2 style={sectionTitle}>Choose Your Path</h2>
+              <p style={sectionSub}>Every path leads to the same destination — clarity, presence, and an awakened inner life.</p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+              {[
+                {
+                  tier: 'Essentials', name: 'The Cohort',
+                  oldPrice: '$444', price: '$99', per: '8-week program',
+                  features: ['8 live group sessions', 'Full video library', 'Workbooks & journals', 'Private community access', 'Guided meditations'],
+                  btnLabel: 'Enroll Now', btnHref: 'https://www.paypal.com/paypalme/Xhantipta/99',
+                  featured: false,
+                },
+                {
+                  tier: 'Most Popular', name: 'Cohort + Mentorship',
+                  oldPrice: '$777', price: '$199', per: '8 weeks + monthly calls',
+                  features: ['Everything in The Cohort', '2 private 1:1 sessions', 'Email support access', 'Custom practice plan', 'Priority enrollment next cycle'],
+                  btnLabel: 'Enroll Now', btnHref: 'https://www.paypal.com/paypalme/Xhantipta/199',
+                  featured: true,
+                },
+                {
+                  tier: 'Deep Dive', name: '90-Day Immersion',
+                  oldPrice: '$1,444', price: '$299', per: '3-month container',
+                  features: ['Bi-weekly 1:1 sessions', 'Unlimited messaging', 'Custom curriculum', 'Full library + community', 'Lifetime resource access'],
+                  btnLabel: 'Apply Now', btnHref: 'https://www.paypal.com/paypalme/Xhantipta/299',
+                  featured: false,
+                },
+              ].map(p => (
+                <div key={p.name} style={{
+                  background: C.white,
+                  border: `1.5px solid ${p.featured ? C.orange : C.border}`,
+                  borderRadius: 16, padding: '2rem',
+                  boxShadow: p.featured ? `0 8px 40px ${C.orange}20` : '0 2px 12px rgba(0,0,0,0.04)',
+                  transform: p.featured ? 'translateY(-8px)' : 'none',
+                  position: 'relative',
+                }}>
+                  {p.featured && (
+                    <div style={{
+                      position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
+                      background: C.orange, color: C.white, fontSize: '0.72rem', fontWeight: 600,
+                      padding: '0.3rem 1.1rem', borderRadius: 999, letterSpacing: '0.08em',
+                      textTransform: 'uppercase', whiteSpace: 'nowrap',
+                    }}>Most Popular</div>
+                  )}
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 600, color: C.orange, textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.3rem' }}>{p.tier}</span>
+                    <h3 style={{ fontFamily: serif, fontSize: '1.5rem', color: C.green, fontWeight: 400, margin: '0 0 1rem' }}>{p.name}</h3>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '0.9rem', color: '#bbb', textDecoration: 'line-through' }}>{p.oldPrice}</span>
+                      <span style={{ fontFamily: serif, fontSize: '3rem', fontWeight: 300, color: C.green, lineHeight: 1 }}>{p.price}</span>
+                    </div>
+                    <span style={{ fontSize: '0.85rem', color: C.muted }}>{p.per}</span>
+                  </div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.75rem' }}>
+                    {p.features.map(f => (
+                      <li key={f} style={{ fontSize: '0.9rem', color: C.text, padding: '0.5rem 0', borderBottom: `1px solid ${C.border}`, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                        <span style={{ color: C.green, fontWeight: 600 }}>✦</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={p.btnHref} target="_blank" rel="noopener noreferrer" style={{
+                    display: 'block', textAlign: 'center', padding: '0.9rem',
+                    background: p.featured ? C.orange : C.green,
+                    color: C.white, borderRadius: 8, textDecoration: 'none',
+                    fontWeight: 500, fontSize: '0.95rem', letterSpacing: '0.02em',
+                  }}>{p.btnLabel}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WAITLIST ── */}
+        <section style={{ padding: '4rem 1.5rem', background: C.cream2, textAlign: 'center' }}>
+          <div style={{ maxWidth: 520, margin: '0 auto' }}>
+            <span style={sectionLabel}>Stay Connected</span>
+            <h2 style={{ ...sectionTitle, textAlign: 'center' }}>Join the Waitlist</h2>
+            <p style={{ color: C.muted, marginBottom: '1.5rem', lineHeight: 1.7 }}>Be first to know when the next cohort opens. No spam, ever.</p>
+            {waitlistStatus === 'success' ? (
+              <p style={{ color: C.green, fontWeight: 500, fontSize: '1rem' }}>✦ You're on the list. We'll be in touch.</p>
+            ) : (
+              <form onSubmit={handleWaitlist} style={{ display: 'flex', gap: '0.75rem', maxWidth: 420, margin: '0 auto' }}>
+                <input
+                  type="email" value={waitlistEmail}
+                  onChange={e => setWaitlistEmail(e.target.value)}
+                  placeholder="your@email.com" required
+                  style={{ ...inp, marginBottom: 0, flex: 1 }}
+                />
+                <button type="submit" style={{
+                  background: C.green, color: C.white, border: 'none',
+                  padding: '0.8rem 1.5rem', borderRadius: 8, fontFamily: sans,
+                  fontSize: '0.9rem', fontWeight: 500, cursor: 'pointer', whiteSpace: 'nowrap',
+                }}>Join</button>
+              </form>
+            )}
+            {waitlistStatus === 'error' && <p style={{ color: '#c0392b', marginTop: '0.5rem', fontSize: '0.875rem' }}>Something went wrong. Try WhatsApp instead.</p>}
+          </div>
+        </section>
+
+        {/* ── CONTACT ── */}
+        <section id="contact" style={sectionWrap(C.white)}>
+          <div style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+            <div>
+              <span style={sectionLabel}>Get in Touch</span>
+              <h2 style={sectionTitle}>We'd Love to Hear From You</h2>
+              <p style={{ color: C.muted, lineHeight: 1.8, marginBottom: '2rem' }}>
+                Have questions about the cohort, mentorship, or which path is right for you? David personally responds to every message.
+              </p>
+              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                background: '#25D366', color: C.white, padding: '0.85rem 1.5rem',
+                borderRadius: 8, fontSize: '0.95rem', fontWeight: 500, textDecoration: 'none',
+              }}>💬 Message on WhatsApp</a>
+            </div>
+            <form onSubmit={handleContact}>
+              <input type="text" placeholder="Your Name" value={contactForm.name}
+                onChange={e => setContactForm({ ...contactForm, name: e.target.value })}
+                required style={inp} />
+              <input type="email" placeholder="Your Email" value={contactForm.email}
+                onChange={e => setContactForm({ ...contactForm, email: e.target.value })}
+                required style={inp} />
+              <textarea placeholder="Your message..." value={contactForm.message}
+                onChange={e => setContactForm({ ...contactForm, message: e.target.value })}
+                required rows={5}
+                style={{ ...inp, resize: 'vertical', lineHeight: 1.6 }} />
+              {contactStatus === 'success' && <p style={{ color: C.green, fontWeight: 500, marginBottom: '0.75rem' }}>✦ Message sent. David will be in touch soon.</p>}
+              {contactStatus === 'error' && <p style={{ color: '#c0392b', marginBottom: '0.75rem' }}>Something went wrong. Please try WhatsApp.</p>}
+              <button type="submit" style={{
+                background: C.green, color: C.white, border: 'none',
+                padding: '0.9rem 2rem', borderRadius: 8, fontFamily: sans,
+                fontSize: '1rem', fontWeight: 500, cursor: 'pointer', width: '100%',
+              }}>Send Message</button>
+            </form>
+          </div>
+        </section>
+
+        {/* ── FOOTER ── */}
+        <footer style={{ background: C.text, color: 'rgba(255,255,255,0.7)', padding: '3rem 2rem' }}>
+          <div style={{ ...inner, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
+            <div>
+              <div style={{ fontFamily: serif, fontSize: '1.4rem', color: C.white, fontWeight: 400, marginBottom: '0.5rem' }}>The Clarity Institute</div>
+              <p style={{ fontSize: '0.875rem', margin: 0, opacity: 0.6 }}>Awakening minds. Transforming lives.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+              {[['#about','About'],['#cohort','Cohort'],['#mentorship','Mentorship'],['#pricing','Pricing']].map(([href,label]) => (
+                <a key={href} href={href} style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>{label}</a>
+              ))}
+              <Link href="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Student Login</Link>
+            </div>
+            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontSize: '0.875rem' }}>WhatsApp</a>
+          </div>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', textAlign: 'center', fontSize: '0.8rem', opacity: 0.5 }}>
+            © {new Date().getFullYear()} The Clarity Institute. All rights reserved.
+          </div>
+        </footer>
+
+      </div>
+    </>
+  )
+}

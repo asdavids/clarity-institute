@@ -23,6 +23,8 @@ const db = getFirestore(app)
 
 const C = { green:'#3D5A3E', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
 
+const ZOOM_LINK = "https://us05web.zoom.us/j/5541552777?pwd=hVLUx0faojiPboPB1AYOrUBANDFnI5.1"
+
 const WEEKS = [
   { id: 'week1-2', label: 'Weeks 1–2', title: 'Foundation', emoji: '🌱', days: 14, href: '/week1-2', color: C.green },
   { id: 'week3-5', label: 'Weeks 3–5', title: 'Activation & Expansion', emoji: '🔥', days: 20, href: '/week3-5', color: C.orange },
@@ -129,6 +131,37 @@ export default function Dashboard() {
             </div>
           )}
 
+          {/* ── ZOOM LINK CARD — only visible after payment ── */}
+          {hasAccess && (
+            <div style={{
+              background: 'linear-gradient(135deg, #f0f4f0, #faf6f0)',
+              border: `1.5px solid ${C.green}40`,
+              borderRadius: 14, padding: '1.5rem 1.75rem', marginBottom: '2rem',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+              flexWrap: 'wrap', gap: '1rem',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{
+                  width: 48, height: 48, borderRadius: 12,
+                  background: C.green, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '1.4rem', flexShrink: 0,
+                }}>📹</div>
+                <div>
+                  <div style={{ fontWeight: 500, color: C.text, marginBottom: '0.15rem' }}>Your Zoom Session Link</div>
+                  <div style={{ fontSize: '0.85rem', color: C.muted }}>Use this link to join your live sessions and 1:1 calls with David.</div>
+                </div>
+              </div>
+              <a href={ZOOM_LINK} target="_blank" rel="noopener noreferrer" style={{
+                background: C.green, color: C.white, padding: '0.7rem 1.5rem',
+                borderRadius: 8, textDecoration: 'none', fontSize: '0.875rem',
+                fontWeight: 500, whiteSpace: 'nowrap', display: 'inline-flex',
+                alignItems: 'center', gap: '0.5rem',
+              }}>
+                Join Zoom Session →
+              </a>
+            </div>
+          )}
+
           {/* Overall progress */}
           {hasAccess && (
             <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:14, padding:'1.75rem', marginBottom:'2rem' }}>
@@ -207,6 +240,7 @@ export default function Dashboard() {
           <h2 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.4rem', color:C.green, fontWeight:400, margin:'0 0 1rem' }}>Quick Links</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'1rem' }}>
             {[
+              { label:'Join Zoom Session', desc:'Live sessions & 1:1 calls', href: ZOOM_LINK, emoji:'📹', external:true },
               { label:'Book a Session', desc:'1:1 with David', href:'/clarity-session', emoji:'🕯' },
               { label:'Download Ebook', desc:'The Inner Eye Awakening', href:'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz', emoji:'📖', external:true },
               { label:'WhatsApp David', desc:'Direct support', href:`https://wa.me/27817904941`, emoji:'💬', external:true },
