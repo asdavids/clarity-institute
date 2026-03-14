@@ -21,27 +21,32 @@ const C = { green:'#3D5A3E', brown:'#6B4A2A', cream:'#FAF6F0', text:'#2C1F14', m
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')
-  const [sent, setSent] = useState(false)
-  const [error, setError] = useState('')
+  const [status, setStatus] = useState('') // '', 'success', 'error'
+  const [errorMsg, setErrorMsg] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    setError('')
+    setStatus('')
+    setErrorMsg('')
     try {
       await sendPasswordResetEmail(auth, email)
-      setSent(true)
+      setStatus('success')
     } catch (err) {
-      if (err.code === 'auth/user-not-found') {
-        setError('No account found with this email address.')
-      } else {
-        setError('Something went wrong. Please try again.')
+      setStatus('error')
+      switch (err.code) {
+        case 'auth/user-not-found': setErrorMsg('No account found with this email.'); break
+        case 'auth/invalid-email': setErrorMsg('Please enter a valid email address.'); break
+        case 'auth/too-many-requests': setErrorMsg('Too many attempts. Please try again later.'); break
+        default: setErrorMsg('Something went wrong. Please try again.')
       }
     } finally {
       setLoading(false)
     }
   }
+
+  const inp = { width:'100%', padding:'0.8rem 1rem', border:`1.5px solid ${C.border}`, borderRadius:8, fontFamily:"'Jost', sans-serif", fontSize:'0.95rem', color:C.text, background:C.cream, outline:'none', boxSizing:'border-box', marginBottom:'1rem' }
 
   return (
     <>
@@ -55,45 +60,49 @@ export default function ForgotPassword() {
           {/* Logo */}
           <div style={{ textAlign:'center', marginBottom:'2rem' }}>
             <div style={{ fontSize:'2.5rem', marginBottom:'0.5rem' }}>👁</div>
-            <Link href="/" style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.4rem', color:C.green, textDecoration:'none' }}>
+            <Link href="/" style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.4rem', color:C.green, textDecoration:'none', fontWeight:400 }}>
               The Clarity Institute
             </Link>
           </div>
 
+          {/* Card */}
           <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:16, padding:'2.5rem', boxShadow:'0 4px 24px rgba(0,0,0,0.06)' }}>
+            <h1 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.8rem', fontWeight:400, color:C.green, margin:'0 0 0.25rem' }}>Reset your password</h1>
+            <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 2rem', lineHeight:1.6 }}>
+              Enter the email you used to register. We'll send you a link to reset your password.
+            </p>
 
-            {sent ? (
+            {status === 'success' ? (
               <div style={{ textAlign:'center' }}>
-                <div style={{ fontSize:'2.5rem', marginBottom:'1rem' }}>📧</div>
-                <h2 style={{ fontFamily:"'Cormorant Garamond', serif", color:C.green, fontWeight:400, margin:'0 0 0.75rem' }}>Check your email</h2>
-                <p style={{ color:C.muted, lineHeight:1.7, marginBottom:'2rem' }}>We've sent a password reset link to <strong>{email}</strong>. Check your inbox and follow the link to reset your password.</p>
-                <Link href="/login" style={{ display:'block', background:C.green, color:C.white, padding:'0.9rem', borderRadius:8, textDecoration:'none', fontWeight:500, textAlign:'center' }}>Back to Sign In</Link>
+                <div style={{ fontSize:'2.5rem', marginBottom:'1rem' }}>✉️</div>
+                <h2 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.4rem', color:C.green, fontWeight:400, margin:'0 0 0.5rem' }}>Check your inbox</h2>
+                <p style={{ color:C.muted, fontSize:'0.9rem', lineHeight:1.6, marginBottom:'1.5rem' }}>
+                  We've sent a password reset link to <strong>{email}</strong>. It may take a minute to arrive — check your spam folder too.
+                </p>
+                <button onClick={() => { setStatus(''); setEmail(''); }} style={{ fontSize:'0.875rem', color:C.green, background:'none', border:`1px solid ${C.border}`, padding:'0.6rem 1.25rem', borderRadius:8, cursor:'pointer', fontFamily:"'Jost', sans-serif", marginBottom:'0.5rem' }}>
+                  Send again
+                </button>
               </div>
             ) : (
-              <>
-                <h1 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.8rem', fontWeight:400, color:C.green, margin:'0 0 0.25rem' }}>Reset your password</h1>
-                <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 2rem', lineHeight:1.6 }}>Enter your email and we'll send you a link to reset your password.</p>
+              <form onSubmit={handleSubmit}>
+                <label style={{ fontSize:'0.8rem', fontWeight:500, color:C.brown, textTransform:'uppercase', letterSpacing:'0.05em', display:'block', marginBottom:'0.4rem' }}>Email</label>
+                <input style={inp} type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" required />
 
-                <form onSubmit={handleSubmit}>
-                  <label style={{ fontSize:'0.8rem', fontWeight:500, color:C.brown, textTransform:'uppercase', letterSpacing:'0.05em', display:'block', marginBottom:'0.4rem' }}>Email Address</label>
-                  <input
-                    type="email" value={email} onChange={e => setEmail(e.target.value)}
-                    placeholder="your@email.com" required
-                    style={{ width:'100%', padding:'0.8rem 1rem', border:`1.5px solid ${C.border}`, borderRadius:8, fontFamily:"'Jost', sans-serif", fontSize:'0.95rem', color:C.text, background:C.cream, outline:'none', boxSizing:'border-box', marginBottom:'1.5rem' }}
-                  />
-                  {error && <p style={{ color:'#c0392b', fontSize:'0.875rem', background:'#fdf2f2', border:'1px solid #f5c6cb', padding:'0.75rem 1rem', borderRadius:8, marginBottom:'1rem' }}>{error}</p>}
-                  <button type="submit" disabled={loading} style={{ width:'100%', padding:'0.9rem', background:C.green, color:C.white, border:'none', borderRadius:8, fontFamily:"'Jost', sans-serif", fontSize:'1rem', fontWeight:500, cursor:'pointer', opacity: loading ? 0.7 : 1 }}>
-                    {loading ? 'Sending...' : 'Send Reset Link'}
-                  </button>
-                </form>
-              </>
+                {status === 'error' && (
+                  <p style={{ color:'#c0392b', fontSize:'0.875rem', background:'#fdf2f2', border:'1px solid #f5c6cb', padding:'0.75rem 1rem', borderRadius:8, marginBottom:'1rem' }}>{errorMsg}</p>
+                )}
+
+                <button type="submit" disabled={loading} style={{ width:'100%', padding:'0.9rem', background:C.green, color:C.white, border:'none', borderRadius:8, fontFamily:"'Jost', sans-serif", fontSize:'1rem', fontWeight:500, cursor:'pointer', opacity: loading ? 0.7 : 1 }}>
+                  {loading ? 'Sending...' : 'Send Reset Link'}
+                </button>
+              </form>
             )}
           </div>
 
           <p style={{ textAlign:'center', marginTop:'1.5rem', fontSize:'0.875rem', color:C.muted }}>
-            <Link href="/login" style={{ color:C.green, textDecoration:'none' }}>← Back to Sign In</Link>
+            Remember your password?{' '}
+            <Link href="/login" style={{ color:C.green, textDecoration:'none', fontWeight:500 }}>Sign In</Link>
           </p>
-
         </div>
       </div>
     </>

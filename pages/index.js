@@ -95,8 +95,27 @@ export default function Home() {
     <>
       <Head>
         <title>The Clarity Institute — Awaken Your Third Eye</title>
-        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs." />
+        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs with David Muyunda." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph / Facebook / WhatsApp */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.theclarityinstitute.guru/" />
+        <meta property="og:title" content="The Clarity Institute — Awaken Your Third Eye" />
+        <meta property="og:description" content="An 8-week journey to activate your third eye, sharpen your intuition, and step into the life you've always sensed was possible." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:site_name" content="The Clarity Institute" />
+
+        {/* Twitter / X */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Clarity Institute — Awaken Your Third Eye" />
+        <meta name="twitter:description" content="An 8-week journey to activate your third eye, sharpen your intuition, and step into the life you've always sensed was possible." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+
+        {/* Extras */}
+        <meta name="theme-color" content="#3D5A3E" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -352,10 +371,21 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            {/* TikTok link */}
+            <div style={{ textAlign:'center', marginTop:'2rem' }}>
+              <a href="https://www.tiktok.com/@asdavids1" target="_blank" rel="noopener noreferrer" style={{
+                display:'inline-flex', alignItems:'center', gap:'0.6rem',
+                background:'rgba(255,255,255,0.12)', border:'1px solid rgba(255,255,255,0.25)',
+                color:C.white, padding:'0.75rem 1.5rem', borderRadius:999,
+                textDecoration:'none', fontSize:'0.9rem', fontWeight:500,
+                transition:'background 0.2s',
+              }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.8a4.84 4.84 0 01-1-.11z"/></svg>
+                See more stories on TikTok →
+              </a>
+            </div>
           </div>
         </section>
-
-        {/* ── PRICING ── */}
         <section id="pricing" style={sectionWrap(C.cream)}>
           <div style={inner}>
             <div style={centeredHeader}>
@@ -508,7 +538,14 @@ export default function Home() {
               ))}
               <Link href="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Student Login</Link>
             </div>
-            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontSize: '0.875rem' }}>WhatsApp</a>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a href="https://www.tiktok.com/@asdavids1" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>TikTok</a>
+              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontSize: '0.875rem' }}>WhatsApp</a>
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/terms" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '0.78rem' }}>Terms of Service</Link>
+            <Link href="/privacy" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '0.78rem' }}>Privacy Policy</Link>
           </div>
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', textAlign: 'center', fontSize: '0.8rem', opacity: 0.5 }}>
             © {new Date().getFullYear()} The Clarity Institute. All rights reserved.
