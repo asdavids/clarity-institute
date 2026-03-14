@@ -6,20 +6,23 @@
  *   1. Marks the Firestore booking as paid
  *   2. Sends a confirmation email to the client
  *   3. Pushes a real-time notification for the admin dashboard
+ *   4. Emails David about the payment
  *
  * Environment variables required (set in .env.local / Vercel):
  *   PAYPAL_CLIENT_ID
  *   PAYPAL_CLIENT_SECRET
  *   PAYPAL_WEBHOOK_ID
  *   PAYPAL_MODE            – "sandbox" | "live"  (defaults to sandbox)
- *   SENDGRID_API_KEY       – for confirmation emails
- *   SENDGRID_FROM_EMAIL    – verified sender address
+ *   RESEND_API_KEY         – for emails
  */
 
 import { buffer } from "micro";
+import { Resend } from "resend";
 import { initAdmin, getFirestore } from "../../../lib/firebaseAdmin";
 import { verifyWebhookSignature, getPayPalBaseUrl } from "../../../lib/paypal";
 import { sendBookingConfirmation } from "../../../lib/email";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Next.js: disable built-in body parsing so we can read the raw body for
 // signature verification.
@@ -164,6 +167,47 @@ async function handlePaymentCompleted(event) {
   } catch (emailErr) {
     // Don't fail the webhook if the email fails — log and continue
     console.error("[PayPal Webhook] Confirmation email failed:", emailErr);
+  }
+
+  // ── 2d. Email David about the payment ─────────────────────────────
+  try {
+    await resend.emails.send({
+      from: 'The Clarity Institute <david@theclarityinstitute.guru>',
+      to: 'davidmuyunda@gmail.com',
+      subject: `💰 Payment Received — ${currency} ${amount} from ${booking.clientName ?? payerEmail}`,
+      html: `
+        <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; padding: 2rem; color: #2C1F14;">
+          <h2 style="color: #3D5A3E; font-weight: 300;">Payment Received</h2>
+          <p style="color: #7A6A5A;">A payment has been confirmed via PayPal.</p>
+          <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+            <tr style="border-bottom: 1px solid #E0D5C5;">
+              <td style="padding: 0.65rem 0; color: #7A6A5A; font-size: 0.85rem; width: 40%;">Client</td>
+              <td style="padding: 0.65rem 0; font-weight: 500;">${booking.clientName ?? "Unknown"}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0D5C5;">
+              <td style="padding: 0.65rem 0; color: #7A6A5A; font-size: 0.85rem;">Email</td>
+              <td style="padding: 0.65rem 0;"><a href="mailto:${booking.clientEmail ?? payerEmail}" style="color: #3D5A3E;">${booking.clientEmail ?? payerEmail}</a></td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0D5C5;">
+              <td style="padding: 0.65rem 0; color: #7A6A5A; font-size: 0.85rem;">Amount</td>
+              <td style="padding: 0.65rem 0; font-weight: 600; color: #3D5A3E; font-size: 1.2rem;">${currency} ${amount}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0D5C5;">
+              <td style="padding: 0.65rem 0; color: #7A6A5A; font-size: 0.85rem;">PayPal Capture ID</td>
+              <td style="padding: 0.65rem 0; font-family: monospace; font-size: 0.85rem;">${captureId}</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.65rem 0; color: #7A6A5A; font-size: 0.85rem;">Booking ID</td>
+              <td style="padding: 0.65rem 0; font-family: monospace; font-size: 0.85rem;">${bookingId}</td>
+            </tr>
+          </table>
+          <a href="https://www.theclarityinstitute.guru/admin" style="display: inline-block; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">View in Admin Dashboard</a>
+          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
+        </div>
+      `,
+    });
+  } catch (adminEmailErr) {
+    console.error("[PayPal Webhook] Admin notification email failed:", adminEmailErr);
   }
 
   console.log(`[PayPal Webhook] Booking ${bookingId} marked as paid (${currency} ${amount})`);

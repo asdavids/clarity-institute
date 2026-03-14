@@ -92,7 +92,7 @@ export default async function handler(req, res) {
             ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g,'')}?text=${encodeURIComponent(`Hi ${name.split(' ')[0]}, this is David from The Clarity Institute. Thank you for booking a Clarity Session! I'm confirming your booking (ref: ${bookingRef}). Let's find a time that works for you.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${name.split(' ')[0]}</a>` : ''}
           </div>
 
-          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
         </div>
       `,
     })
@@ -143,7 +143,7 @@ export default async function handler(req, res) {
 
           <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">
             <p style="font-style: italic; color: #7A6A5A; font-size: 0.95rem; line-height: 1.7; margin: 0;">"The eye through which I see God is the same eye through which God sees me."</p>
-            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">The Clarity Institute · theclarityinstitute.guru</p>
           </div>
         </div>
       `,

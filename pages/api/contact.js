@@ -52,7 +52,7 @@ export default async function handler(req, res) {
             <p style="margin: 0; line-height: 1.7;">${message}</p>
           </div>
           <a href="mailto:${email}?subject=Re: Your message to The Clarity Institute" style="display: inline-block; margin-top: 1.5rem; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">Reply to ${name}</a>
-          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
         </div>
       `,
     })
@@ -81,7 +81,7 @@ export default async function handler(req, res) {
           </div>
 
           <div style="border-top: 1px solid #E0D5C5; margin-top: 2rem; padding-top: 1.5rem; text-align: center;">
-            <p style="color: #aaa; font-size: 0.8rem; margin: 0;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+            <p style="color: #aaa; font-size: 0.8rem; margin: 0;">The Clarity Institute · theclarityinstitute.guru</p>
           </div>
         </div>
       `,

@@ -42,7 +42,7 @@ export default async function handler(req, res) {
             <p style="margin: 0; font-size: 1.1rem;"><strong>${email}</strong></p>
           </div>
           <a href="mailto:${email}" style="display: inline-block; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">Reply to ${email}</a>
-          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+          <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
         </div>
       `,
     })
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
 
           <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">
             <p style="font-style: italic; color: #7A6A5A; font-size: 0.9rem; line-height: 1.7; margin: 0;">"The quieter you become, the more you can hear."</p>
-            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">The Clarity Institute · theclarityinstitute.vercel.app</p>
+            <p style="color: #aaa; font-size: 0.8rem; margin-top: 1rem;">The Clarity Institute · theclarityinstitute.guru</p>
           </div>
         </div>
       `,
