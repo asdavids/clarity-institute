@@ -4,7 +4,6 @@
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
-
 .bookingCard {
   background: var(--cream);
   border-radius: 4px;
@@ -15,24 +14,20 @@
   border: 1.5px solid var(--sand);
   transition: transform 0.25s, box-shadow 0.25s;
 }
-
 .bookingCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(44,31,18,0.1);
 }
-
 .bookingIcon {
   font-size: 2rem;
   margin-bottom: 0.3rem;
 }
-
 .bookingTitle {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--text-dark);
 }
-
 .bookingDesc {
   font-size: 0.88rem;
   color: var(--text-light);
@@ -40,7 +35,6 @@
   line-height: 1.65;
   flex: 1;
 }
-
 .zoomBtn {
   display: flex;
   align-items: center;
@@ -58,18 +52,16 @@
   transition: background 0.2s, transform 0.2s;
   margin-top: 0.5rem;
 }
-
 .zoomBtn:hover {
   background: #1a7ae8;
   transform: translateY(-1px);
 }
-
 .calendarBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: var(--green);
+  background: #3D5A3E;
   color: white;
   padding: 0.85rem 1.5rem;
   border-radius: 3px;
@@ -81,12 +73,10 @@
   transition: background 0.2s, transform 0.2s;
   margin-top: 0.5rem;
 }
-
 .calendarBtn:hover {
-  background: var(--green-light);
+  background: #2e4530;
   transform: translateY(-1px);
 }
-
 @media (max-width: 700px) {
   .booking { grid-template-columns: 1fr; }
 }
