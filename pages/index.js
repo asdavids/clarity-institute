@@ -312,8 +312,8 @@ export default function Home() {
                   icon: '👁', title: '90-Day Immersion',
                   desc: 'A complete transformation container with bi-weekly sessions, unlimited messaging, custom curriculum, and lifetime community access.',
                   tag: 'Deep transformation',
-                  href: `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I am interested in the 90-Day Immersion.')}`,
-                  btnLabel: 'Apply Now', isLink: false,
+                  href: '/immersion',
+                  btnLabel: 'Apply Now', isLink: true,
                 },
               ].map(m => (
                 <div key={m.title} style={{
