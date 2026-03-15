@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useAuth } from '../lib/useAuth'
-import { markDayComplete, getDayStatus } from '../lib/useProgress'
+import { useProgress } from '../lib/useProgress'
 
 const C = { green:'#3D5A3E', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', cream2:'#F2EBE0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
 const serif = "'Cormorant Garamond', serif"
@@ -124,24 +124,19 @@ function LockedScreen() {
   )
 }
 
-function CourseContent() {
-  const { user } = useAuth()
+function CourseContent({ user }) {
+  const { completed: completedDays, markDone, loading: progressLoading } = useProgress(user?.uid, 'week1-2')
   const [activeDay, setActiveDay] = useState(0)
-  const [completedDays, setCompletedDays] = useState([])
-
-  useEffect(() => {
-    if (user) { getDayStatus(user.uid, 'week1-2').then(days => setCompletedDays(days || [])) }
-  }, [user])
 
   const handleComplete = async (day) => {
-    if (!completedDays.includes(day)) {
-      await markDayComplete(user.uid, 'week1-2', day)
-      setCompletedDays(prev => [...prev, day])
-    }
+    await markDone(day)
   }
 
   const currentDay = DAYS[activeDay]
-  const progress = Math.round((completedDays.length / 14) * 100)
+  const progress = Math.round(((completedDays || []).length / 14) * 100)
+  const days = completedDays || []
+
+  if (progressLoading) return <LoadingScreen />
 
   return (
     <>
@@ -174,7 +169,7 @@ function CourseContent() {
               <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:14, overflow:'hidden', position:'sticky', top:'1rem' }}>
                 {DAYS.map((d, i) => {
                   const isActive = i === activeDay
-                  const isComplete = completedDays.includes(d.day)
+                  const isComplete = days.includes(d.day)
                   const isWeekBreak = i === 0 || d.week !== DAYS[i-1]?.week
                   return (
                     <div key={d.day}>
@@ -234,13 +229,13 @@ function CourseContent() {
                 </div>
 
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'1rem' }}>
-                  <button onClick={() => handleComplete(currentDay.day)} disabled={completedDays.includes(currentDay.day)} style={{
-                    background: completedDays.includes(currentDay.day) ? C.cream : C.green,
-                    color: completedDays.includes(currentDay.day) ? C.green : C.white,
-                    border: completedDays.includes(currentDay.day) ? `1.5px solid ${C.green}` : 'none',
+                  <button onClick={() => handleComplete(currentDay.day)} disabled={days.includes(currentDay.day)} style={{
+                    background: days.includes(currentDay.day) ? C.cream : C.green,
+                    color: days.includes(currentDay.day) ? C.green : C.white,
+                    border: days.includes(currentDay.day) ? `1.5px solid ${C.green}` : 'none',
                     padding:'0.85rem 2rem', borderRadius:8, fontFamily:sans, fontSize:'0.95rem', fontWeight:500,
-                    cursor: completedDays.includes(currentDay.day) ? 'default' : 'pointer',
-                  }}>{completedDays.includes(currentDay.day) ? '✓ Day Completed' : 'Mark Day as Complete'}</button>
+                    cursor: days.includes(currentDay.day) ? 'default' : 'pointer',
+                  }}>{days.includes(currentDay.day) ? '✓ Day Completed' : 'Mark Day as Complete'}</button>
 
                   <div style={{ display:'flex', gap:'0.5rem' }}>
                     {activeDay > 0 && (
@@ -281,5 +276,5 @@ export default function Week1_2() {
   if (loading) return <LoadingScreen />
   if (!user) return <LoadingScreen />
   if (!isPaid && !isAdmin) return <LockedScreen />
-  return <CourseContent />
+  return <CourseContent user={user} />
 }
