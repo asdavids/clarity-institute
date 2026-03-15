@@ -148,6 +148,7 @@ export default function Home() {
                 {['About', 'Cohort', 'Mentorship', 'Pricing', 'FAQ', 'Contact'][i]}
               </a>
             ))}
+            <Link href="/blog" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Blog</Link>
             <Link href="/login" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
             <a href="#pricing" onClick={() => setMenuOpen(false)} style={{
               background: C.green, color: C.white, padding: '0.5rem 1.25rem',
@@ -582,6 +583,8 @@ export default function Home() {
                 <a key={href} href={href} style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>{label}</a>
               ))}
               <Link href="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Student Login</Link>
+              <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Blog</Link>
+              <Link href="/about" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>About David</Link>
             </div>
             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
               <a href="https://www.tiktok.com/@asdavids1" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>TikTok</a>

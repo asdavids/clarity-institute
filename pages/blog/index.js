@@ -8,6 +8,14 @@ const sans = "'Jost', sans-serif"
 
 const posts = [
   {
+    slug: 'astral-projection-beginners-guide',
+    title: 'Astral Projection: A Beginner\'s Guide to Travelling Beyond the Body',
+    excerpt: 'Astral projection — the experience of consciousness separating from the physical body — has been reported across cultures and centuries. Here\'s what it is and how to begin safely.',
+    date: '2026-03-12',
+    readTime: '8 min read',
+    emoji: '🌌',
+  },
+  {
     slug: 'what-is-the-third-eye',
     title: 'What Is the Third Eye? A Beginner\'s Guide',
     excerpt: 'The third eye, or Ajna chakra, is far more than a mystical concept. It\'s a gateway to intuition, clarity, and deeper awareness that lives within each of us.',
@@ -31,6 +39,30 @@ const posts = [
     readTime: '7 min read',
     emoji: '🌿',
   },
+  {
+    slug: 'understanding-your-dreams',
+    title: 'Understanding Your Dreams: Messages from the Unseen',
+    excerpt: 'Dreams are not random. They are a language — your subconscious and spiritual self communicating what your waking mind can\'t yet see.',
+    date: '2026-02-20',
+    readTime: '6 min read',
+    emoji: '🌙',
+  },
+  {
+    slug: 'what-is-remote-viewing',
+    title: 'What Is Remote Viewing? Seeing Beyond the Eyes',
+    excerpt: 'Remote viewing is the practice of perceiving information about a distant target using nothing but the mind. Here\'s what science and spirituality say.',
+    date: '2026-02-14',
+    readTime: '7 min read',
+    emoji: '🔮',
+  },
+  {
+    slug: 'spiritual-growth-where-to-begin',
+    title: 'Spiritual Growth: Where to Begin When You Don\'t Know Where to Start',
+    excerpt: 'Starting a spiritual journey can feel overwhelming. Here\'s a grounded, honest guide to beginning — no jargon, no gatekeeping, just the essentials.',
+    date: '2026-02-07',
+    readTime: '6 min read',
+    emoji: '🌱',
+  },
 ]
 
 const formatDate = (d) => new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
@@ -40,7 +72,10 @@ export default function Blog() {
     <>
       <Head>
         <title>Blog — The Clarity Institute</title>
-        <meta name="description" content="Articles on third eye awakening, meditation, intuition, and spiritual growth from The Clarity Institute." />
+        <meta name="description" content="Articles on third eye awakening, meditation, intuition, astral projection, dreams, and spiritual growth from The Clarity Institute." />
+        <meta property="og:title" content="The Clarity Blog — The Clarity Institute" />
+        <meta property="og:description" content="Reflections on awakening, intuition, and the inner life." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
@@ -66,7 +101,6 @@ export default function Blog() {
                 <article style={{
                   background:C.white, border:`1px solid ${C.border}`, borderRadius:14,
                   padding:'2rem', display:'flex', gap:'1.5rem', alignItems:'flex-start',
-                  transition:'box-shadow 0.2s, transform 0.2s',
                   cursor:'pointer',
                 }}>
                   <div style={{ fontSize:'2.5rem', flexShrink:0, marginTop:'0.25rem' }}>{post.emoji}</div>
