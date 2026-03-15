@@ -56,7 +56,7 @@ export default function ClaritySessionPage() {
     } catch(err){setError(err.message)} finally{setLoading(false)}
   }
 
-  const paypalLink = `https://www.paypal.com/paypalme/${PAYPAL_EMAIL.split('@')[0]}/${SESSION_PRICE}`
+  const paypalLink = `https://www.paypal.com/paypalme/Xhantipta/${SESSION_PRICE}`
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi David, I just booked a Single Clarity Session. My name is '+form.name+' and my email is '+form.email+'. Looking forward to connecting!')}`
 
   const inp = {padding:'0.75rem 1rem',border:`1.5px solid ${C.border}`,borderRadius:'8px',fontFamily:"'Jost',sans-serif",fontSize:'0.95rem',color:C.text,background:C.cream,width:'100%',boxSizing:'border-box',outline:'none'}
