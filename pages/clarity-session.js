@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const PAYPAL_EMAIL = 'davidmuyunda@gmail.com'
 const WHATSAPP_NUMBER = '27817904941'
-const SESSION_PRICE = 111
+const SESSION_PRICE = 49.99
 
 const SESSION_FOCUS_OPTIONS = [
   'Breaking through a specific block',
