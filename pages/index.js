@@ -189,12 +189,12 @@ export default function Home() {
                   textDecoration: 'none', letterSpacing: '0.02em',
                   boxShadow: `0 4px 20px ${C.green}40`,
                 }}>Begin Your Journey</a>
-                <a href={PDF_LINK} target="_blank" rel="noopener noreferrer" style={{
+                <Link href="/ebook" style={{
                   border: `1.5px solid ${C.brown}`, color: C.brown, padding: '0.9rem 2rem',
                   borderRadius: 8, fontSize: '0.9rem', fontWeight: 500,
                   textDecoration: 'none', letterSpacing: '0.05em',
                   background: 'transparent',
-                }}>FREE EBOOK ↓</a>
+                }}>FREE EBOOK ↓</Link>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
