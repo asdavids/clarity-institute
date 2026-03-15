@@ -31,6 +31,7 @@ export default function Home() {
   const [contactStatus, setContactStatus] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [faqOpen, setFaqOpen] = useState(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -142,9 +143,9 @@ export default function Home() {
             <span style={menuOpen ? { transform: 'rotate(-45deg) translateY(-7px)' } : {}} />
           </button>
           <div className={`nav-links${menuOpen ? ' open' : ''}`}>
-            {['#about', '#cohort', '#mentorship', '#pricing', '#contact'].map((href, i) => (
+            {['#about', '#cohort', '#mentorship', '#pricing', '#faq', '#contact'].map((href, i) => (
               <a key={href} href={href} onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>
-                {['About', 'Cohort', 'Mentorship', 'Pricing', 'Contact'][i]}
+                {['About', 'Cohort', 'Mentorship', 'Pricing', 'FAQ', 'Contact'][i]}
               </a>
             ))}
             <Link href="/login" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
@@ -458,6 +459,50 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section id="faq" style={sectionWrap(C.white)}>
+          <div style={{ ...inner, maxWidth: 760 }}>
+            <div style={centeredHeader}>
+              <span style={sectionLabel}>Common Questions</span>
+              <h2 style={sectionTitle}>Frequently Asked</h2>
+            </div>
+            {[
+              { q: 'Do I need any prior experience with meditation or spirituality?', a: 'Not at all. The cohort is designed for both beginners and experienced practitioners. David meets you exactly where you are and guides you from there.' },
+              { q: 'What happens during the 8-week cohort?', a: 'Each week includes a live group session with David, guided meditations, journaling prompts, and daily activation practices. You also get access to a private community of fellow seekers for support between sessions.' },
+              { q: 'How are the sessions delivered?', a: 'All live sessions happen via Zoom. You\'ll receive your Zoom link after enrollment. Sessions are also recorded so you can revisit them at your own pace.' },
+              { q: 'What is a Single Clarity Session?', a: 'It\'s a powerful 60-minute one-on-one call with David. You share what\'s alive for you, and David provides intuitive guidance, energy work, and practical tools tailored to your situation.' },
+              { q: 'What is your refund policy?', a: 'Due to the nature of digital content and personalised services, all sales are final. If you have questions about which program is right for you, message David on WhatsApp before enrolling.' },
+              { q: 'I\'m in a different timezone — can I still join?', a: 'Absolutely. Session times are flexible, and all live sessions are recorded. Many of our students are in Africa, Europe, and Asia. David will find a time that works for you.' },
+              { q: 'How do I pay?', a: 'Payment is processed securely through PayPal. You can pay with your PayPal balance, bank account, or credit/debit card — no PayPal account required.' },
+            ].map((item, i) => (
+              <div key={i} style={{
+                borderBottom: `1px solid ${C.border}`,
+                marginBottom: 0,
+              }}>
+                <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} style={{
+                  width: '100%', textAlign: 'left', background: 'none', border: 'none',
+                  padding: '1.25rem 0', cursor: 'pointer', fontFamily: sans,
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem',
+                }}>
+                  <span style={{ fontSize: '1rem', fontWeight: 500, color: C.text, lineHeight: 1.5 }}>{item.q}</span>
+                  <span style={{
+                    fontSize: '1.4rem', color: C.muted, flexShrink: 0,
+                    transform: faqOpen === i ? 'rotate(45deg)' : 'none',
+                    transition: 'transform 0.2s',
+                  }}>+</span>
+                </button>
+                {faqOpen === i && (
+                  <div style={{
+                    padding: '0 0 1.25rem', color: C.muted, fontSize: '0.95rem', lineHeight: 1.8,
+                  }}>
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
