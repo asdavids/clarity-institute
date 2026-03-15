@@ -305,8 +305,8 @@ export default function Home() {
                   icon: '🌀', title: 'Monthly Mentorship',
                   desc: 'Ongoing 1:1 support with bi-weekly calls, voice message access, and a custom practice plan tailored to your path.',
                   tag: 'Ongoing support',
-                  href: `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I am interested in Monthly Mentorship.')}`,
-                  btnLabel: 'Enquire Now', isLink: false,
+                  href: '/mentorship',
+                  btnLabel: 'Apply Now', isLink: true,
                 },
                 {
                   icon: '👁', title: '90-Day Immersion',
