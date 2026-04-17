@@ -169,6 +169,7 @@ export default function Home() {
           <div style={{ position: 'absolute', bottom: '5%', left: '0%', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${C.green}10 0%, transparent 70%)`, pointerEvents: 'none' }} />
 
           <div className="grid-hero" style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            {/* Left — headline + buttons */}
             <div className="hero-text">
               <span style={{ ...sectionLabel, textAlign: 'left' }}>Begin Your Awakening</span>
               <h1 style={{
@@ -196,7 +197,67 @@ export default function Home() {
                   background: 'transparent',
                 }}>FREE EBOOK ↓</Link>
               </div>
+
+              {/* ── CLARITY SESSION CARD ── */}
+              <div style={{
+                marginTop: '2.5rem',
+                background: `linear-gradient(135deg, ${C.green2} 0%, ${C.green} 100%)`,
+                borderRadius: 14,
+                padding: '1.5rem',
+                position: 'relative',
+                overflow: 'hidden',
+                boxShadow: `0 8px 40px ${C.green}40`,
+              }}>
+                {/* Subtle ring decoration */}
+                <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: 160, height: 160, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.08)', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: 100, height: 100, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)', pointerEvents: 'none' }} />
+
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  {/* Badge */}
+                  <span style={{
+                    display: 'inline-block',
+                    background: `${C.orange}`,
+                    color: C.white,
+                    fontSize: '0.68rem', fontWeight: 600,
+                    letterSpacing: '0.12em', textTransform: 'uppercase',
+                    padding: '0.25rem 0.75rem', borderRadius: 999,
+                    marginBottom: '0.85rem',
+                  }}>✦ Start Here</span>
+
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
+                    <div style={{ flex: 1 }}>
+                      <h3 style={{
+                        fontFamily: serif, fontSize: '1.5rem', fontWeight: 400,
+                        color: C.white, margin: '0 0 0.4rem', lineHeight: 1.2,
+                      }}>Single Clarity Session</h3>
+                      <p style={{
+                        fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)',
+                        lineHeight: 1.6, margin: '0 0 1rem', maxWidth: 280,
+                      }}>
+                        Something in you already knows it's time. One hour with David — to break through, receive guidance, and leave with clarity you can feel.
+                      </p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                        <span style={{ fontFamily: serif, fontSize: '1.6rem', fontWeight: 300, color: C.white }}>$49.99</span>
+                        <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>· 60 min · one-time</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link href="/clarity-session" style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                    marginTop: '1.1rem',
+                    background: C.white, color: C.green,
+                    padding: '0.7rem 1.5rem', borderRadius: 8,
+                    fontSize: '0.9rem', fontWeight: 600,
+                    textDecoration: 'none', letterSpacing: '0.02em',
+                  }}>
+                    👁 Book a Session →
+                  </Link>
+                </div>
+              </div>
             </div>
+
+            {/* Right — eye orb */}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div className="hero-eye" style={{
                 width: 320, height: 320, borderRadius: '50%',
