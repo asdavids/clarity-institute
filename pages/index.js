@@ -32,9 +32,10 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [faqOpen, setFaqOpen] = useState(null)
+  const [showTop, setShowTop] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => { setScrolled(window.scrollY > 40); setShowTop(window.scrollY > 600) }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -760,6 +761,28 @@ export default function Home() {
             © {new Date().getFullYear()} The Clarity Institute. All rights reserved.
           </div>
         </footer>
+
+        {/* ── BACK TO TOP ── */}
+        {showTop && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-3px)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
+            aria-label="Back to top"
+            style={{
+              position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 999,
+              width: 48, height: 48, borderRadius: '50%',
+              background: C.green, color: C.white,
+              border: 'none', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '1.2rem', fontWeight: 600,
+              boxShadow: '0 4px 20px rgba(61,90,62,0.5)',
+              transition: 'transform 0.2s',
+            }}
+          >
+            ↑
+          </button>
+        )}
 
       </div>
     </>
