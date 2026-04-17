@@ -6,8 +6,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 const WHATSAPP = '27817904941'
-const PDF_LINK = 'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz'
-
 const C = {
   green:  '#3D5A3E',
   green2: '#2e4530',
