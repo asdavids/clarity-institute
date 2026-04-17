@@ -220,6 +220,67 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── DREAM INTERPRETER BANNER ── */}
+        <section style={{
+          padding: '5rem 1.5rem',
+          background: `linear-gradient(135deg, ${C.green2} 0%, ${C.green} 100%)`,
+          position: 'relative', overflow: 'hidden',
+        }}>
+          {/* Decorative circles */}
+          <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: 300, height: 300, borderRadius: '50%', background: 'rgba(255,255,255,0.04)', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', bottom: '-80px', left: '-40px', width: 250, height: 250, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
+
+          <div style={{ ...inner, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem' }}>
+            <div style={{ flex: 1, minWidth: 280 }}>
+              <span style={{ ...sectionLabel, color: `${C.orange}` }}>New Feature</span>
+              <h2 style={{ fontFamily: serif, fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: C.white, margin: '0 0 1rem', lineHeight: 1.15 }}>
+                Explore Your Dreams
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, maxWidth: 480, margin: '0 0 0.5rem' }}>
+                Your dreams carry messages from the depths of your unconscious. Discover their hidden symbols, emotional landscapes, and the guidance your psyche is offering you.
+              </p>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', marginBottom: '2rem' }}>
+                Free to use. No sign-in required.
+              </p>
+              <Link href="/dream-interpreter" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                background: C.white, color: C.green,
+                padding: '0.9rem 2rem', borderRadius: 8,
+                fontSize: '1rem', fontWeight: 600,
+                textDecoration: 'none', letterSpacing: '0.02em',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+              }}>
+                🌙 Interpret My Dream
+              </Link>
+            </div>
+
+            {/* Preview card */}
+            <div style={{
+              background: 'rgba(255,255,255,0.07)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              borderRadius: 16, padding: '2rem',
+              maxWidth: 340, width: '100%',
+            }}>
+              <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Example interpretation</div>
+              <p style={{ fontFamily: serif, fontSize: '1rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 1.25rem' }}>
+                "I was flying over a vast ocean at dusk, watching a golden light rise from beneath the waves…"
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {[
+                  { label: 'Theme', value: 'Spiritual transcendence & inner awakening' },
+                  { label: 'Key symbol', value: 'Ocean — the unconscious mind' },
+                  { label: 'Guidance', value: 'Your inner light is rising. Trust it.' },
+                ].map(item => (
+                  <div key={item.label} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '0.6rem 0.85rem' }}>
+                    <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{item.label}</span>
+                    <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)', marginTop: '0.2rem' }}>{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── ABOUT ── */}
         <section id="about" style={sectionWrap(C.white)}>
           <div style={inner}>
