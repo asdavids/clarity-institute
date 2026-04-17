@@ -123,9 +123,9 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <style>{`
           @keyframes glow {
-            0%   { filter: drop-shadow(0 0 10px #00c6ff); }
-            50%  { filter: drop-shadow(0 0 28px #00c6ff) drop-shadow(0 0 8px #ffd700); }
-            100% { filter: drop-shadow(0 0 10px #00c6ff); }
+            0%   { filter: drop-shadow(0 0 15px #00c6ff) drop-shadow(0 0 5px #ffd700); }
+            50%  { filter: drop-shadow(0 0 40px #00c6ff) drop-shadow(0 0 20px #ffd700); }
+            100% { filter: drop-shadow(0 0 15px #00c6ff) drop-shadow(0 0 5px #ffd700); }
           }
           .logo-glow { animation: glow 3s ease-in-out infinite; }
         `}</style>
@@ -313,10 +313,10 @@ export default function Home() {
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div className="hero-eye" style={{
                   width: 320, height: 320, borderRadius: '50%',
-                  background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
-                  border: `1px solid ${C.border}`,
+                  background: 'transparent',
+                  border: 'none',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  boxShadow: `0 20px 80px ${C.brown}20`,
+                  boxShadow: 'none',
                   position: 'relative',
                 }}>
                   <img src="/logo.png" alt="The Clarity Institute" className="logo-glow" style={{ width: 220, height: 220, objectFit: 'contain' }} />
