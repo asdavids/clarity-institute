@@ -9,10 +9,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "No dream provided" });
   }
 
-  const apiKey = process.env.GOOGLE_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
-    return res.status(500).json({ error: "API key not configured", debug: "GOOGLE_API_KEY is missing" });
+    return res.status(500).json({ error: "API key not configured" });
   }
 
   const moodContext = mood ? ` The dreamer felt ${mood} during the dream.` : "";
@@ -29,30 +29,32 @@ The JSON must have exactly these keys:
 Dream: ${dream}${moodContext}`;
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-        }),
-      }
-    );
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.7,
+      }),
+    });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Google API error:", JSON.stringify(data));
-      return res.status(500).json({ error: "Google API failed", debug: JSON.stringify(data) });
+      console.error("Groq API error:", JSON.stringify(data));
+      return res.status(500).json({ error: "Groq API failed", debug: JSON.stringify(data) });
     }
 
-    const text = data.candidates[0].content.parts[0].text;
+    const text = data.choices[0].message.content;
     const parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
 
     return res.status(200).json(parsed);
   } catch (error) {
-    console.error("Dream API error:", error.message, error.stack);
+    console.error("Dream API error:", error.message);
     return res.status(500).json({ error: "Interpretation failed", debug: error.message });
   }
 }
