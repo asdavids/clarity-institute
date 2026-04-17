@@ -121,6 +121,14 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <style>{`
+          @keyframes glow {
+            0%   { filter: drop-shadow(0 0 10px #00c6ff); }
+            50%  { filter: drop-shadow(0 0 28px #00c6ff) drop-shadow(0 0 8px #ffd700); }
+            100% { filter: drop-shadow(0 0 10px #00c6ff); }
+          }
+          .logo-glow { animation: glow 3s ease-in-out infinite; }
+        `}</style>
       </Head>
 
       <div style={{ fontFamily: sans, color: C.text, background: C.cream }}>
@@ -259,7 +267,7 @@ export default function Home() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   padding: '1rem',
                 }}>
-                  <img src="/logo.png" alt="The Clarity Institute" style={{ width: 100, height: 100, objectFit: 'contain' }} />
+                  <img src="/logo.png" alt="The Clarity Institute" className="logo-glow" style={{ width: 100, height: 100, objectFit: 'contain' }} />
                 </div>
                 <p style={{
                   fontFamily: serif, fontSize: '1.1rem', fontStyle: 'italic',
@@ -311,7 +319,7 @@ export default function Home() {
                   boxShadow: `0 20px 80px ${C.brown}20`,
                   position: 'relative',
                 }}>
-                  <img src="/logo.png" alt="The Clarity Institute" style={{ width: 220, height: 220, objectFit: 'contain' }} />
+                  <img src="/logo.png" alt="The Clarity Institute" className="logo-glow" style={{ width: 220, height: 220, objectFit: 'contain' }} />
                   <div style={{ position: 'absolute', inset: -20, borderRadius: '50%', border: `1px dashed ${C.brown}30` }} />
                   <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', border: `1px dashed ${C.brown}15` }} />
                 </div>
