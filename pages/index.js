@@ -168,116 +168,153 @@ export default function Home() {
           <div style={{ position: 'absolute', top: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: `radial-gradient(circle, ${C.orange}15 0%, transparent 70%)`, pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', bottom: '5%', left: '0%', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${C.green}10 0%, transparent 70%)`, pointerEvents: 'none' }} />
 
-          <div className="grid-hero" style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-            {/* Left — headline + buttons */}
-            <div className="hero-text">
-              <span style={{ ...sectionLabel, textAlign: 'left' }}>Begin Your Awakening</span>
-              <h1 style={{
-                fontFamily: serif, fontSize: 'clamp(3rem, 6vw, 5rem)',
-                fontWeight: 300, color: C.green, margin: '0 0 1.5rem', lineHeight: 1.1,
-                letterSpacing: '-0.01em',
-              }}>
-                See Beyond<br /><em style={{ color: C.brown }}>What You've<br />Been Told</em>
-              </h1>
-              <p style={{ fontSize: '1.1rem', color: C.muted, lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: 480 }}>
-                An 8-week journey to activate your third eye, sharpen your intuition,
-                and step into the life you've always sensed was possible.
-              </p>
-              <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="#pricing" style={{
-                  background: C.green, color: C.white, padding: '0.9rem 2rem',
-                  borderRadius: 8, fontSize: '1rem', fontWeight: 500,
+          <div style={{ ...inner, width: '100%' }}>
+
+            {/* ── CLARITY SESSION — full width, top of hero ── */}
+            <div style={{
+              background: `linear-gradient(135deg, ${C.green2} 0%, ${C.green} 100%)`,
+              borderRadius: 20,
+              padding: '3rem 3.5rem',
+              marginBottom: '4rem',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: `0 16px 60px ${C.green}50`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '2rem',
+            }}>
+              {/* Ring decorations */}
+              <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: 320, height: 320, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.07)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: 200, height: 200, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.05)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', bottom: '-60px', left: '30%', width: 220, height: 220, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.04)', pointerEvents: 'none' }} />
+
+              {/* Left — text */}
+              <div style={{ position: 'relative', zIndex: 1, flex: 1, minWidth: 280 }}>
+                <span style={{
+                  display: 'inline-block',
+                  background: C.orange,
+                  color: C.white,
+                  fontSize: '0.7rem', fontWeight: 700,
+                  letterSpacing: '0.15em', textTransform: 'uppercase',
+                  padding: '0.3rem 0.9rem', borderRadius: 999,
+                  marginBottom: '1rem',
+                }}>✦ Start Here — Most Popular First Step</span>
+
+                <h2 style={{
+                  fontFamily: serif,
+                  fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+                  fontWeight: 300, color: C.white,
+                  margin: '0 0 0.75rem', lineHeight: 1.15,
+                }}>
+                  Single Clarity Session
+                </h2>
+
+                <p style={{
+                  fontSize: '1.05rem',
+                  color: 'rgba(255,255,255,0.75)',
+                  lineHeight: 1.75,
+                  maxWidth: 500,
+                  margin: '0 0 1.5rem',
+                }}>
+                  Something in you already knows it's time. One private hour with David — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
+                </p>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '1.75rem' }}>
+                  <span style={{ fontFamily: serif, fontSize: '2.5rem', fontWeight: 300, color: C.white, lineHeight: 1 }}>$49.99</span>
+                  {['60 minutes', 'One-on-one', 'One-time'].map(tag => (
+                    <span key={tag} style={{
+                      fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      padding: '0.25rem 0.75rem', borderRadius: 999,
+                    }}>{tag}</span>
+                  ))}
+                </div>
+
+                <Link href="/clarity-session" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                  background: C.white, color: C.green,
+                  padding: '0.95rem 2.25rem', borderRadius: 10,
+                  fontSize: '1.05rem', fontWeight: 700,
                   textDecoration: 'none', letterSpacing: '0.02em',
-                  boxShadow: `0 4px 20px ${C.green}40`,
-                }}>Begin Your Journey</a>
-                <Link href="/ebook" style={{
-                  border: `1.5px solid ${C.brown}`, color: C.brown, padding: '0.9rem 2rem',
-                  borderRadius: 8, fontSize: '0.9rem', fontWeight: 500,
-                  textDecoration: 'none', letterSpacing: '0.05em',
-                  background: 'transparent',
-                }}>FREE EBOOK ↓</Link>
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                }}>
+                  👁 Book Your Session →
+                </Link>
               </div>
 
-              {/* ── CLARITY SESSION CARD ── */}
+              {/* Right — big eye + tagline */}
               <div style={{
-                marginTop: '2.5rem',
-                background: `linear-gradient(135deg, ${C.green2} 0%, ${C.green} 100%)`,
-                borderRadius: 14,
-                padding: '1.5rem',
-                position: 'relative',
-                overflow: 'hidden',
-                boxShadow: `0 8px 40px ${C.green}40`,
+                position: 'relative', zIndex: 1,
+                display: 'flex', flexDirection: 'column',
+                alignItems: 'center', gap: '1rem',
+                minWidth: 200,
               }}>
-                {/* Subtle ring decoration */}
-                <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: 160, height: 160, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.08)', pointerEvents: 'none' }} />
-                <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: 100, height: 100, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)', pointerEvents: 'none' }} />
+                <div style={{
+                  width: 140, height: 140, borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '4.5rem',
+                }}>👁</div>
+                <p style={{
+                  fontFamily: serif, fontSize: '1.1rem', fontStyle: 'italic',
+                  color: 'rgba(255,255,255,0.6)', textAlign: 'center',
+                  maxWidth: 180, lineHeight: 1.5, margin: 0,
+                }}>
+                  "One hour that changes everything."
+                </p>
+              </div>
+            </div>
 
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  {/* Badge */}
-                  <span style={{
-                    display: 'inline-block',
-                    background: `${C.orange}`,
-                    color: C.white,
-                    fontSize: '0.68rem', fontWeight: 600,
-                    letterSpacing: '0.12em', textTransform: 'uppercase',
-                    padding: '0.25rem 0.75rem', borderRadius: 999,
-                    marginBottom: '0.85rem',
-                  }}>✦ Start Here</span>
-
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{
-                        fontFamily: serif, fontSize: '1.5rem', fontWeight: 400,
-                        color: C.white, margin: '0 0 0.4rem', lineHeight: 1.2,
-                      }}>Single Clarity Session</h3>
-                      <p style={{
-                        fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)',
-                        lineHeight: 1.6, margin: '0 0 1rem', maxWidth: 280,
-                      }}>
-                        Something in you already knows it's time. One hour with David — to break through, receive guidance, and leave with clarity you can feel.
-                      </p>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                        <span style={{ fontFamily: serif, fontSize: '1.6rem', fontWeight: 300, color: C.white }}>$49.99</span>
-                        <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>· 60 min · one-time</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link href="/clarity-session" style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                    marginTop: '1.1rem',
-                    background: C.white, color: C.green,
-                    padding: '0.7rem 1.5rem', borderRadius: 8,
-                    fontSize: '0.9rem', fontWeight: 600,
+            {/* ── MAIN HERO CONTENT ── */}
+            <div className="grid-hero" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+              <div className="hero-text">
+                <span style={{ ...sectionLabel, textAlign: 'left' }}>Begin Your Awakening</span>
+                <h1 style={{
+                  fontFamily: serif, fontSize: 'clamp(3rem, 6vw, 5rem)',
+                  fontWeight: 300, color: C.green, margin: '0 0 1.5rem', lineHeight: 1.1,
+                  letterSpacing: '-0.01em',
+                }}>
+                  See Beyond<br /><em style={{ color: C.brown }}>What You've<br />Been Told</em>
+                </h1>
+                <p style={{ fontSize: '1.1rem', color: C.muted, lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: 480 }}>
+                  An 8-week journey to activate your third eye, sharpen your intuition,
+                  and step into the life you've always sensed was possible.
+                </p>
+                <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <a href="#pricing" style={{
+                    background: C.green, color: C.white, padding: '0.9rem 2rem',
+                    borderRadius: 8, fontSize: '1rem', fontWeight: 500,
                     textDecoration: 'none', letterSpacing: '0.02em',
-                  }}>
-                    👁 Book a Session →
-                  </Link>
+                    boxShadow: `0 4px 20px ${C.green}40`,
+                  }}>Begin Your Journey</a>
+                  <Link href="/ebook" style={{
+                    border: `1.5px solid ${C.brown}`, color: C.brown, padding: '0.9rem 2rem',
+                    borderRadius: 8, fontSize: '0.9rem', fontWeight: 500,
+                    textDecoration: 'none', letterSpacing: '0.05em',
+                    background: 'transparent',
+                  }}>FREE EBOOK ↓</Link>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div className="hero-eye" style={{
+                  width: 320, height: 320, borderRadius: '50%',
+                  background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
+                  border: `1px solid ${C.border}`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '8rem', boxShadow: `0 20px 80px ${C.brown}20`,
+                  position: 'relative',
+                }}>
+                  👁
+                  <div style={{ position: 'absolute', inset: -20, borderRadius: '50%', border: `1px dashed ${C.brown}30` }} />
+                  <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', border: `1px dashed ${C.brown}15` }} />
                 </div>
               </div>
             </div>
 
-            {/* Right — eye orb */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div className="hero-eye" style={{
-                width: 320, height: 320, borderRadius: '50%',
-                background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
-                border: `1px solid ${C.border}`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '8rem', boxShadow: `0 20px 80px ${C.brown}20`,
-                position: 'relative',
-              }}>
-                👁
-                <div style={{
-                  position: 'absolute', inset: -20, borderRadius: '50%',
-                  border: `1px dashed ${C.brown}30`,
-                }} />
-                <div style={{
-                  position: 'absolute', inset: -40, borderRadius: '50%',
-                  border: `1px dashed ${C.brown}15`,
-                }} />
-              </div>
-            </div>
           </div>
         </section>
 
