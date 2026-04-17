@@ -778,7 +778,7 @@ export default function Home() {
             onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
             aria-label="Back to top"
             style={{
-              position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 999,
+              position: 'fixed', bottom: '5.5rem', right: '2rem', zIndex: 999,
               width: 48, height: 48, borderRadius: '50%',
               background: C.green, color: C.white,
               border: 'none', cursor: 'pointer',
