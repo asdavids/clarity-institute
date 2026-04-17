@@ -13,12 +13,12 @@ const C = {
   green2: '#2e4530',
   brown:  '#6B4A2A',
   orange: '#C1581A',
-  cream:  '#FAF6F0',
-  cream2: '#F2EBE0',
+  cream:  '#F5EFE6',
+  cream2: '#EDE3D6',
   text:   '#2C1F14',
   muted:  '#7A6A5A',
-  border: '#E0D5C5',
-  white:  '#ffffff',
+  border: '#D9CCBA',
+  white:  '#FBF6F0',
 }
 
 const serif  = "'Cormorant Garamond', serif"
