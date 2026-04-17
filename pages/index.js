@@ -240,7 +240,7 @@ export default function Home() {
                   textDecoration: 'none', letterSpacing: '0.02em',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
                 }}>
-                  👁 Book Your Session →
+                  Book Your Session →
                 </Link>
               </div>
 
@@ -256,8 +256,10 @@ export default function Home() {
                   background: 'rgba(255,255,255,0.08)',
                   border: '1px solid rgba(255,255,255,0.15)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '4.5rem',
-                }}>👁</div>
+                  padding: '1rem',
+                }}>
+                  <img src="/logo.png" alt="The Clarity Institute" style={{ width: 100, height: 100, objectFit: 'contain' }} />
+                </div>
                 <p style={{
                   fontFamily: serif, fontSize: '1.1rem', fontStyle: 'italic',
                   color: 'rgba(255,255,255,0.6)', textAlign: 'center',
@@ -305,10 +307,10 @@ export default function Home() {
                   background: `radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
                   border: `1px solid ${C.border}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '8rem', boxShadow: `0 20px 80px ${C.brown}20`,
+                  boxShadow: `0 20px 80px ${C.brown}20`,
                   position: 'relative',
                 }}>
-                  👁
+                  <img src="/logo.png" alt="The Clarity Institute" style={{ width: 220, height: 220, objectFit: 'contain' }} />
                   <div style={{ position: 'absolute', inset: -20, borderRadius: '50%', border: `1px dashed ${C.brown}30` }} />
                   <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', border: `1px dashed ${C.brown}15` }} />
                 </div>
@@ -468,7 +470,7 @@ export default function Home() {
                   btnLabel: 'Apply Now', isLink: true,
                 },
                 {
-                  icon: '👁', title: '90-Day Immersion',
+                  icon: '🪷', title: '90-Day Immersion',
                   desc: 'A complete transformation container with bi-weekly sessions, unlimited messaging, custom curriculum, and lifetime community access.',
                   tag: 'Deep transformation',
                   href: '/immersion',
