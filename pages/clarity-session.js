@@ -21,7 +21,7 @@ const SESSION_FOCUS_OPTIONS = [
 
 const TIME_OPTIONS = ['07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00']
 
-const C = { green:'#3D5A3E', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5' }
+const C = { green:'#3D5A3E', green2:'#2e4530', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', cream2:'#F2EBE0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
 
 export default function ClaritySessionPage() {
   const [step, setStep] = useState(1)
@@ -73,40 +73,154 @@ export default function ClaritySessionPage() {
     <>
       <Head>
         <title>Single Clarity Session — The Clarity Institute</title>
-        <meta name="description" content="Book a powerful 60-minute one-on-one session with David." />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+        <meta name="description" content="Book a powerful 60-minute one-on-one session with David. Receive direct spiritual guidance, break through your blocks, and step into clarity." />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{minHeight:'100vh',background:C.cream,color:C.text,fontFamily:"'Jost',sans-serif"}}>
 
         {/* Nav */}
         <nav style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'1.25rem 2rem',borderBottom:`1px solid ${C.border}`,background:'white'}}>
           <Link href="/" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'1.3rem',color:C.green,textDecoration:'none',fontWeight:'600'}}>The Clarity Institute</Link>
-          <Link href="/#mentorship" style={{fontSize:'0.875rem',color:C.muted,textDecoration:'none'}}>← Back to Mentorship</Link>
+          <Link href="/#mentorship" style={{fontSize:'0.875rem',color:C.muted,textDecoration:'none'}}>← Back</Link>
         </nav>
 
-        {/* Hero */}
-        <div style={{textAlign:'center',padding:'4rem 2rem 2.5rem',background:'linear-gradient(to bottom,#fff,#FAF6F0)'}}>
-          <div style={{fontSize:'3rem',marginBottom:'1rem'}}>👁</div>
-          <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'clamp(2.2rem,5vw,3.5rem)',fontWeight:'300',color:C.green,margin:'0 0 0.5rem',letterSpacing:'0.02em'}}>Single Clarity Session</h1>
-          <p style={{fontSize:'1.1rem',color:C.muted,margin:'0 0 1.5rem',fontWeight:'300'}}>A powerful 60-minute one-on-one with David</p>
-          <div style={{display:'flex',justifyContent:'center',gap:'0.75rem',flexWrap:'wrap'}}>
-            {['60 Minutes','One-on-One','One-Time Session',`$${SESSION_PRICE} USD`].map(p=>(
-              <span key={p} style={{background:'white',border:`1px solid ${C.border}`,color:C.brown,padding:'0.35rem 1rem',borderRadius:'999px',fontSize:'0.85rem',fontWeight:'500'}}>{p}</span>
-            ))}
+        {/* ── PROPHETIC HERO ── */}
+        <div style={{
+          background: `linear-gradient(160deg, ${C.green2} 0%, ${C.green} 60%, #4a6741 100%)`,
+          padding: '5rem 2rem 4rem',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          {/* Decorative rings */}
+          <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:'600px',height:'600px',borderRadius:'50%',border:'1px solid rgba(255,255,255,0.05)',pointerEvents:'none'}} />
+          <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:'400px',height:'400px',borderRadius:'50%',border:'1px solid rgba(255,255,255,0.07)',pointerEvents:'none'}} />
+          <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:'200px',height:'200px',borderRadius:'50%',border:'1px solid rgba(255,255,255,0.1)',pointerEvents:'none'}} />
+
+          <div style={{position:'relative',zIndex:1,maxWidth:'760px',margin:'0 auto'}}>
+            {/* Label */}
+            <span style={{
+              display:'inline-block',
+              fontSize:'0.72rem', fontWeight:600, letterSpacing:'0.2em',
+              textTransform:'uppercase', color:C.orange,
+              marginBottom:'1.5rem',
+            }}>One-on-One · 60 Minutes · $49.99</span>
+
+            {/* Eye */}
+            <div style={{fontSize:'4rem',marginBottom:'1.5rem',lineHeight:1}}>👁</div>
+
+            {/* Main headline */}
+            <h1 style={{
+              fontFamily:"'Cormorant Garamond',serif",
+              fontSize:'clamp(2.8rem,7vw,5rem)',
+              fontWeight:300,
+              color:'white',
+              margin:'0 0 1rem',
+              lineHeight:1.1,
+              letterSpacing:'-0.01em',
+            }}>
+              Something in you<br />
+              <em style={{color:'rgba(255,255,255,0.7)',fontStyle:'italic'}}>already knows</em><br />
+              it's time.
+            </h1>
+
+            {/* Sub headline */}
+            <p style={{
+              fontFamily:"'Cormorant Garamond',serif",
+              fontSize:'clamp(1.2rem,3vw,1.6rem)',
+              fontWeight:300,
+              color:'rgba(255,255,255,0.8)',
+              lineHeight:1.7,
+              maxWidth:560,
+              margin:'0 auto 1.5rem',
+              fontStyle:'italic',
+            }}>
+              One session. One hour. One conversation that could change the direction of everything.
+            </p>
+
+            <p style={{
+              fontSize:'1rem',
+              color:'rgba(255,255,255,0.6)',
+              lineHeight:1.8,
+              maxWidth:500,
+              margin:'0 auto 2.5rem',
+            }}>
+              A private 60-minute session with David — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
+            </p>
+
+            {/* CTA */}
+            <a href="#book" onClick={(e)=>{e.preventDefault();document.getElementById('book').scrollIntoView({behavior:'smooth'})}} style={{
+              display:'inline-flex',alignItems:'center',gap:'0.6rem',
+              background:'white',color:C.green,
+              padding:'1rem 2.5rem',borderRadius:'8px',
+              fontSize:'1.05rem',fontWeight:600,
+              textDecoration:'none',letterSpacing:'0.02em',
+              boxShadow:'0 8px 32px rgba(0,0,0,0.25)',
+            }}>
+              Book Your Session →
+            </a>
+
+            <p style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.4)',marginTop:'1rem'}}>
+              Secure payment via PayPal · Confirmation within 24 hours
+            </p>
           </div>
         </div>
 
-        {/* Feature cards */}
-        <div style={{maxWidth:'900px',margin:'0 auto',padding:'2rem 2rem 3rem'}}>
-          <div className="session-features" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'1.5rem'}}>
-            {[['🔓','Break Through Blocks',"Identify and release what's holding you back from clarity, purpose, or peace."],['🌀','Intuitive Guidance','Receive direct, grounded guidance tailored to your unique situation and energy.'],['🕯','Deepen Your Practice','Get personalised tools, meditations, and practices to take into your daily life.']].map(([icon,title,desc])=>(
-              <div key={title} style={{background:'white',border:`1px solid ${C.border}`,borderRadius:'12px',padding:'1.75rem 1.5rem',textAlign:'center'}}>
-                <div style={{fontSize:'2rem',marginBottom:'0.75rem'}}>{icon}</div>
-                <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'1.25rem',color:C.green,margin:'0 0 0.5rem'}}>{title}</h3>
-                <p style={{fontSize:'0.9rem',color:C.muted,margin:0,lineHeight:'1.6'}}>{desc}</p>
-              </div>
-            ))}
+        {/* ── WHAT THIS SESSION IS ── */}
+        <div style={{background:C.white,padding:'4rem 2rem',textAlign:'center'}}>
+          <div style={{maxWidth:760,margin:'0 auto'}}>
+            <span style={{fontSize:'0.75rem',fontWeight:600,letterSpacing:'0.15em',textTransform:'uppercase',color:C.orange,display:'block',marginBottom:'0.75rem'}}>What to expect</span>
+            <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'clamp(1.8rem,4vw,2.8rem)',fontWeight:300,color:C.green,margin:'0 0 1rem',lineHeight:1.2}}>
+              This is not a consultation.<br />
+              <em>It's a transmission.</em>
+            </h2>
+            <p style={{fontSize:'1rem',color:C.muted,lineHeight:1.8,maxWidth:560,margin:'0 auto 3rem'}}>
+              David doesn't just talk at you. He tunes in, reads what's present, and meets you exactly where you are — with honesty, depth, and spiritual precision.
+            </p>
           </div>
+
+          {/* Feature cards */}
+          <div style={{maxWidth:'900px',margin:'0 auto'}}>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'1.5rem'}}>
+              {[
+                ['🔓','Break Through Blocks',"Identify and release what's been holding you back — from clarity, from peace, from the life you sense is waiting."],
+                ['🌀','Intuitive Guidance','Receive direct, grounded guidance tailored to your unique energy, situation, and what your soul is actually asking for.'],
+                ['🕯','Tools You Can Use','Leave with personalised practices, meditations, and next steps you can take into your daily life immediately.'],
+              ].map(([icon,title,desc])=>(
+                <div key={title} style={{background:C.cream,border:`1px solid ${C.border}`,borderRadius:'12px',padding:'1.75rem 1.5rem',textAlign:'center'}}>
+                  <div style={{fontSize:'2rem',marginBottom:'0.75rem'}}>{icon}</div>
+                  <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'1.25rem',color:C.green,margin:'0 0 0.5rem'}}>{title}</h3>
+                  <p style={{fontSize:'0.9rem',color:C.muted,margin:0,lineHeight:'1.6'}}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── PULL QUOTE ── */}
+        <div style={{
+          background:`linear-gradient(135deg,${C.cream2},${C.cream})`,
+          padding:'4rem 2rem',textAlign:'center',
+          borderTop:`1px solid ${C.border}`,borderBottom:`1px solid ${C.border}`,
+        }}>
+          <div style={{maxWidth:640,margin:'0 auto'}}>
+            <p style={{
+              fontFamily:"'Cormorant Garamond',serif",
+              fontSize:'clamp(1.4rem,3vw,2rem)',
+              fontStyle:'italic',fontWeight:300,
+              color:C.green,lineHeight:1.8,margin:'0 0 1.25rem',
+            }}>
+              "You already carry the answers. This session helps you hear them."
+            </p>
+            <span style={{fontSize:'0.875rem',color:C.muted,fontWeight:500}}>— David, Founder of The Clarity Institute</span>
+          </div>
+        </div>
+
+        {/* ── BOOKING SECTION ── */}
+        <div id="book" style={{padding:'4rem 2rem 2rem',textAlign:'center'}}>
+          <span style={{fontSize:'0.75rem',fontWeight:600,letterSpacing:'0.15em',textTransform:'uppercase',color:C.orange,display:'block',marginBottom:'0.5rem'}}>Reserve Your Spot</span>
+          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'clamp(1.8rem,4vw,2.5rem)',fontWeight:300,color:C.green,margin:'0 0 0.5rem'}}>Book Your Clarity Session</h2>
+          <p style={{color:C.muted,fontSize:'0.95rem',marginBottom:'2.5rem'}}>Complete the form below. David will confirm your time within 24 hours.</p>
         </div>
 
         {/* Step bar */}
