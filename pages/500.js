@@ -26,7 +26,7 @@ export default function Custom500() {
             <a href="https://wa.me/27817904941?text=Hi%20David%2C%20I'm%20getting%20an%20error%20on%20the%20website." target="_blank" rel="noopener noreferrer" style={{
               background:'#25D366', color:C.white, padding:'0.8rem 1.75rem',
               borderRadius:8, textDecoration:'none', fontSize:'0.95rem', fontWeight:500,
-            }}>💬 Report to David</a>
+            }}>💬 Report to AS Davids</a>
           </div>
         </div>
       </div>

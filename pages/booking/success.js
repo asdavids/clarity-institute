@@ -51,7 +51,7 @@ export default function BookingSuccess() {
               <h3 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'1.15rem', color:C.green, margin:'0 0 0.75rem', fontWeight:400 }}>What happens next?</h3>
               <ol style={{ paddingLeft:'1.25rem', margin:0 }}>
                 <li style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>Check your email for the confirmation and receipt.</li>
-                <li style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>David will reach out within 24 hours to confirm your session time.</li>
+                <li style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>AS Davids will reach out within 24 hours to confirm your session time.</li>
                 <li style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.7 }}>Log in to your dashboard to access your course materials.</li>
               </ol>
             </div>
@@ -65,7 +65,7 @@ export default function BookingSuccess() {
               <a href="https://wa.me/27817904941" target="_blank" rel="noopener noreferrer" style={{
                 background:'#25D366', color:C.white, padding:'0.8rem 1.5rem',
                 borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500,
-              }}>💬 Message David</a>
+              }}>💬 Message AS Davids</a>
             </div>
           </div>
 

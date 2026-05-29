@@ -54,7 +54,7 @@ export default async function handler(req, res) {
           <div style="text-align: center; padding: 2rem 0 1.5rem;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌀</div>
             <h1 style="color: #3D5A3E; font-weight: 300; font-size: 1.8rem; margin: 0 0 0.5rem;">Welcome, ${firstName}.</h1>
-            <p style="color: #7A6A5A; margin: 0; line-height: 1.7;">Your mentorship journey with David begins now.</p>
+            <p style="color: #7A6A5A; margin: 0; line-height: 1.7;">Your mentorship journey with AS Davids begins now.</p>
           </div>
 
           <div style="background: white; border: 1px solid #E0D5C5; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
@@ -83,21 +83,21 @@ export default async function handler(req, res) {
             <a href="${ZOOM_LINK}" style="display: inline-block; background: white; color: #3D5A3E; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-size: 1rem; font-weight: 600;">
               Join Zoom Session →
             </a>
-            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0.75rem 0 0;">Save this link — you'll use it for all your calls with David.</p>
+            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0.75rem 0 0;">Save this link — you'll use it for all your calls with AS Davids.</p>
           </div>
 
           <div style="background: white; border: 1px solid #E0D5C5; border-radius: 12px; padding: 1.75rem; margin: 1.5rem 0;">
             <h3 style="color: #3D5A3E; font-weight: 400; margin: 0 0 0.75rem;">What happens next:</h3>
             <ol style="padding-left: 1.25rem; margin: 0; color: #7A6A5A; line-height: 1.8; font-size: 0.9rem;">
-              <li>David will review your application and reach out within 24 hours.</li>
+              <li>AS Davids will review your application and reach out within 24 hours.</li>
               <li>Your first bi-weekly call will be scheduled at a mutually convenient time.</li>
               <li>You will receive your custom practice plan before or during your first call.</li>
-              <li>Between calls, you can send David voice messages anytime via WhatsApp.</li>
+              <li>Between calls, you can send AS Davids voice messages anytime via WhatsApp.</li>
             </ol>
           </div>
 
           <div style="text-align: center; margin: 2rem 0;">
-            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 Message David on WhatsApp</a>
+            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 Message AS Davids on WhatsApp</a>
           </div>
 
           <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">
@@ -139,7 +139,7 @@ export default async function handler(req, res) {
 
           <div style="margin-top: 2rem;">
             <a href="mailto:${email}?subject=Welcome to Mentorship — ${refId}" style="display: inline-block; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; margin-right: 0.75rem;">Reply by Email</a>
-            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi ${firstName}, this is David from The Clarity Institute. Welcome to mentorship! I've received your application (ref: ${refId}) and I'm looking forward to our journey together. Let's schedule your first call.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${firstName}</a>` : ''}
+            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi ${firstName}, this is AS Davids from The Clarity Institute. Welcome to mentorship! I've received your application (ref: ${refId}) and I'm looking forward to our journey together. Let's schedule your first call.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${firstName}</a>` : ''}
           </div>
 
           <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>

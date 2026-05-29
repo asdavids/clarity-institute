@@ -70,7 +70,7 @@ export default async function handler(req, res) {
           <div style="background: white; border: 1px solid #E0D5C5; border-radius: 12px; padding: 1.75rem; margin: 1.5rem 0;">
             <h3 style="color: #3D5A3E; font-weight: 400; margin: 0 0 0.75rem;">Your 90-Day Journey:</h3>
             <ol style="padding-left: 1.25rem; margin: 0; color: #7A6A5A; line-height: 1.8; font-size: 0.9rem;">
-              <li>David designs your custom curriculum based on your application (within 24 hours).</li>
+              <li>AS Davids designs your custom curriculum based on your application (within 24 hours).</li>
               <li>Your first bi-weekly session is scheduled at a time that works for you.</li>
               <li>Month 1: Excavation — uncovering and clearing core patterns.</li>
               <li>Month 2: Activation — developing your specific gifts and perceptions.</li>
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
             </ol>
           </div>
           <div style="text-align: center; margin: 2rem 0;">
-            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 Message David on WhatsApp</a>
+            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 Message AS Davids on WhatsApp</a>
           </div>
           <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">
             <p style="font-style: italic; color: #7A6A5A; font-size: 0.9rem; line-height: 1.7; margin: 0;">"The wound is the place where the Light enters you."</p>
@@ -115,7 +115,7 @@ export default async function handler(req, res) {
           ${commitment ? `<div style="background: #FAF6F0; border-left: 3px solid #3D5A3E; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1rem 0;"><p style="margin: 0 0 0.5rem; font-size: 0.8rem; color: #7A6A5A; text-transform: uppercase;">Their Commitment</p><p style="margin: 0; line-height: 1.7; font-size: 0.9rem;">${commitment}</p></div>` : ''}
           <div style="margin-top: 2rem;">
             <a href="mailto:${email}?subject=Welcome to the 90-Day Immersion — ${refId}" style="display: inline-block; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; margin-right: 0.75rem;">Reply by Email</a>
-            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi ${firstName}, this is David from The Clarity Institute. Welcome to the 90-Day Immersion! I've received your application (ref: ${refId}) and I'm designing your custom curriculum now. Let's schedule your first session.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${firstName}</a>` : ''}
+            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi ${firstName}, this is AS Davids from The Clarity Institute. Welcome to the 90-Day Immersion! I've received your application (ref: ${refId}) and I'm designing your custom curriculum now. Let's schedule your first session.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${firstName}</a>` : ''}
           </div>
           <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
         </div>

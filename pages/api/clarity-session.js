@@ -89,7 +89,7 @@ export default async function handler(req, res) {
 
           <div style="margin-top: 2rem; display: flex; gap: 1rem;">
             <a href="mailto:${email}?subject=Your Clarity Session Booking — ${bookingRef}" style="display: inline-block; background: #3D5A3E; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; margin-right: 0.75rem;">Reply by Email</a>
-            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g,'')}?text=${encodeURIComponent(`Hi ${name.split(' ')[0]}, this is David from The Clarity Institute. Thank you for booking a Clarity Session! I'm confirming your booking (ref: ${bookingRef}). Let's find a time that works for you.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${name.split(' ')[0]}</a>` : ''}
+            ${phone ? `<a href="https://wa.me/${phone.replace(/\D/g,'')}?text=${encodeURIComponent(`Hi ${name.split(' ')[0]}, this is AS Davids from The Clarity Institute. Thank you for booking a Clarity Session! I'm confirming your booking (ref: ${bookingRef}). Let's find a time that works for you.`)}" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">WhatsApp ${name.split(' ')[0]}</a>` : ''}
           </div>
 
           <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">The Clarity Institute · theclarityinstitute.guru</p>
@@ -138,7 +138,7 @@ export default async function handler(req, res) {
 
           <div style="text-align: center; margin: 2rem 0;">
             <p style="color: #7A6A5A; font-size: 0.9rem; margin-bottom: 1rem;">Any questions? Message me directly:</p>
-            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp David</a>
+            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp AS Davids</a>
           </div>
 
           <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">

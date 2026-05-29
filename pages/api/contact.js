@@ -77,7 +77,7 @@ export default async function handler(req, res) {
 
           <p style="color: #7A6A5A; line-height: 1.7; text-align: center; margin: 1.5rem 0;">Need a faster response? Message me directly on WhatsApp.</p>
           <div style="text-align: center;">
-            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.65rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp David</a>
+            <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.65rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp AS Davids</a>
           </div>
 
           <div style="border-top: 1px solid #E0D5C5; margin-top: 2rem; padding-top: 1.5rem; text-align: center;">

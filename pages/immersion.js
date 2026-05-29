@@ -39,7 +39,7 @@ export default function ImmersionPage() {
     if (!form.name.trim()) return 'Please enter your name.'
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) return 'Please enter a valid email.'
     if (!form.focus) return 'Please select your primary focus.'
-    if (!form.intention.trim()) return 'Please share your intention — this helps David prepare your custom curriculum.'
+    if (!form.intention.trim()) return 'Please share your intention — this helps AS Davids prepare your custom curriculum.'
     return null
   }
 
@@ -71,7 +71,7 @@ export default function ImmersionPage() {
         <title>90-Day Immersion — The Clarity Institute</title>
         <meta name="description" content="A complete 90-day transformation container with bi-weekly sessions, unlimited messaging, custom curriculum, and lifetime community access." />
         <meta property="og:title" content="90-Day Immersion — The Clarity Institute" />
-        <meta property="og:description" content="The deepest transformation container The Clarity Institute offers. 90 days with David. $299.99." />
+        <meta property="og:description" content="The deepest transformation container The Clarity Institute offers. 90 days with AS Davids. $299.99." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
@@ -90,7 +90,7 @@ export default function ImmersionPage() {
           <span style={{ fontSize:'0.72rem', fontWeight:600, letterSpacing:'0.18em', textTransform:'uppercase', color:C.orange, display:'block', marginBottom:'0.75rem' }}>The Deepest Container</span>
           <h1 style={{ fontFamily:serif, fontSize:'clamp(2.2rem, 5vw, 3.5rem)', fontWeight:300, color:C.green, margin:'0 0 0.5rem' }}>90-Day <em style={{ color:C.brown }}>Immersion</em></h1>
           <p style={{ fontSize:'1.1rem', color:C.muted, margin:'0 0 1.5rem', fontWeight:300, maxWidth:560, marginLeft:'auto', marginRight:'auto', lineHeight:1.7 }}>
-            A complete transformation container. Three months of deep, sustained spiritual work with David — designed to fundamentally shift who you are and how you move through the world.
+            A complete transformation container. Three months of deep, sustained spiritual work with AS Davids — designed to fundamentally shift who you are and how you move through the world.
           </p>
           <div style={{ display:'flex', justifyContent:'center', gap:'0.75rem', flexWrap:'wrap' }}>
             {['Bi-Weekly Sessions', 'Unlimited Messaging', 'Custom Curriculum', 'Lifetime Access', `$${PRICE}`].map(p => (
@@ -104,12 +104,12 @@ export default function ImmersionPage() {
           <h2 style={{ fontFamily:serif, fontSize:'1.8rem', color:C.green, fontWeight:300, textAlign:'center', margin:'0 0 2rem' }}>Everything You Receive</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(250px, 1fr))', gap:'1.5rem' }}>
             {[
-              ['🕯', 'Bi-Weekly 1:1 Sessions', 'Six deep, 60-minute sessions with David over 90 days. Each one builds on the last, creating a sustained arc of transformation that a single session cannot achieve.'],
-              ['💬', 'Unlimited Voice Messaging', 'Reach David anytime between sessions via WhatsApp voice message. When something arises — a dream, a breakthrough, a question, a crisis — you are never alone with it.'],
-              ['📋', 'Custom Curriculum', 'David designs a personalised 90-day practice plan built around your specific gifts, blocks, life circumstances, and goals. No generic programme. This is yours.'],
+              ['🕯', 'Bi-Weekly 1:1 Sessions', 'Six deep, 60-minute sessions with AS Davids over 90 days. Each one builds on the last, creating a sustained arc of transformation that a single session cannot achieve.'],
+              ['💬', 'Unlimited Voice Messaging', 'Reach AS Davids anytime between sessions via WhatsApp voice message. When something arises — a dream, a breakthrough, a question, a crisis — you are never alone with it.'],
+              ['📋', 'Custom Curriculum', 'AS Davids designs a personalised 90-day practice plan built around your specific gifts, blocks, life circumstances, and goals. No generic programme. This is yours.'],
               ['📚', 'Full Course Library', 'Complete access to the 52-day cohort course, all video teachings, workbooks, guided meditations, and supplementary materials. Yours for life.'],
               ['👥', 'Lifetime Community Access', 'Permanent membership in The Clarity Institute community — a space of fellow seekers who understand the path you are walking.'],
-              ['🔮', 'Intuitive Deep Dives', 'During your sessions, David brings his full spiritual perception to your situation — seeing what is hidden, naming what is unspoken, and illuminating the path forward with clarity and care.'],
+              ['🔮', 'Intuitive Deep Dives', 'During your sessions, AS Davids brings his full spiritual perception to your situation — seeing what is hidden, naming what is unspoken, and illuminating the path forward with clarity and care.'],
             ].map(([icon, title, desc]) => (
               <div key={title} style={{ background:'white', border:`1px solid ${C.border}`, borderRadius:12, padding:'1.75rem 1.5rem' }}>
                 <div style={{ fontSize:'2rem', marginBottom:'0.75rem' }}>{icon}</div>
@@ -126,7 +126,7 @@ export default function ImmersionPage() {
             <h2 style={{ fontFamily:serif, fontSize:'1.8rem', color:C.white, fontWeight:300, textAlign:'center', margin:'0 0 2rem' }}>The 90-Day Arc</h2>
             <div style={{ display:'grid', gap:'1.5rem' }}>
               {[
-                ['Month 1: Excavation', 'We go beneath the surface. David works with you to identify the core patterns, wounds, and blocks that have been shaping your life from the shadows. We clear what is ready to be cleared and name what is ready to be seen. This is the foundation of genuine transformation.'],
+                ['Month 1: Excavation', 'We go beneath the surface. AS Davids works with you to identify the core patterns, wounds, and blocks that have been shaping your life from the shadows. We clear what is ready to be cleared and name what is ready to be seen. This is the foundation of genuine transformation.'],
                 ['Month 2: Activation', 'With the ground cleared, we activate. Your specific intuitive gifts are identified and developed. Your daily practice is refined and deepened. You begin to perceive and navigate the subtle dimensions of your life with increasing confidence and clarity.'],
                 ['Month 3: Embodiment', 'The final month is about integration — making the transformation permanent. We align your outer life with your inner vision. Relationships, vocation, creative expression, and daily habits are all brought into coherence with who you are becoming. You leave with a clear personal vision and a practice that will sustain you for life.'],
               ].map(([title, desc]) => (
@@ -177,7 +177,7 @@ export default function ImmersionPage() {
         {step === 1 && (
           <div style={crd}>
             <h2 style={{ fontFamily:serif, fontSize:'1.8rem', fontWeight:400, color:C.green, margin:'0 0 0.4rem' }}>Begin your application</h2>
-            <p style={{ color:C.muted, fontSize:'0.95rem', margin:'0 0 2rem', lineHeight:1.6 }}>David reads every immersion application personally and designs your custom curriculum before your first session.</p>
+            <p style={{ color:C.muted, fontSize:'0.95rem', margin:'0 0 2rem', lineHeight:1.6 }}>AS Davids reads every immersion application personally and designs your custom curriculum before your first session.</p>
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.25rem' }}>
               <div style={fld}><label style={lbl}>Full Name *</label><input style={inp} name="name" value={form.name} onChange={handle} placeholder="Your name" /></div>
               <div style={fld}><label style={lbl}>Email Address *</label><input style={inp} name="email" type="email" value={form.email} onChange={handle} placeholder="your@email.com" /></div>
@@ -186,7 +186,7 @@ export default function ImmersionPage() {
             </div>
             <div style={fld}><label style={lbl}>Primary Focus *</label><select style={inp} name="focus" value={form.focus} onChange={handle}><option value="">What is the transformation you are seeking?</option>{FOCUS_OPTIONS.map(o => <option key={o}>{o}</option>)}</select></div>
             <div style={fld}><label style={lbl}>Spiritual Background</label><textarea style={{...inp, resize:'vertical', lineHeight:1.6}} name="background" value={form.background} onChange={handle} rows={3} placeholder="Describe your spiritual journey so far — practices, traditions, significant experiences. Where you are is perfect." /></div>
-            <div style={fld}><label style={lbl}>Your Intention *</label><textarea style={{...inp, resize:'vertical', lineHeight:1.6}} name="intention" value={form.intention} onChange={handle} rows={5} placeholder="What brought you to this point? What is the deep change you are seeking? What would your life look like on the other side of this immersion? Be as open as you can — David uses this to design your curriculum." /></div>
+            <div style={fld}><label style={lbl}>Your Intention *</label><textarea style={{...inp, resize:'vertical', lineHeight:1.6}} name="intention" value={form.intention} onChange={handle} rows={5} placeholder="What brought you to this point? What is the deep change you are seeking? What would your life look like on the other side of this immersion? Be as open as you can — AS Davids uses this to design your curriculum." /></div>
             <div style={fld}><label style={lbl}>What can you commit to for 90 days?</label><textarea style={{...inp, resize:'vertical', lineHeight:1.6}} name="commitment" value={form.commitment} onChange={handle} rows={3} placeholder="Daily practice time, willingness to change habits, openness to discomfort, etc. Honesty here serves you." /></div>
             <div style={fld}><label style={lbl}>Previous experience with The Clarity Institute?</label><select style={inp} name="experience" value={form.experience} onChange={handle}><option value="">Select one</option><option>Completed the 8-week cohort</option><option>Currently in the cohort</option><option>Had a Clarity Session</option><option>Currently in Monthly Mentorship</option><option>No previous experience</option></select></div>
             <div style={fld}><label style={lbl}>How did you hear about us?</label><select style={inp} name="howHeard" value={form.howHeard} onChange={handle}><option value="">Select one</option>{['TikTok','Instagram','WhatsApp','Friend / Word of Mouth','Cohort referral','Blog','Other'].map(o => <option key={o}>{o}</option>)}</select></div>
@@ -253,19 +253,19 @@ export default function ImmersionPage() {
             <div style={{ fontSize:'3.5rem', marginBottom:'1.25rem' }}>👁</div>
             <h2 style={{ fontFamily:serif, fontSize:'2rem', fontWeight:400, color:C.green, margin:'0 0 0.75rem' }}>Your immersion begins, {form.name.split(' ')[0]}.</h2>
             <p style={{ color:C.muted, fontSize:'1rem', lineHeight:1.7, margin:'0 0 2rem' }}>
-              David has received your application and will reach out within <strong>24 hours</strong> with your custom curriculum and first session details.
+              AS Davids has received your application and will reach out within <strong>24 hours</strong> with your custom curriculum and first session details.
             </p>
             <div style={{ background:`linear-gradient(135deg, #f0f4f0, ${C.cream})`, borderRadius:12, padding:'1.5rem', textAlign:'left', marginBottom:'2rem' }}>
               <h3 style={{ fontFamily:serif, fontSize:'1.25rem', color:C.green, margin:'0 0 0.75rem' }}>What happens next?</h3>
               <ol style={{ paddingLeft:'1.25rem', margin:0 }}>
-                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>David reviews your application and designs your personal 90-day curriculum.</li>
+                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>AS Davids reviews your application and designs your personal 90-day curriculum.</li>
                 <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>You receive a welcome package with your Zoom link, curriculum outline, and initial practice plan within 24 hours.</li>
                 <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>Your first bi-weekly session is scheduled at a time that works for you.</li>
-                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7 }}>From day one, you have unlimited voice message access to David via WhatsApp.</li>
+                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7 }}>From day one, you have unlimited voice message access to AS Davids via WhatsApp.</li>
               </ol>
             </div>
-            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I just signed up for the 90-Day Immersion. My name is ' + form.name + '. I am ready to begin.')}`} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.6rem', background:'#25D366', color:'white', padding:'0.85rem 1.75rem', borderRadius:8, fontSize:'0.95rem', fontWeight:500, textDecoration:'none', marginBottom:'1.25rem' }}>
-              💬 Message David on WhatsApp
+            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi AS Davids, I just signed up for the 90-Day Immersion. My name is ' + form.name + '. I am ready to begin.')}`} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.6rem', background:'#25D366', color:'white', padding:'0.85rem 1.75rem', borderRadius:8, fontSize:'0.95rem', fontWeight:500, textDecoration:'none', marginBottom:'1.25rem' }}>
+              💬 Message AS Davids on WhatsApp
             </a>
             <Link href="/" style={{ display:'block', color:C.muted, fontSize:'0.875rem', textDecoration:'none' }}>← Return to home</Link>
           </div>
@@ -283,7 +283,7 @@ export default function ImmersionPage() {
 
         {/* Footer */}
         <div style={{ textAlign:'center', padding:'2rem', borderTop:`1px solid ${C.border}`, fontSize:'0.875rem', color:C.muted }}>
-          Questions? Reach David on{' '}
+          Questions? Reach AS Davids on{' '}
           <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{ color:C.green }}>WhatsApp</a>.
         </div>
       </div>

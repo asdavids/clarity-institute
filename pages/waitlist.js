@@ -80,7 +80,7 @@ export default function WaitlistPage() {
                   What you're joining
                 </h2>
                 {[
-                  { icon: '🌿', title: 'Group Awakening Cohort', desc: 'A structured 52-day journey through spiritual awakening, guided by David with a small group of intentional seekers.' },
+                  { icon: '🌿', title: 'Group Awakening Cohort', desc: 'A structured 52-day journey through spiritual awakening, guided by AS Davids with a small group of intentional seekers.' },
                   { icon: '🕯', title: 'Live sessions + community', desc: 'Regular group calls, peer reflection, and a shared space for questions and breakthroughs.' },
                   { icon: '📖', title: 'Daily practice framework', desc: 'Structured modules across 3 phases — foundation, deepening, and integration — with daily practices.' },
                 ].map((item, i) => (
@@ -100,7 +100,7 @@ export default function WaitlistPage() {
                   Reserve your place
                 </h2>
                 <p style={{ fontSize: '0.875rem', color: C.muted, margin: '0 0 1.5rem', lineHeight: 1.6 }}>
-                  No payment now. You'll hear from David personally when the cohort opens.
+                  No payment now. You'll hear from AS Davids personally when the cohort opens.
                 </p>
 
                 <label style={{ fontSize: '0.8rem', fontWeight: 500, color: C.brown, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.4rem' }}>
@@ -152,7 +152,7 @@ export default function WaitlistPage() {
                 You're on the list.
               </h1>
               <p style={{ color: C.muted, lineHeight: 1.8, fontSize: '1rem', maxWidth: 400, margin: '0 auto 2rem' }}>
-                David will be in touch when the next cohort opens. Check your inbox — your free ebook is on its way.
+                AS Davids will be in touch when the next cohort opens. Check your inbox — your free ebook is on its way.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: 300, margin: '0 auto' }}>
                 <Link href="/dream-interpreter" style={{ display: 'block', background: C.green, color: C.white, padding: '0.875rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem' }}>

@@ -38,7 +38,7 @@ export default function MentorshipPage() {
     if (!form.name.trim()) return 'Please enter your name.'
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) return 'Please enter a valid email.'
     if (!form.focus) return 'Please select your primary focus.'
-    if (!form.intention.trim()) return 'Please share your intention — this helps David prepare.'
+    if (!form.intention.trim()) return 'Please share your intention — this helps AS Davids prepare.'
     return null
   }
 
@@ -68,7 +68,7 @@ export default function MentorshipPage() {
     <>
       <Head>
         <title>Monthly Mentorship — The Clarity Institute</title>
-        <meta name="description" content="Ongoing 1:1 spiritual mentorship with David. Bi-weekly calls, voice message access, and a custom practice plan tailored to your path." />
+        <meta name="description" content="Ongoing 1:1 spiritual mentorship with AS Davids. Bi-weekly calls, voice message access, and a custom practice plan tailored to your path." />
         <meta property="og:title" content="Monthly Mentorship — The Clarity Institute" />
         <meta property="og:description" content="Deep, personalised spiritual guidance with AS Davids. $99.99/month." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
@@ -87,7 +87,7 @@ export default function MentorshipPage() {
           <div style={{ fontSize:'3rem', marginBottom:'1rem' }}>🌀</div>
           <h1 style={{ fontFamily:serif, fontSize:'clamp(2.2rem, 5vw, 3.5rem)', fontWeight:300, color:C.green, margin:'0 0 0.5rem' }}>Monthly Mentorship</h1>
           <p style={{ fontSize:'1.1rem', color:C.muted, margin:'0 0 1.5rem', fontWeight:300, maxWidth:560, marginLeft:'auto', marginRight:'auto', lineHeight:1.7 }}>
-            Deep, ongoing 1:1 spiritual guidance with David. Walk your path with a committed companion who sees you clearly and meets you where you are.
+            Deep, ongoing 1:1 spiritual guidance with AS Davids. Walk your path with a committed companion who sees you clearly and meets you where you are.
           </p>
           <div style={{ display:'flex', justifyContent:'center', gap:'0.75rem', flexWrap:'wrap' }}>
             {['Bi-Weekly Calls', 'Voice Message Access', 'Custom Practice Plan', `$${PRICE}/month`].map(p => (
@@ -100,10 +100,10 @@ export default function MentorshipPage() {
         <div style={{ maxWidth:900, margin:'0 auto', padding:'2rem 2rem 3rem' }}>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))', gap:'1.5rem' }}>
             {[
-              ['📞', 'Bi-Weekly Calls', 'Two 45-minute video calls per month with David. Deep, focused sessions on whatever is most alive in your journey.'],
-              ['🎙', 'Voice Message Access', 'Send David voice messages between calls when something arises that cannot wait. Receive thoughtful, personalised responses.'],
+              ['📞', 'Bi-Weekly Calls', 'Two 45-minute video calls per month with AS Davids. Deep, focused sessions on whatever is most alive in your journey.'],
+              ['🎙', 'Voice Message Access', 'Send AS Davids voice messages between calls when something arises that cannot wait. Receive thoughtful, personalised responses.'],
               ['📋', 'Custom Practice Plan', 'A spiritual practice plan designed specifically for you — your gifts, your blocks, your life. Adjusted monthly as you grow.'],
-              ['🔮', 'Intuitive Guidance', 'David brings his full intuitive perception to every interaction. Not generic advice — direct, grounded spiritual sight applied to your specific situation.'],
+              ['🔮', 'Intuitive Guidance', 'AS Davids brings his full intuitive perception to every interaction. Not generic advice — direct, grounded spiritual sight applied to your specific situation.'],
               ['📖', 'Full Course Access', 'Complete access to the 8-week cohort materials, video library, workbooks, guided meditations, and community.'],
               ['♾️', 'Ongoing Support', 'This is not a programme with an end date. Continue for as long as the mentorship serves your growth. Cancel anytime.'],
             ].map(([icon, title, desc]) => (
@@ -144,7 +144,7 @@ export default function MentorshipPage() {
         {step === 1 && (
           <div style={crd}>
             <h2 style={{ fontFamily:serif, fontSize:'1.8rem', fontWeight:400, color:C.green, margin:'0 0 0.4rem' }}>Tell us about yourself</h2>
-            <p style={{ color:C.muted, fontSize:'0.95rem', margin:'0 0 2rem', lineHeight:1.6 }}>David reads every application personally. The more openly you share, the better he can serve you.</p>
+            <p style={{ color:C.muted, fontSize:'0.95rem', margin:'0 0 2rem', lineHeight:1.6 }}>AS Davids reads every application personally. The more openly you share, the better he can serve you.</p>
 
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.25rem' }}>
               <div style={fld}><label style={lbl}>Full Name *</label><input style={inp} name="name" value={form.name} onChange={handle} placeholder="Your name" /></div>
@@ -232,21 +232,21 @@ export default function MentorshipPage() {
             <div style={{ fontSize:'3.5rem', marginBottom:'1.25rem' }}>🌀</div>
             <h2 style={{ fontFamily:serif, fontSize:'2rem', fontWeight:400, color:C.green, margin:'0 0 0.75rem' }}>Welcome to mentorship, {form.name.split(' ')[0]}.</h2>
             <p style={{ color:C.muted, fontSize:'1rem', lineHeight:1.7, margin:'0 0 2rem' }}>
-              David has received your application and will reach out within <strong>24 hours</strong> to schedule your first call.
+              AS Davids has received your application and will reach out within <strong>24 hours</strong> to schedule your first call.
             </p>
 
             <div style={{ background:`linear-gradient(135deg, #f0f4f0, ${C.cream})`, borderRadius:12, padding:'1.5rem', textAlign:'left', marginBottom:'2rem' }}>
               <h3 style={{ fontFamily:serif, fontSize:'1.25rem', color:C.green, margin:'0 0 0.75rem' }}>What happens next?</h3>
               <ol style={{ paddingLeft:'1.25rem', margin:0 }}>
-                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>David reviews your application and prepares for your journey together.</li>
+                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>AS Davids reviews your application and prepares for your journey together.</li>
                 <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>You will receive a welcome email with your Zoom link, scheduling details, and your initial practice plan within 24 hours.</li>
                 <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7, marginBottom:'0.4rem' }}>Your first bi-weekly call will be scheduled at a time that works for both of you.</li>
-                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7 }}>Between calls, you can reach David via voice message anytime something arises.</li>
+                <li style={{ fontSize:'0.9rem', color:C.text, lineHeight:1.7 }}>Between calls, you can reach AS Davids via voice message anytime something arises.</li>
               </ol>
             </div>
 
-            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi David, I just signed up for Monthly Mentorship. My name is ' + form.name + '. Looking forward to working together!')}`} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.6rem', background:'#25D366', color:'white', padding:'0.85rem 1.75rem', borderRadius:8, fontSize:'0.95rem', fontWeight:500, textDecoration:'none', marginBottom:'1.25rem' }}>
-              💬 Message David on WhatsApp
+            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi AS Davids, I just signed up for Monthly Mentorship. My name is ' + form.name + '. Looking forward to working together!')}`} target="_blank" rel="noopener noreferrer" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.6rem', background:'#25D366', color:'white', padding:'0.85rem 1.75rem', borderRadius:8, fontSize:'0.95rem', fontWeight:500, textDecoration:'none', marginBottom:'1.25rem' }}>
+              💬 Message AS Davids on WhatsApp
             </a>
             <Link href="/" style={{ display:'block', color:C.muted, fontSize:'0.875rem', textDecoration:'none' }}>← Return to home</Link>
           </div>
@@ -256,7 +256,7 @@ export default function MentorshipPage() {
         {step < 4 && (
           <div style={{ maxWidth:560, margin:'0 auto', padding:'2rem 2rem 3rem', textAlign:'center' }}>
             <p style={{ fontFamily:serif, fontSize:'1.15rem', fontStyle:'italic', color:C.muted, lineHeight:1.8, marginBottom:'0.75rem' }}>
-              "David's guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there."
+              "AS Davids' guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there."
             </p>
             <p style={{ fontSize:'0.85rem', color:C.brown }}>— James M., Johannesburg</p>
           </div>
@@ -264,7 +264,7 @@ export default function MentorshipPage() {
 
         {/* Footer */}
         <div style={{ textAlign:'center', padding:'2rem', borderTop:`1px solid ${C.border}`, fontSize:'0.875rem', color:C.muted }}>
-          Questions? Reach David on{' '}
+          Questions? Reach AS Davids on{' '}
           <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{ color:C.green }}>WhatsApp</a>.
         </div>
       </div>

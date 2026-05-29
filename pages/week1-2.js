@@ -114,10 +114,10 @@ function LockedScreen() {
       <div style={{ maxWidth:480, textAlign:'center', background:C.white, border:`1px solid ${C.border}`, borderRadius:16, padding:'3rem 2rem', boxShadow:'0 4px 24px rgba(0,0,0,0.06)' }}>
         <div style={{ fontSize:'3rem', marginBottom:'1rem' }}>🔒</div>
         <h2 style={{ fontFamily:serif, color:C.green, fontWeight:400, fontSize:'1.8rem', margin:'0 0 0.75rem' }}>Course Access Required</h2>
-        <p style={{ color:C.muted, lineHeight:1.7, marginBottom:'2rem' }}>You need to enroll in a cohort to access the course content. Once payment is complete, David will activate your access within 24 hours.</p>
+        <p style={{ color:C.muted, lineHeight:1.7, marginBottom:'2rem' }}>You need to enroll in a cohort to access the course content. Once payment is complete, AS Davids will activate your access within 24 hours.</p>
         <div style={{ display:'flex', flexDirection:'column', gap:'0.75rem' }}>
           <a href="/#pricing" style={{ display:'block', background:C.green, color:C.white, padding:'0.9rem', borderRadius:8, textDecoration:'none', fontWeight:500 }}>View Enrollment Options</a>
-          <a href={`https://wa.me/27817904941?text=${encodeURIComponent('Hi David, I have completed payment and would like my course access activated.')}`} target="_blank" rel="noopener noreferrer" style={{ display:'block', background:'#25D366', color:C.white, padding:'0.9rem', borderRadius:8, textDecoration:'none', fontWeight:500 }}>💬 Message David on WhatsApp</a>
+          <a href={`https://wa.me/27817904941?text=${encodeURIComponent('Hi AS Davids, I have completed payment and would like my course access activated.')}`} target="_blank" rel="noopener noreferrer" style={{ display:'block', background:'#25D366', color:C.white, padding:'0.9rem', borderRadius:8, textDecoration:'none', fontWeight:500 }}>💬 Message AS Davids on WhatsApp</a>
         </div>
       </div>
     </div>

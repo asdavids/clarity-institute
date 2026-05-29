@@ -97,7 +97,7 @@ export default function Post() {
             <div style={{ flex:'1', minWidth:200 }}>
               <p style={{ fontSize:'0.7rem', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.12em', color:C.orange, margin:'0 0 0.4rem' }}>Free Download</p>
               <p style={{ fontFamily:serif, fontSize:'1.15rem', color:C.green, margin:'0 0 0.3rem', lineHeight:1.3 }}>The Third Eye Awakening</p>
-              <p style={{ fontSize:'0.85rem', color:C.muted, margin:0, lineHeight:1.6 }}>David's foundational guide to awakening your spiritual perception — free.</p>
+              <p style={{ fontSize:'0.85rem', color:C.muted, margin:0, lineHeight:1.6 }}>AS Davids' foundational guide to awakening your spiritual perception — free.</p>
             </div>
             <Link href="/ebook" style={{ display:'inline-block', background:C.green, color:'white', padding:'0.75rem 1.5rem', borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500, whiteSpace:'nowrap' }}>
               Get the free ebook →
@@ -106,7 +106,7 @@ export default function Post() {
 
           <div style={{ background:`linear-gradient(135deg, #f0f4f0, ${C.cream})`, border:`1px solid ${C.green}30`, borderRadius:14, padding:'1.75rem', marginTop:'1rem', textAlign:'center' }}>
             <p style={{ fontFamily:serif, fontSize:'1.2rem', color:C.green, margin:'0 0 0.5rem' }}>Navigating an awakening right now?</p>
-            <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 1rem', lineHeight:1.7 }}>A Clarity Session with David offers a space to understand what is happening, what it means for you, and what your next step is.</p>
+            <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 1rem', lineHeight:1.7 }}>A Clarity Session with AS Davids offers a space to understand what is happening, what it means for you, and what your next step is.</p>
             <Link href="/clarity-session" style={{ display:'inline-block', background:C.green, color:C.white, padding:'0.75rem 1.5rem', borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500 }}>Book a Clarity Session →</Link>
           </div>
 

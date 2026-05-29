@@ -43,7 +43,7 @@ export default function BookingCancel() {
                 color:C.green, textDecoration:'none', fontSize:'0.9rem', fontWeight:500,
                 display:'inline-flex', alignItems:'center', gap:'0.4rem',
               }}>
-                💬 Need help? Message David
+                💬 Need help? Message AS Davids
               </a>
             </div>
           </div>

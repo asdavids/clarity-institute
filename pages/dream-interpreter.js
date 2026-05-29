@@ -222,7 +222,7 @@ export default function DreamInterpreter() {
                   The dream revealed. Now what do you do?
                 </h2>
                 <p style={{ color: "#6b5f7a", fontSize: "0.95rem", lineHeight: 1.8, margin: "0 0 1.5rem", maxWidth: "460px", marginLeft: "auto", marginRight: "auto" }}>
-                  A Clarity Session with David takes the revelation further — into what you are to do, what must be broken, and what is being opened for your life.
+                  A Clarity Session with AS Davids takes the revelation further — into what you are to do, what must be broken, and what is being opened for your life.
                 </p>
                 <a
                   href="/clarity-session"

@@ -10,9 +10,9 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About David — The Clarity Institute</title>
+        <title>About AS Davids — The Clarity Institute</title>
         <meta name="description" content="AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology." />
-        <meta property="og:title" content="About David — The Clarity Institute" />
+        <meta property="og:title" content="About AS Davids — The Clarity Institute" />
         <meta property="og:description" content="Writer, spiritual guide, and founder of The Clarity Institute." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -50,10 +50,10 @@ export default function About() {
               Through books, teachings, and digital platforms, he reflects on spiritual perception, the mysteries of the human mind, and the deep wisdom found in African and biblical traditions. His writing blends storytelling with spiritual reflection, seeking to awaken deeper awareness, challenge conventional thinking, and guide readers toward greater understanding of themselves and the unseen dimensions of life.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
-              With over a decade of practice in third eye activation, intuitive development, and consciousness expansion, David founded The Clarity Institute as a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within.
+              With over a decade of practice in third eye activation, intuitive development, and consciousness expansion, AS Davids founded The Clarity Institute as a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9 }}>
-              Whether through the 8-week cohort, private mentorship, or one-on-one clarity sessions, David meets each person exactly where they are — with warmth, directness, and a commitment to genuine transformation.
+              Whether through the 8-week cohort, private mentorship, or one-on-one clarity sessions, AS Davids meets each person exactly where they are — with warmth, directness, and a commitment to genuine transformation.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export default function About() {
               Something in you already knows it's time.
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1.75rem', maxWidth: 440, marginLeft: 'auto', marginRight: 'auto' }}>
-              A single Clarity Session is where it begins — one hour with David that meets you exactly where you are.
+              A single Clarity Session is where it begins — one hour with AS Davids that meets you exactly where you are.
             </p>
             <div className="about-cta-buttons" style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/clarity-session" style={{ background: 'white', color: C.green, padding: '0.85rem 1.75rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
@@ -120,9 +120,9 @@ export default function About() {
 
           {/* Connect */}
           <div style={{ textAlign:'center', marginBottom:'2rem' }}>
-            <h2 style={{ fontFamily:serif, fontSize:'1.6rem', color:C.green, fontWeight:300, margin:'0 0 0.75rem' }}>Connect with David</h2>
+            <h2 style={{ fontFamily:serif, fontSize:'1.6rem', color:C.green, fontWeight:300, margin:'0 0 0.75rem' }}>Connect with AS Davids</h2>
             <p style={{ color:C.muted, fontSize:'0.95rem', lineHeight:1.7, marginBottom:'1.5rem' }}>
-              Whether you're curious about the cohort, ready to book a session, or just want to say hello — David personally responds to every message.
+              Whether you're curious about the cohort, ready to book a session, or just want to say hello — AS Davids personally responds to every message.
             </p>
             <div style={{ display:'flex', gap:'0.75rem', justifyContent:'center', flexWrap:'wrap' }}>
               <a href="https://wa.me/27817904941" target="_blank" rel="noopener noreferrer" style={{

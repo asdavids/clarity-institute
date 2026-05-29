@@ -40,7 +40,7 @@ export default function ClaritySessionPage() {
     if(!form.name.trim()) return 'Please enter your name.'
     if(!form.email.trim()||!/\S+@\S+\.\S+/.test(form.email)) return 'Please enter a valid email.'
     if(!form.sessionFocus) return 'Please select a session focus.'
-    if(!form.intention.trim()) return 'Please share your intention — this helps David prepare.'
+    if(!form.intention.trim()) return 'Please share your intention — this helps AS Davids prepare.'
     return null
   }
 
@@ -57,7 +57,7 @@ export default function ClaritySessionPage() {
   }
 
   const paypalLink = `https://www.paypal.com/paypalme/Xhantipta/${SESSION_PRICE}`
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi David, I just booked a Single Clarity Session. My name is '+form.name+' and my email is '+form.email+'. Looking forward to connecting!')}`
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi AS Davids, I just booked a Single Clarity Session. My name is '+form.name+' and my email is '+form.email+'. Looking forward to connecting!')}`
 
   const inp = {padding:'0.75rem 1rem',border:`1.5px solid ${C.border}`,borderRadius:'8px',fontFamily:"'Jost',sans-serif",fontSize:'0.95rem',color:C.text,background:C.cream,width:'100%',boxSizing:'border-box',outline:'none'}
   const lbl = {fontSize:'0.8rem',fontWeight:'500',color:C.brown,textTransform:'uppercase',letterSpacing:'0.05em',display:'block',marginBottom:'0.4rem'}
@@ -73,7 +73,7 @@ export default function ClaritySessionPage() {
     <>
       <Head>
         <title>Single Clarity Session — The Clarity Institute</title>
-        <meta name="description" content="Book a powerful 60-minute one-on-one session with David. Receive direct spiritual guidance, break through your blocks, and step into clarity." />
+        <meta name="description" content="Book a powerful 60-minute one-on-one session with AS Davids. Receive direct spiritual guidance, break through your blocks, and step into clarity." />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{minHeight:'100vh',background:C.cream,color:C.text,fontFamily:"'Jost',sans-serif"}}>
@@ -145,7 +145,7 @@ export default function ClaritySessionPage() {
               maxWidth:500,
               margin:'0 auto 2.5rem',
             }}>
-              A private 60-minute session with David — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
+              A private 60-minute session with AS Davids — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
             </p>
 
             {/* CTA */}
@@ -169,7 +169,7 @@ export default function ClaritySessionPage() {
         {/* ── AVAILABILITY BANNER ── */}
         <div style={{ background: C.green, padding: '0.875rem 2rem', textAlign: 'center' }}>
           <p style={{ margin: 0, color: 'rgba(255,255,255,0.92)', fontSize: '0.875rem', letterSpacing: '0.02em' }}>
-            🕯 David takes a limited number of sessions each month. <strong style={{ color: 'white' }}>June availability is filling.</strong> Book now to secure your spot.
+            🕯 AS Davids takes a limited number of sessions each month. <strong style={{ color: 'white' }}>June availability is filling.</strong> Book now to secure your spot.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export default function ClaritySessionPage() {
               <em>It's a transmission.</em>
             </h2>
             <p style={{fontSize:'1rem',color:C.muted,lineHeight:1.8,maxWidth:560,margin:'0 auto 3rem'}}>
-              David doesn't just talk at you. He tunes in, reads what's present, and meets you exactly where you are — with honesty, depth, and spiritual precision.
+              AS Davids doesn't just talk at you. He tunes in, reads what's present, and meets you exactly where you are — with honesty, depth, and spiritual precision.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ export default function ClaritySessionPage() {
             }}>
               "You already carry the answers. This session helps you hear them."
             </p>
-            <span style={{fontSize:'0.875rem',color:C.muted,fontWeight:500}}>— David, Founder of The Clarity Institute</span>
+            <span style={{fontSize:'0.875rem',color:C.muted,fontWeight:500}}>— AS Davids, Founder of The Clarity Institute</span>
           </div>
         </div>
 
@@ -232,8 +232,8 @@ export default function ClaritySessionPage() {
             </h2>
             <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
               {[
-                { quote: "I walked in with three years of confusion about my purpose. I left with complete clarity. David said things no one else could have known — and everything he said landed.", name: 'Fatima A.', location: 'Lagos, Nigeria' },
-                { quote: "I expected a conversation. What I got was a spiritual encounter. David tuned into something I'd never said out loud and held space for me to hear it for the first time.", name: 'Kwame B.', location: 'Accra, Ghana' },
+                { quote: "I walked in with three years of confusion about my purpose. I left with complete clarity. AS Davids said things no one else could have known — and everything he said landed.", name: 'Fatima A.', location: 'Lagos, Nigeria' },
+                { quote: "I expected a conversation. What I got was a spiritual encounter. AS Davids tuned into something I'd never said out loud and held space for me to hear it for the first time.", name: 'Kwame B.', location: 'Accra, Ghana' },
                 { quote: "One session shifted a pattern I had been carrying for fifteen years. I cannot explain it — I can only say it worked, and my life has been different since.", name: 'Sarah L.', location: 'London, UK' },
               ].map((t, i) => (
                 <div key={i} style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 14, padding: '1.75rem', textAlign: 'left' }}>
@@ -253,7 +253,7 @@ export default function ClaritySessionPage() {
         <div id="book" style={{padding:'4rem 2rem 2rem',textAlign:'center'}}>
           <span style={{fontSize:'0.75rem',fontWeight:600,letterSpacing:'0.15em',textTransform:'uppercase',color:C.orange,display:'block',marginBottom:'0.5rem'}}>Reserve Your Spot</span>
           <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'clamp(1.8rem,4vw,2.5rem)',fontWeight:300,color:C.green,margin:'0 0 0.5rem'}}>Book Your Clarity Session</h2>
-          <p style={{color:C.muted,fontSize:'0.95rem',marginBottom:'2.5rem'}}>Complete the form below. David will confirm your time within 24 hours.</p>
+          <p style={{color:C.muted,fontSize:'0.95rem',marginBottom:'2.5rem'}}>Complete the form below. AS Davids will confirm your time within 24 hours.</p>
         </div>
 
         {/* Step bar */}
@@ -274,7 +274,7 @@ export default function ClaritySessionPage() {
         {step===1&&(
           <div className="session-card" style={crd}>
             <h2 style={ttl}>Tell us about yourself</h2>
-            <p style={sub}>David reads your intention before your session — be as open as you like.</p>
+            <p style={sub}>AS Davids reads your intention before your session — be as open as you like.</p>
             <div className="grid-session-datetime" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.25rem'}}>
               <div style={fld}><label style={lbl}>Full Name *</label><input style={inp} name="name" value={form.name} onChange={handle} placeholder="Your name" /></div>
               <div style={fld}><label style={lbl}>Email Address *</label><input style={inp} name="email" type="email" value={form.email} onChange={handle} placeholder="your@email.com" /></div>
@@ -284,7 +284,7 @@ export default function ClaritySessionPage() {
               <div style={fld}><label style={lbl}>Your Timezone</label><input style={inp} name="timezone" value={form.timezone} onChange={handle} placeholder="e.g. Africa/Johannesburg" /></div>
             </div>
             <div style={fld}><label style={lbl}>Session Focus *</label><select style={inp} name="sessionFocus" value={form.sessionFocus} onChange={handle}><option value="">What would you like to work on?</option>{SESSION_FOCUS_OPTIONS.map(o=><option key={o}>{o}</option>)}</select></div>
-            <div style={fld}><label style={lbl}>Your Intention *</label><textarea style={{...inp,resize:'vertical',lineHeight:'1.6'}} name="intention" value={form.intention} onChange={handle} rows={5} placeholder="Share what's alive for you right now. What are you seeking clarity on? The more openly you share, the better David can prepare." /></div>
+            <div style={fld}><label style={lbl}>Your Intention *</label><textarea style={{...inp,resize:'vertical',lineHeight:'1.6'}} name="intention" value={form.intention} onChange={handle} rows={5} placeholder="Share what's alive for you right now. What are you seeking clarity on? The more openly you share, the better AS Davids can prepare." /></div>
             <div style={fld}><label style={lbl}>How did you hear about us?</label><select style={inp} name="howHeard" value={form.howHeard} onChange={handle}><option value="">Select one</option>{['TikTok','Instagram','WhatsApp','Friend / Word of Mouth','Cohort referral','Other'].map(o=><option key={o}>{o}</option>)}</select></div>
             {error&&<p style={errBox}>{error}</p>}
             <button style={btnP} onClick={()=>{const e=validateStep1();if(e){setError(e);return}setStep(2)}}>Continue to Payment →</button>
@@ -348,7 +348,7 @@ export default function ClaritySessionPage() {
           <div className="session-card" style={{...crd,textAlign:'center',maxWidth:'560px'}}>
             <div style={{fontSize:'3.5rem',marginBottom:'1.25rem'}}>👁</div>
             <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'2rem',fontWeight:'400',color:C.green,margin:'0 0 0.75rem'}}>Your session is booked, {form.name.split(' ')[0]}.</h2>
-            <p style={{color:C.muted,fontSize:'1rem',lineHeight:'1.7',margin:'0 0 2rem'}}>David has received your intention and will confirm your session time within <strong>24 hours</strong>.</p>
+            <p style={{color:C.muted,fontSize:'1rem',lineHeight:'1.7',margin:'0 0 2rem'}}>AS Davids has received your intention and will confirm your session time within <strong>24 hours</strong>.</p>
             <div style={{border:`1px solid ${C.border}`,borderRadius:'10px',overflow:'hidden',marginBottom:'2rem',textAlign:'left'}}>
               {[['Booking Reference',bookingId?.slice(0,8).toUpperCase()],['Confirmation sent to',form.email],['Session','Single Clarity Session · 60 min']].map(([l,v],i,arr)=>(
                 <div key={l} style={{display:'flex',justifyContent:'space-between',padding:'0.8rem 1.25rem',borderBottom:i<arr.length-1?`1px solid ${C.border}`:'none',fontSize:'0.875rem'}}>
@@ -360,20 +360,20 @@ export default function ClaritySessionPage() {
             <div style={{background:'linear-gradient(135deg,#f0f4f0,#faf6f0)',borderRadius:'10px',padding:'1.5rem',textAlign:'left',marginBottom:'2rem'}}>
               <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'1.25rem',color:C.green,margin:'0 0 0.75rem'}}>What happens next?</h3>
               <ol style={{paddingLeft:'1.25rem',margin:0}}>
-                <li style={{fontSize:'0.9rem',color:C.text,lineHeight:'1.7',marginBottom:'0.4rem'}}>David reviews your intention and prepares for your session.</li>
+                <li style={{fontSize:'0.9rem',color:C.text,lineHeight:'1.7',marginBottom:'0.4rem'}}>AS Davids reviews your intention and prepares for your session.</li>
                 <li style={{fontSize:'0.9rem',color:C.text,lineHeight:'1.7',marginBottom:'0.4rem'}}>You will receive a Zoom link and confirmed time via email or WhatsApp within 24 hours.</li>
                 <li style={{fontSize:'0.9rem',color:C.text,lineHeight:'1.7'}}>Show up as you are. The session holds space for exactly what you need.</li>
               </ol>
             </div>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'0.6rem',background:'#25D366',color:'white',padding:'0.85rem 1.75rem',borderRadius:'8px',fontSize:'0.95rem',fontWeight:'500',textDecoration:'none',marginBottom:'1.25rem'}}>
-              💬 Message David on WhatsApp
+              💬 Message AS Davids on WhatsApp
             </a>
             <Link href="/" style={{display:'block',color:C.muted,fontSize:'0.875rem',textDecoration:'none'}}>← Return to home</Link>
           </div>
         )}
 
         <div style={{textAlign:'center',padding:'2rem',borderTop:`1px solid ${C.border}`,fontSize:'0.875rem',color:C.muted}}>
-          Questions? Reach David on{' '}
+          Questions? Reach AS Davids on{' '}
           <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{color:C.green}}>WhatsApp</a>.
         </div>
       </div>

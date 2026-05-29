@@ -70,7 +70,7 @@ export default function Post() {
           <P>Jung's famous formulation remains the clearest: "Until you make the unconscious conscious, it will direct your life and you will call it fate." Shadow work is the process of making the unconscious conscious — and reclaiming the authorship of your own life.</P>
           <div style={{ background:`linear-gradient(135deg, #f0f4f0, ${C.cream})`, border:`1px solid ${C.green}30`, borderRadius:14, padding:'1.75rem', marginTop:'2.5rem', textAlign:'center' }}>
             <p style={{ fontFamily:serif, fontSize:'1.2rem', color:C.green, margin:'0 0 0.5rem' }}>Ready to meet what you've been avoiding?</p>
-            <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 1rem', lineHeight:1.7 }}>A Clarity Session with David creates a grounded, safe space to begin the work of integration — with guidance from someone who has walked this territory.</p>
+            <p style={{ color:C.muted, fontSize:'0.9rem', margin:'0 0 1rem', lineHeight:1.7 }}>A Clarity Session with AS Davids creates a grounded, safe space to begin the work of integration — with guidance from someone who has walked this territory.</p>
             <Link href="/clarity-session" style={{ display:'inline-block', background:C.green, color:C.white, padding:'0.75rem 1.5rem', borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500 }}>Book a Clarity Session →</Link>
           </div>
           <div style={{ marginTop:'3rem', padding:'1.5rem 0', borderTop:`1px solid ${C.border}` }}>

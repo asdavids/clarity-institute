@@ -30,7 +30,7 @@ export default function Custom404() {
             }}>Go to Dashboard</Link>
           </div>
           <p style={{ marginTop:'2rem', fontSize:'0.85rem', color:C.muted }}>
-            Need help? <a href="https://wa.me/27817904941" style={{ color:C.green, textDecoration:'none' }}>Message David on WhatsApp</a>
+            Need help? <a href="https://wa.me/27817904941" style={{ color:C.green, textDecoration:'none' }}>Message AS Davids on WhatsApp</a>
           </p>
         </div>
       </div>

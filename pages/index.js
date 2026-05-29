@@ -96,7 +96,7 @@ export default function Home() {
       <Head>
         <title>The Clarity Institute — Awaken Your Third Eye</title>
         <meta name="msvalidate.01" content="0EDA385E3E0ABAA5AF9AB7B10733207D" />
-        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs with David Muyunda." />
+        <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs with AS Davids Muyunda." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph / Facebook / WhatsApp */}
@@ -135,7 +135,7 @@ export default function Home() {
               "@type": "Person",
               "@id": "https://www.theclarityinstitute.guru/#david",
               "name": "AS Davids",
-              "alternateName": "David",
+              "alternateName": "AS Davids",
               "jobTitle": "Spiritual Coach & Founder",
               "url": "https://www.theclarityinstitute.guru/about",
               "worksFor": { "@id": "https://www.theclarityinstitute.guru/#organization" },
@@ -145,7 +145,7 @@ export default function Home() {
               "@type": "Service",
               "name": "Single Clarity Session",
               "provider": { "@id": "https://www.theclarityinstitute.guru/#organization" },
-              "description": "A private 60-minute one-on-one spiritual coaching session with David. Break through blocks, receive intuitive guidance, and leave with clarity.",
+              "description": "A private 60-minute one-on-one spiritual coaching session with AS Davids. Break through blocks, receive intuitive guidance, and leave with clarity.",
               "url": "https://www.theclarityinstitute.guru/clarity-session",
               "offers": { "@type": "Offer", "price": "49.99", "priceCurrency": "USD" }
             }
@@ -263,7 +263,7 @@ export default function Home() {
                   maxWidth: 500,
                   margin: '0 0 1.5rem',
                 }}>
-                  Something in you already knows it's time. One private hour with David — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
+                  Something in you already knows it's time. One private hour with AS Davids — to break through what's blocking you, receive direct intuitive guidance, and leave with clarity you can feel.
                 </p>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '1.75rem' }}>
@@ -437,7 +437,7 @@ export default function Home() {
                   The Clarity Institute is a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within you.
                 </p>
                 <p style={{ color: C.muted, lineHeight: 1.8, marginBottom: '1rem' }}>
-                  Founded by David, a spiritual guide with over a decade of practice in third eye activation, intuitive development, and consciousness expansion.
+                  Founded by AS Davids, a spiritual guide with over a decade of practice in third eye activation, intuitive development, and consciousness expansion.
                 </p>
                 <p style={{ color: C.muted, lineHeight: 1.8 }}>
                   Whether you're just beginning to sense there's more, or you've been walking this path for years — there's a place for you here.
@@ -564,7 +564,7 @@ export default function Home() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
               {[
                 { quote: "I had been searching for years. The Clarity Institute gave me the tools, the community, and the courage to actually trust what I've always known inside.", name: 'Amara T.', location: 'Nairobi, Kenya' },
-                { quote: "David's guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there.", name: 'James M.', location: 'Johannesburg, South Africa' },
+                { quote: "AS Davids' guidance is unlike anything I've experienced. He meets you exactly where you are and helps you see what was already there.", name: 'James M.', location: 'Johannesburg, South Africa' },
                 { quote: "The 8-week cohort changed the way I move through every single day. I am clearer, calmer, and more myself than I've ever been.", name: 'Priya S.', location: 'London, UK' },
               ].map(t => (
                 <div key={t.name} style={{
@@ -677,12 +677,12 @@ export default function Home() {
               <h2 style={sectionTitle}>Frequently Asked</h2>
             </div>
             {[
-              { q: 'Do I need any prior experience with meditation or spirituality?', a: 'Not at all. The cohort is designed for both beginners and experienced practitioners. David meets you exactly where you are and guides you from there.' },
-              { q: 'What happens during the 8-week cohort?', a: 'Each week includes a live group session with David, guided meditations, journaling prompts, and daily activation practices. You also get access to a private community of fellow seekers for support between sessions.' },
+              { q: 'Do I need any prior experience with meditation or spirituality?', a: 'Not at all. The cohort is designed for both beginners and experienced practitioners. AS Davids meets you exactly where you are and guides you from there.' },
+              { q: 'What happens during the 8-week cohort?', a: 'Each week includes a live group session with AS Davids, guided meditations, journaling prompts, and daily activation practices. You also get access to a private community of fellow seekers for support between sessions.' },
               { q: 'How are the sessions delivered?', a: 'All live sessions happen via Zoom. You\'ll receive your Zoom link after enrollment. Sessions are also recorded so you can revisit them at your own pace.' },
-              { q: 'What is a Single Clarity Session?', a: 'It\'s a powerful 60-minute one-on-one call with David. You share what\'s alive for you, and David provides intuitive guidance, energy work, and practical tools tailored to your situation.' },
-              { q: 'What is your refund policy?', a: 'Due to the nature of digital content and personalised services, all sales are final. If you have questions about which program is right for you, message David on WhatsApp before enrolling.' },
-              { q: 'I\'m in a different timezone — can I still join?', a: 'Absolutely. Session times are flexible, and all live sessions are recorded. Many of our students are in Africa, Europe, and Asia. David will find a time that works for you.' },
+              { q: 'What is a Single Clarity Session?', a: 'It\'s a powerful 60-minute one-on-one call with AS Davids. You share what\'s alive for you, and AS Davids provides intuitive guidance, energy work, and practical tools tailored to your situation.' },
+              { q: 'What is your refund policy?', a: 'Due to the nature of digital content and personalised services, all sales are final. If you have questions about which program is right for you, message AS Davids on WhatsApp before enrolling.' },
+              { q: 'I\'m in a different timezone — can I still join?', a: 'Absolutely. Session times are flexible, and all live sessions are recorded. Many of our students are in Africa, Europe, and Asia. AS Davids will find a time that works for you.' },
               { q: 'How do I pay?', a: 'Payment is processed securely through PayPal. You can pay with your PayPal balance, bank account, or credit/debit card — no PayPal account required.' },
             ].map((item, i) => (
               <div key={i} style={{
@@ -747,7 +747,7 @@ export default function Home() {
               <span style={sectionLabel}>Get in Touch</span>
               <h2 style={sectionTitle}>We'd Love to Hear From You</h2>
               <p style={{ color: C.muted, lineHeight: 1.8, marginBottom: '2rem' }}>
-                Have questions about the cohort, mentorship, or which path is right for you? David personally responds to every message.
+                Have questions about the cohort, mentorship, or which path is right for you? AS Davids personally responds to every message.
               </p>
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
@@ -766,7 +766,7 @@ export default function Home() {
                 onChange={e => setContactForm({ ...contactForm, message: e.target.value })}
                 required rows={5}
                 style={{ ...inp, resize: 'vertical', lineHeight: 1.6 }} />
-              {contactStatus === 'success' && <p style={{ color: C.green, fontWeight: 500, marginBottom: '0.75rem' }}>✦ Message sent. David will be in touch soon.</p>}
+              {contactStatus === 'success' && <p style={{ color: C.green, fontWeight: 500, marginBottom: '0.75rem' }}>✦ Message sent. AS Davids will be in touch soon.</p>}
               {contactStatus === 'error' && <p style={{ color: '#c0392b', marginBottom: '0.75rem' }}>Something went wrong. Please try WhatsApp.</p>}
               <button type="submit" style={{
                 background: C.green, color: C.white, border: 'none',
@@ -790,7 +790,7 @@ export default function Home() {
               ))}
               <Link href="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Student Login</Link>
               <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Blog</Link>
-              <Link href="/about" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>About David</Link>
+              <Link href="/about" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>About AS Davids</Link>
             </div>
             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
               <a href="https://www.tiktok.com/@asdavids1" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>TikTok</a>

@@ -123,10 +123,10 @@ export default function Dashboard() {
             <div style={{ background:'#FFF8E1', border:'1px solid #F0C040', borderRadius:12, padding:'1.25rem 1.5rem', marginBottom:'2rem', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'1rem' }}>
               <div>
                 <div style={{ fontWeight:500, color:'#7A6000', marginBottom:'0.25rem' }}>⏳ Course access pending</div>
-                <div style={{ fontSize:'0.85rem', color:'#7A6000' }}>Once David confirms your payment, your course will unlock within 24 hours.</div>
+                <div style={{ fontSize:'0.85rem', color:'#7A6000' }}>Once AS Davids confirms your payment, your course will unlock within 24 hours.</div>
               </div>
-              <a href={`https://wa.me/27817904941?text=${encodeURIComponent('Hi David, I have completed payment and would like my course access activated.')}`} target="_blank" rel="noopener noreferrer" style={{ background:'#25D366', color:C.white, padding:'0.6rem 1.25rem', borderRadius:8, textDecoration:'none', fontSize:'0.875rem', fontWeight:500, whiteSpace:'nowrap' }}>
-                💬 Message David
+              <a href={`https://wa.me/27817904941?text=${encodeURIComponent('Hi AS Davids, I have completed payment and would like my course access activated.')}`} target="_blank" rel="noopener noreferrer" style={{ background:'#25D366', color:C.white, padding:'0.6rem 1.25rem', borderRadius:8, textDecoration:'none', fontSize:'0.875rem', fontWeight:500, whiteSpace:'nowrap' }}>
+                💬 Message AS Davids
               </a>
             </div>
           )}
@@ -148,7 +148,7 @@ export default function Dashboard() {
                 }}>📹</div>
                 <div>
                   <div style={{ fontWeight: 500, color: C.text, marginBottom: '0.15rem' }}>Your Zoom Session Link</div>
-                  <div style={{ fontSize: '0.85rem', color: C.muted }}>Use this link to join your live sessions and 1:1 calls with David.</div>
+                  <div style={{ fontSize: '0.85rem', color: C.muted }}>Use this link to join your live sessions and 1:1 calls with AS Davids.</div>
                 </div>
               </div>
               <a href={ZOOM_LINK} target="_blank" rel="noopener noreferrer" style={{
@@ -241,9 +241,9 @@ export default function Dashboard() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'1rem' }}>
             {[
               { label:'Join Zoom Session', desc:'Live sessions & 1:1 calls', href: ZOOM_LINK, emoji:'📹', external:true },
-              { label:'Book a Session', desc:'1:1 with David', href:'/clarity-session', emoji:'🕯' },
+              { label:'Book a Session', desc:'1:1 with AS Davids', href:'/clarity-session', emoji:'🕯' },
               { label:'Download Ebook', desc:'The Inner Eye Awakening', href:'https://drive.google.com/uc?export=download&id=1tlDSepusgZ16sB0_A3Edgu75azQtHGlz', emoji:'📖', external:true },
-              { label:'WhatsApp David', desc:'Direct support', href:`https://wa.me/27817904941`, emoji:'💬', external:true },
+              { label:'WhatsApp AS Davids', desc:'Direct support', href:`https://wa.me/27817904941`, emoji:'💬', external:true },
             ].map(l => (
               <a key={l.label} href={l.href} target={l.external ? '_blank' : '_self'} rel={l.external ? 'noopener noreferrer' : ''} style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:12, padding:'1.25rem', textDecoration:'none', display:'flex', alignItems:'center', gap:'0.75rem' }}>
                 <span style={{ fontSize:'1.5rem' }}>{l.emoji}</span>

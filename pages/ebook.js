@@ -128,7 +128,7 @@ export default function EbookLanding() {
                     <input style={inp} type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)} required />
                     {status === 'error' && (
                       <p style={{ color:'#c0392b', fontSize:'0.85rem', background:'#fdf2f2', border:'1px solid #f5c6cb', padding:'0.65rem 1rem', borderRadius:8, marginBottom:'1rem' }}>
-                        Something went wrong. Please try again or message David on WhatsApp.
+                        Something went wrong. Please try again or message AS Davids on WhatsApp.
                       </p>
                     )}
                     <button type="submit" disabled={status === 'loading'} style={{
@@ -188,7 +188,7 @@ export default function EbookLanding() {
           <p style={{ color:C.muted, fontSize:'0.95rem', lineHeight:1.8, marginBottom:'1rem' }}>
             AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology. He is the founder of The Clarity Institute.
           </p>
-          <Link href="/about" style={{ color:C.green, textDecoration:'none', fontSize:'0.9rem', fontWeight:500 }}>Learn more about David →</Link>
+          <Link href="/about" style={{ color:C.green, textDecoration:'none', fontSize:'0.9rem', fontWeight:500 }}>Learn more about AS Davids →</Link>
         </div>
 
         {/* Footer */}

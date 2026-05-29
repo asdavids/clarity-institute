@@ -106,8 +106,8 @@ export default async function handler(req, res) {
               </div>
 
               <div style="text-align: center; margin: 1.5rem 0;">
-                <p style="color: #7A6A5A; font-size: 0.9rem; margin-bottom: 1rem;">Need to reschedule? Message David at least 24 hours in advance.</p>
-                <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.65rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp David</a>
+                <p style="color: #7A6A5A; font-size: 0.9rem; margin-bottom: 1rem;">Need to reschedule? Message AS Davids at least 24 hours in advance.</p>
+                <a href="https://wa.me/27817904941" style="display: inline-block; background: #25D366; color: white; padding: 0.65rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">💬 WhatsApp AS Davids</a>
               </div>
 
               <div style="border-top: 1px solid #E0D5C5; padding-top: 1.5rem; text-align: center;">
