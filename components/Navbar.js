@@ -41,7 +41,8 @@ export default function Navbar() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
         <Link href="/#about" style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none' }}>About</Link>
         <Link href="/#cohort" style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none' }}>Cohort</Link>
-        <Link href="/#pricing" style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none' }}>Pricing</Link>
+        <Link href="/dream-interpreter" style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none' }}>Dream Interpreter</Link>
+        <Link href="/waitlist" style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none' }}>Waitlist</Link>
         {user ? (
           <>
             <Link href="/dashboard" style={{ fontSize: '0.875rem', color: C.green, textDecoration: 'none', fontWeight: 500 }}>Dashboard</Link>

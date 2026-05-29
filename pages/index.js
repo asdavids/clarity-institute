@@ -117,6 +117,41 @@ export default function Home() {
         <meta name="theme-color" content="#3D5A3E" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/" />
 
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.theclarityinstitute.guru/#organization",
+              "name": "The Clarity Institute",
+              "url": "https://www.theclarityinstitute.guru",
+              "logo": "https://www.theclarityinstitute.guru/logo.png",
+              "description": "A spiritual coaching and awakening platform rooted in prophetic insight, African wisdom traditions, and depth psychology.",
+              "founder": { "@type": "Person", "@id": "https://www.theclarityinstitute.guru/#david" },
+              "sameAs": ["https://www.tiktok.com/@asdavids1"]
+            },
+            {
+              "@type": "Person",
+              "@id": "https://www.theclarityinstitute.guru/#david",
+              "name": "AS Davids",
+              "alternateName": "David",
+              "jobTitle": "Spiritual Coach & Founder",
+              "url": "https://www.theclarityinstitute.guru/about",
+              "worksFor": { "@id": "https://www.theclarityinstitute.guru/#organization" },
+              "knowsAbout": ["Spiritual Awakening", "Third Eye Activation", "Dream Interpretation", "Intuition Development", "African Spirituality", "Shadow Work"]
+            },
+            {
+              "@type": "Service",
+              "name": "Single Clarity Session",
+              "provider": { "@id": "https://www.theclarityinstitute.guru/#organization" },
+              "description": "A private 60-minute one-on-one spiritual coaching session with David. Break through blocks, receive intuitive guidance, and leave with clarity.",
+              "url": "https://www.theclarityinstitute.guru/clarity-session",
+              "offers": { "@type": "Offer", "price": "49.99", "priceCurrency": "USD" }
+            }
+          ]
+        })}} />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -157,6 +192,8 @@ export default function Home() {
               </a>
             ))}
             <Link href="/blog" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Blog</Link>
+            <Link href="/dream-interpreter" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Dream Interpreter</Link>
+            <Link href="/waitlist" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Waitlist</Link>
             <Link href="/login" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
             <a href="#pricing" onClick={() => setMenuOpen(false)} style={{
               background: C.green, color: C.white, padding: '0.5rem 1.25rem',
