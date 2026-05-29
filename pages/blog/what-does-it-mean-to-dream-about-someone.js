@@ -25,6 +25,7 @@ export default function Post() {
         <meta property="og:description" content="Dreaming about someone carries real meaning. Here's what your dream is most likely communicating." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-does-it-mean-to-dream-about-someone" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -103,6 +104,20 @@ export default function Post() {
           </div>
 
           <div style={{ marginTop:'2rem', padding:'1.25rem', background:C.white, border:`1px solid ${C.border}`, borderRadius:12 }}>
+            <p style={{ fontSize:'0.78rem', color:C.muted, fontWeight:600, textTransform:'uppercase', letterSpacing:'0.08em', margin:'0 0 0.4rem' }}>Continue reading</p>
+            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'0.75rem', marginBottom:'1rem' }}>
+              {[
+                { slug:'recurring-dreams', title:'Recurring Dreams: What They Mean and Why They Keep Coming Back' },
+                { slug:'what-is-spiritual-awakening', title:'What Is Spiritual Awakening? Signs, Stages and What Comes Next' },
+              ].map(p => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} style={{ background:C.cream, border:`1px solid ${C.border}`, borderRadius:10, padding:'1rem', textDecoration:'none', display:'block' }}>
+                  <span style={{ fontSize:'0.875rem', color:C.green, fontFamily:serif, lineHeight:1.4 }}>{p.title} →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginTop:'1rem', padding:'1.25rem', background:C.white, border:`1px solid ${C.border}`, borderRadius:12 }}>
             <p style={{ fontSize:'0.78rem', color:C.muted, fontWeight:600, textTransform:'uppercase', letterSpacing:'0.08em', margin:'0 0 0.4rem' }}>About the author</p>
             <p style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.75, margin:0 }}>
               <strong>AS Davids (David)</strong> is the founder of The Clarity Institute — a spiritual coaching practice rooted in prophetic insight, African wisdom traditions, and depth psychology. He works with individuals navigating awakening, calling, and the inner life. <Link href="/clarity-session" style={{ color:C.green }}>Book a session →</Link>

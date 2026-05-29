@@ -25,6 +25,7 @@ export default function Post() {
         <meta property="og:description" content="Intuition is a faculty you can develop. Here's a practical, grounded guide to strengthening your inner knowing." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/how-to-develop-your-intuition" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

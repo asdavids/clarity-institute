@@ -24,6 +24,7 @@ export default function Post() {
         <meta property="og:description" content="Recurring dreams are your psyche's most persistent messages. Here's what they mean and why they repeat." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/recurring-dreams" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
