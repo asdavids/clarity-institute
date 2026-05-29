@@ -8,6 +8,60 @@ const sans = "'Jost', sans-serif"
 
 const posts = [
   {
+    slug: 'what-are-chakras',
+    title: 'What Are Chakras? A Complete Guide to the 7 Energy Centers',
+    excerpt: 'Chakras are seven energy centers located along the spine. Here\'s what each one governs, how to know when they\'re blocked, and how to bring them back into alignment.',
+    date: '2026-05-20', readTime: '9 min read', emoji: '🌀',
+  },
+  {
+    slug: 'what-are-angel-numbers',
+    title: 'What Are Angel Numbers? Meaning of 111, 222, 333, 444, 555 and More',
+    excerpt: 'Angel numbers are repeating sequences that carry spiritual messages. Here\'s what 111, 222, 333, 444, 555, and every other major sequence actually means.',
+    date: '2026-05-19', readTime: '8 min read', emoji: '✨',
+  },
+  {
+    slug: 'how-to-manifest',
+    title: 'How to Manifest: What Actually Works (and What Doesn\'t)',
+    excerpt: 'Manifestation is real — but not the way most people teach it. Here\'s what actually works, why most people fail, and the spiritual truth behind conscious creation.',
+    date: '2026-05-18', readTime: '8 min read', emoji: '🌿',
+  },
+  {
+    slug: 'what-is-kundalini',
+    title: 'What Is Kundalini? Signs of Awakening, Symptoms, and How to Navigate It',
+    excerpt: 'Kundalini is a powerful spiritual energy that, when awakened, can radically transform your life. Here\'s what it is, what awakening feels like, and how to move through it safely.',
+    date: '2026-05-17', readTime: '9 min read', emoji: '🔥',
+  },
+  {
+    slug: 'how-to-lucid-dream',
+    title: 'How to Lucid Dream: A Step-by-Step Guide for Beginners',
+    excerpt: 'Lucid dreaming — becoming conscious inside a dream — is a learnable skill. Here\'s the most effective techniques and what it can teach you about your inner world.',
+    date: '2026-05-16', readTime: '8 min read', emoji: '🌙',
+  },
+  {
+    slug: 'what-are-spiritual-gifts',
+    title: 'What Are Spiritual Gifts? How to Identify and Develop Yours',
+    excerpt: 'Spiritual gifts are innate capacities for perception, healing, and service. Here\'s how to identify what you carry — and begin developing it with intention.',
+    date: '2026-05-15', readTime: '8 min read', emoji: '🕊',
+  },
+  {
+    slug: 'how-to-raise-your-vibration',
+    title: 'How to Raise Your Vibration: What It Means and What Actually Works',
+    excerpt: 'Raising your vibration isn\'t about toxic positivity — it\'s about genuine energetic alignment. Here\'s what it actually means and the practices that create real change.',
+    date: '2026-05-14', readTime: '7 min read', emoji: '⚡',
+  },
+  {
+    slug: 'signs-from-the-universe',
+    title: 'Signs from the Universe: How to Recognise and Interpret Them',
+    excerpt: 'The universe communicates through synchronicity, symbols, and patterns. Here\'s how to recognise genuine signs, what they typically mean, and how to respond.',
+    date: '2026-05-13', readTime: '7 min read', emoji: '🦋',
+  },
+  {
+    slug: 'what-is-your-life-purpose',
+    title: 'How to Find Your Life Purpose: A Practical Spiritual Guide',
+    excerpt: 'Purpose is not found by searching outside yourself — it\'s already present, waiting to be recognised. Here\'s how to access it and how to know when you\'ve found it.',
+    date: '2026-05-12', readTime: '8 min read', emoji: '🧭',
+  },
+  {
     slug: 'what-is-spiritual-awakening',
     title: 'What Is Spiritual Awakening? Signs, Stages and What Comes Next',
     excerpt: 'Spiritual awakening is a shift in consciousness in which you begin to see beyond your conditioned identity. Here\'s what it actually is, what triggers it, and how to navigate what comes next.',

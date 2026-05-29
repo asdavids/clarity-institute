@@ -16,6 +16,15 @@ const staticPages = [
 ]
 
 const blogPosts = [
+  { slug: 'what-are-chakras', date: '2026-05-20' },
+  { slug: 'what-are-angel-numbers', date: '2026-05-19' },
+  { slug: 'how-to-manifest', date: '2026-05-18' },
+  { slug: 'what-is-kundalini', date: '2026-05-17' },
+  { slug: 'how-to-lucid-dream', date: '2026-05-16' },
+  { slug: 'what-are-spiritual-gifts', date: '2026-05-15' },
+  { slug: 'how-to-raise-your-vibration', date: '2026-05-14' },
+  { slug: 'signs-from-the-universe', date: '2026-05-13' },
+  { slug: 'what-is-your-life-purpose', date: '2026-05-12' },
   { slug: 'what-is-spiritual-awakening', date: '2026-05-28' },
   { slug: 'what-does-it-mean-to-dream-about-someone', date: '2026-05-27' },
   { slug: 'how-to-develop-your-intuition', date: '2026-05-26' },
