@@ -95,6 +95,7 @@ export default function Home() {
     <>
       <Head>
         <title>The Clarity Institute — Awaken Your Third Eye</title>
+        <meta name="msvalidate.01" content="0EDA385E3E0ABAA5AF9AB7B10733207D" />
         <meta name="description" content="Transform your life through third eye awakening. Join our 8-week cohort and private mentorship programs with David Muyunda." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
