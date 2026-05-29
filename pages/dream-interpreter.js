@@ -140,6 +140,28 @@ export default function DreamInterpreter() {
 
             </div>
           )}
+
+          {/* Clarity Session CTA — shown after results */}
+          {result && (
+            <div style={{ marginTop: "2rem", background: "linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%)", border: "1px solid #7c5cbf", borderRadius: "12px", padding: "2rem", textAlign: "center" }}>
+              <div style={{ fontSize: "1.75rem", marginBottom: "0.75rem" }}>👁</div>
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "400", color: "#c9b8e8", margin: "0 0 0.75rem" }}>
+                Your dream is pointing to something deeper.
+              </h2>
+              <p style={{ color: "#8b7fa8", fontSize: "0.95rem", lineHeight: "1.7", margin: "0 0 1.5rem", maxWidth: "480px", marginLeft: "auto", marginRight: "auto" }}>
+                A Clarity Session with David goes beyond symbols — it helps you understand the patterns, decisions, and spiritual direction your inner world is calling you toward.
+              </p>
+              <a
+                href="/clarity-session"
+                style={{ display: "inline-block", background: "#2d1f4e", border: "1px solid #7c5cbf", color: "#c9b8e8", padding: "0.875rem 2rem", borderRadius: "8px", textDecoration: "none", fontSize: "1rem", fontFamily: "Georgia, serif", letterSpacing: "0.02em" }}
+              >
+                Book a Clarity Session →
+              </a>
+              <p style={{ color: "#6b5f7a", fontSize: "0.8rem", marginTop: "1rem", marginBottom: "0" }}>
+                One-on-one · 60 minutes · $99
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </>
