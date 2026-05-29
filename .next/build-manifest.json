@@ -1,0 +1,334 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-42372ed130431b0a.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/zN-la1DTnu2mJOXUV4185/_buildManifest.js",
+    "static/zN-la1DTnu2mJOXUV4185/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/index-ffd12e9dd2104bd7.js"
+    ],
+    "/404": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/404-ff2eb839ed7b3fe7.js"
+    ],
+    "/500": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/500-eb3ae92b8444a6d7.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/css/be0d6c928d7a6cd7.css",
+      "static/chunks/pages/_app-342032b28ff4f27b.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/pages/_error-7a92967bea80186d.js"
+    ],
+    "/about": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/about-723656ae11318b15.js"
+    ],
+    "/admin": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/admin-268c10e19e9d3452.js"
+    ],
+    "/admin/students": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/admin/students-00e3f3fbd4c1f8aa.js"
+    ],
+    "/blog": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog-531659c07b9899aa.js"
+    ],
+    "/blog/5-signs-your-third-eye-is-opening": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/5-signs-your-third-eye-is-opening-0594242d7c415ffd.js"
+    ],
+    "/blog/african-spirituality-and-the-third-eye": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/african-spirituality-and-the-third-eye-6eca41b92d53561a.js"
+    ],
+    "/blog/astral-projection-beginners-guide": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/astral-projection-beginners-guide-6e89389121e123ce.js"
+    ],
+    "/blog/daily-meditation-practice": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/daily-meditation-practice-8329fa841eb63c51.js"
+    ],
+    "/blog/dark-night-of-the-soul": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/dark-night-of-the-soul-465725f6eb143411.js"
+    ],
+    "/blog/how-to-develop-your-intuition": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/how-to-develop-your-intuition-c878c68c7fa792a8.js"
+    ],
+    "/blog/recurring-dreams": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/recurring-dreams-8626e2e515e2152e.js"
+    ],
+    "/blog/spiritual-growth-where-to-begin": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/spiritual-growth-where-to-begin-0d88abb8064bbaaa.js"
+    ],
+    "/blog/understanding-your-dreams": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/understanding-your-dreams-0ed235a4fe633cb3.js"
+    ],
+    "/blog/what-does-it-mean-to-dream-about-someone": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-does-it-mean-to-dream-about-someone-82cfb4a1d5e8afb2.js"
+    ],
+    "/blog/what-is-a-spiritual-coach": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-is-a-spiritual-coach-a12741b971f9dea6.js"
+    ],
+    "/blog/what-is-remote-viewing": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-is-remote-viewing-c330de9537675365.js"
+    ],
+    "/blog/what-is-shadow-work": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-is-shadow-work-d3ee86e8119ae240.js"
+    ],
+    "/blog/what-is-spiritual-awakening": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-is-spiritual-awakening-a06aa84c3145ef0b.js"
+    ],
+    "/blog/what-is-the-third-eye": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/blog/what-is-the-third-eye-b0cd42f20f8cc5ec.js"
+    ],
+    "/booking/cancel": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/booking/cancel-90f220127169ed05.js"
+    ],
+    "/booking/success": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/booking/success-0f5a30fdda560c8b.js"
+    ],
+    "/clarity-session": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/clarity-session-8b63a3185b2551ae.js"
+    ],
+    "/dashboard": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/dashboard-0bf5a3070e1e0d74.js"
+    ],
+    "/dream-interpreter": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/pages/dream-interpreter-b6f400dcfe8a5209.js"
+    ],
+    "/ebook": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/ebook-23f7afe4f48f48f3.js"
+    ],
+    "/forgot-password": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/pages/forgot-password-4b71e17408ee605a.js"
+    ],
+    "/immersion": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/immersion-8cebb1b0def40702.js"
+    ],
+    "/login": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/login-da5d5eb7c9aba4a6.js"
+    ],
+    "/mentorship": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/mentorship-8905d8f858bed5dc.js"
+    ],
+    "/privacy": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/privacy-a1ff2b6bf3685aeb.js"
+    ],
+    "/register": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/register-85fc2d0e4d717a73.js"
+    ],
+    "/terms": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/terms-8be2bc61df903653.js"
+    ],
+    "/waitlist": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/pages/waitlist-e5c429da6cc15a14.js"
+    ],
+    "/week1-2": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/week1-2-d083a33311c0772a.js"
+    ],
+    "/week3-5": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/week3-5-9be8e92b9c995fbe.js"
+    ],
+    "/week6-8": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-01bffbbc72a2bb1d.js",
+      "static/chunks/d9184769-6bb204526ba2d11e.js",
+      "static/chunks/7112840a-f639cfe70f12fc4a.js",
+      "static/chunks/664-d254d21a6fe56bff.js",
+      "static/chunks/690-083990b992b5eb34.js",
+      "static/chunks/229-2aac2402dbda475c.js",
+      "static/chunks/pages/week6-8-07cb3745c34ca613.js"
+    ]
+  },
+  "ampFirstPages": []
+}

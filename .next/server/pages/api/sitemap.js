@@ -1,0 +1,14 @@
+"use strict";(()=>{var e={};e.id=9290,e.ids=[9290],e.modules={145:e=>{e.exports=require("next/dist/compiled/next-server/pages-api.runtime.prod.js")},6249:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,r){return r in t?t[r]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,r)):"function"==typeof t&&"default"===r?t:void 0}}})},2428:(e,t,r)=>{r.r(t),r.d(t,{config:()=>p,default:()=>g,routeModule:()=>c});var i={};r.r(i),r.d(i,{default:()=>d});var a=r(1802),n=r(7153),l=r(6249);let o="https://www.theclarityinstitute.guru",u=[{url:"/",changefreq:"weekly",priority:1},{url:"/about",changefreq:"monthly",priority:.8},{url:"/blog",changefreq:"weekly",priority:.9},{url:"/clarity-session",changefreq:"monthly",priority:.8},{url:"/login",changefreq:"yearly",priority:.3},{url:"/register",changefreq:"yearly",priority:.3},{url:"/terms",changefreq:"yearly",priority:.2},{url:"/privacy",changefreq:"yearly",priority:.2}],s=[{slug:"what-is-spiritual-awakening",date:"2026-05-28"},{slug:"what-does-it-mean-to-dream-about-someone",date:"2026-05-27"},{slug:"how-to-develop-your-intuition",date:"2026-05-26"},{slug:"dark-night-of-the-soul",date:"2026-05-25"},{slug:"what-is-a-spiritual-coach",date:"2026-05-24"},{slug:"recurring-dreams",date:"2026-05-23"},{slug:"african-spirituality-and-the-third-eye",date:"2026-05-22"},{slug:"what-is-shadow-work",date:"2026-05-21"},{slug:"astral-projection-beginners-guide",date:"2026-03-12"},{slug:"what-is-the-third-eye",date:"2026-03-10"},{slug:"5-signs-your-third-eye-is-opening",date:"2026-03-05"},{slug:"daily-meditation-practice",date:"2026-02-28"},{slug:"understanding-your-dreams",date:"2026-02-20"},{slug:"what-is-remote-viewing",date:"2026-02-14"},{slug:"spiritual-growth-where-to-begin",date:"2026-02-07"}];function d(e,t){let r=`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${u.map(e=>`  <url>
+    <loc>${o}${e.url}</loc>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`).join("\n")}
+${s.map(e=>`  <url>
+    <loc>${o}/blog/${e.slug}</loc>
+    <lastmod>${e.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join("\n")}
+</urlset>`;return t.setHeader("Content-Type","application/xml"),t.setHeader("Cache-Control","public, s-maxage=86400, stale-while-revalidate"),t.status(200).send(r)}let g=(0,l.l)(i,"default"),p=(0,l.l)(i,"config"),c=new a.PagesAPIRouteModule({definition:{kind:n.x.PAGES_API,page:"/api/sitemap",pathname:"/api/sitemap",bundlePath:"",filename:""},userland:i})},7153:(e,t)=>{var r;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return r}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(r||(r={}))},1802:(e,t,r)=>{e.exports=r(145)}};var t=require("../../webpack-api-runtime.js");t.C(e);var r=t(t.s=2428);module.exports=r})();
