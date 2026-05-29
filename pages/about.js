@@ -108,7 +108,7 @@ export default function About() {
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1.75rem', maxWidth: 440, marginLeft: 'auto', marginRight: 'auto' }}>
               A single Clarity Session is where it begins — one hour with David that meets you exactly where you are.
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="about-cta-buttons" style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/clarity-session" style={{ background: 'white', color: C.green, padding: '0.85rem 1.75rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
                 Book a Clarity Session →
               </Link>

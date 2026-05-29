@@ -230,7 +230,7 @@ export default function ClaritySessionPage() {
             <h2 style={{ fontFamily: `'Cormorant Garamond', serif`, fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 300, color: C.green, margin: '0 0 2.5rem', lineHeight: 1.2 }}>
               Real sessions. Real shifts.
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+            <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
               {[
                 { quote: "I walked in with three years of confusion about my purpose. I left with complete clarity. David said things no one else could have known — and everything he said landed.", name: 'Fatima A.', location: 'Lagos, Nigeria' },
                 { quote: "I expected a conversation. What I got was a spiritual encounter. David tuned into something I'd never said out loud and held space for me to hear it for the first time.", name: 'Kwame B.', location: 'Accra, Ghana' },
