@@ -16,6 +16,14 @@ const staticPages = [
 ]
 
 const blogPosts = [
+  { slug: 'what-is-spiritual-awakening', date: '2026-05-28' },
+  { slug: 'what-does-it-mean-to-dream-about-someone', date: '2026-05-27' },
+  { slug: 'how-to-develop-your-intuition', date: '2026-05-26' },
+  { slug: 'dark-night-of-the-soul', date: '2026-05-25' },
+  { slug: 'what-is-a-spiritual-coach', date: '2026-05-24' },
+  { slug: 'recurring-dreams', date: '2026-05-23' },
+  { slug: 'african-spirituality-and-the-third-eye', date: '2026-05-22' },
+  { slug: 'what-is-shadow-work', date: '2026-05-21' },
   { slug: 'astral-projection-beginners-guide', date: '2026-03-12' },
   { slug: 'what-is-the-third-eye', date: '2026-03-10' },
   { slug: '5-signs-your-third-eye-is-opening', date: '2026-03-05' },
