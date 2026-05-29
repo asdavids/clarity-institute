@@ -99,6 +99,25 @@ export default function About() {
             </div>
           </div>
 
+          {/* CTA */}
+          <div style={{ background: `linear-gradient(135deg, ${C.green} 0%, #2e4530 100%)`, borderRadius: 16, padding: '2.5rem', textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>👁</div>
+            <h2 style={{ fontFamily: serif, fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 300, color: 'white', margin: '0 0 0.75rem', lineHeight: 1.2 }}>
+              Something in you already knows it's time.
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1.75rem', maxWidth: 440, marginLeft: 'auto', marginRight: 'auto' }}>
+              A single Clarity Session is where it begins — one hour with David that meets you exactly where you are.
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/clarity-session" style={{ background: 'white', color: C.green, padding: '0.85rem 1.75rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
+                Book a Clarity Session →
+              </Link>
+              <Link href="/waitlist" style={{ background: 'transparent', color: 'rgba(255,255,255,0.85)', padding: '0.85rem 1.75rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem', border: '1px solid rgba(255,255,255,0.3)' }}>
+                Join the Waitlist
+              </Link>
+            </div>
+          </div>
+
           {/* Connect */}
           <div style={{ textAlign:'center', marginBottom:'2rem' }}>
             <h2 style={{ fontFamily:serif, fontSize:'1.6rem', color:C.green, fontWeight:300, margin:'0 0 0.75rem' }}>Connect with David</h2>
@@ -115,7 +134,7 @@ export default function About() {
                 background:C.text, color:C.white, padding:'0.8rem 1.5rem',
                 borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500,
               }}>TikTok</a>
-              <a href="mailto:davidmuyunda@gmail.com" style={{
+              <a href="mailto:david@theclarityinstitute.guru" style={{
                 background:'transparent', color:C.green, padding:'0.8rem 1.5rem',
                 borderRadius:8, textDecoration:'none', fontSize:'0.9rem', fontWeight:500,
                 border:`1.5px solid ${C.green}`,
