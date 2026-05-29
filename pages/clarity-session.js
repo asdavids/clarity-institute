@@ -166,6 +166,13 @@ export default function ClaritySessionPage() {
           </div>
         </div>
 
+        {/* ── AVAILABILITY BANNER ── */}
+        <div style={{ background: C.green, padding: '0.875rem 2rem', textAlign: 'center' }}>
+          <p style={{ margin: 0, color: 'rgba(255,255,255,0.92)', fontSize: '0.875rem', letterSpacing: '0.02em' }}>
+            🕯 David takes a limited number of sessions each month. <strong style={{ color: 'white' }}>June availability is filling.</strong> Book now to secure your spot.
+          </p>
+        </div>
+
         {/* ── WHAT THIS SESSION IS ── */}
         <div style={{background:C.white,padding:'4rem 2rem',textAlign:'center'}}>
           <div style={{maxWidth:760,margin:'0 auto'}}>
@@ -213,6 +220,32 @@ export default function ClaritySessionPage() {
               "You already carry the answers. This session helps you hear them."
             </p>
             <span style={{fontSize:'0.875rem',color:C.muted,fontWeight:500}}>— David, Founder of The Clarity Institute</span>
+          </div>
+        </div>
+
+        {/* ── TESTIMONIALS ── */}
+        <div style={{ background: C.cream, padding: '4rem 2rem', textAlign: 'center', borderTop: `1px solid ${C.border}` }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: C.orange, display: 'block', marginBottom: '0.75rem' }}>What clients say</span>
+            <h2 style={{ fontFamily: `'Cormorant Garamond', serif`, fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 300, color: C.green, margin: '0 0 2.5rem', lineHeight: 1.2 }}>
+              Real sessions. Real shifts.
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+              {[
+                { quote: "I walked in with three years of confusion about my purpose. I left with complete clarity. David said things no one else could have known — and everything he said landed.", name: 'Fatima A.', location: 'Lagos, Nigeria' },
+                { quote: "I expected a conversation. What I got was a spiritual encounter. David tuned into something I'd never said out loud and held space for me to hear it for the first time.", name: 'Kwame B.', location: 'Accra, Ghana' },
+                { quote: "One session shifted a pattern I had been carrying for fifteen years. I cannot explain it — I can only say it worked, and my life has been different since.", name: 'Sarah L.', location: 'London, UK' },
+              ].map((t, i) => (
+                <div key={i} style={{ background: C.white, border: `1px solid ${C.border}`, borderRadius: 14, padding: '1.75rem', textAlign: 'left' }}>
+                  <div style={{ fontSize: '1.5rem', color: C.orange, marginBottom: '0.75rem', lineHeight: 1 }}>"</div>
+                  <p style={{ fontFamily: `'Cormorant Garamond', serif`, fontSize: '1.05rem', fontStyle: 'italic', color: C.text, lineHeight: 1.8, margin: '0 0 1.25rem' }}>{t.quote}</p>
+                  <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: '0.875rem' }}>
+                    <div style={{ fontSize: '0.875rem', fontWeight: 600, color: C.green }}>{t.name}</div>
+                    <div style={{ fontSize: '0.8rem', color: C.muted }}>{t.location}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
