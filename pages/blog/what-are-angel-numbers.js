@@ -34,7 +34,6 @@ export default function Post() {
             { "@type": "Question", "name": "What does 555 mean?", "acceptedAnswer": { "@type": "Answer", "text": "555 signals significant change. It indicates that a major shift is coming or already underway — a transition in life circumstances, perspective, or identity. It asks you to release resistance and trust the process of transformation." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

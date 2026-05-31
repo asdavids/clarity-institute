@@ -194,7 +194,6 @@ export default function Blog() {
         <meta property="og:title" content="The Clarity Blog — The Clarity Institute" />
         <meta property="og:description" content="Reflections on awakening, intuition, and the inner life." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
 

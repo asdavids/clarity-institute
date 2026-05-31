@@ -123,7 +123,6 @@ export default function AdminDashboard() {
     <>
       <Head>
         <title>Admin Dashboard — The Clarity Institute</title>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
 

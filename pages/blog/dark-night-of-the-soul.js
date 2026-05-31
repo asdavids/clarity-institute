@@ -36,7 +36,6 @@ export default function Post() {
             { "@type": "Question", "name": "What is the difference between the dark night of the soul and depression?", "acceptedAnswer": { "@type": "Answer", "text": "Depression and the dark night can look similar from the outside and may co-occur. The key distinctions: the dark night tends to arise in the context of spiritual development or significant life transition; it carries a sense of purposefulness even amid the suffering; it often includes periods of heightened perception and aliveness alongside the darkness; and it typically results in a genuine transformation of identity rather than a return to the former self. If you are unsure, working with both a mental health professional and a spiritual guide simultaneously is wise." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

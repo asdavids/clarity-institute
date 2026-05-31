@@ -36,7 +36,6 @@ export default function Post() {
             { "@type": "Question", "name": "Can everyone develop intuition?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Intuition is not a rare gift. It is a human faculty that most people have learned to override through the demands of rational, analytical, and performance-driven modern life. With consistent practice, almost everyone can reconnect with and strengthen their intuitive capacity." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

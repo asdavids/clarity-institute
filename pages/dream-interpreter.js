@@ -113,7 +113,6 @@ export default function DreamInterpreter() {
         <meta property="og:title" content="Prophetic Dream Interpreter — The Clarity Institute" />
         <meta property="og:description" content="Your dream is not random. Receive a prophetic reading of what the spiritual realm is revealing." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <style>{`
           @keyframes flicker1 { 0%,100%{transform:scaleX(1) scaleY(1) rotate(-1deg)} 25%{transform:scaleX(0.95) scaleY(1.05) rotate(1deg)} 50%{transform:scaleX(1.02) scaleY(0.97) rotate(-0.5deg)} 75%{transform:scaleX(0.98) scaleY(1.03) rotate(1deg)} }
           @keyframes flicker2 { 0%,100%{opacity:0.9;transform:scaleX(1) scaleY(1)} 33%{opacity:0.75;transform:scaleX(1.04) scaleY(0.96)} 66%{opacity:0.85;transform:scaleX(0.97) scaleY(1.04)} }

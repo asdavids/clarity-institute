@@ -33,7 +33,6 @@ export default function Post() {
             { "@type": "Question", "name": "How do you respond to signs from the universe?", "acceptedAnswer": { "@type": "Answer", "text": "First, acknowledge them — write them down and sit with them rather than dismissing or over-explaining. Then ask what question the sign might be answering and what action it seems to be pointing toward. Signs are rarely commands; they are invitations to pay attention to something your waking mind has been overlooking." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

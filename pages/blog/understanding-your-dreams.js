@@ -15,7 +15,6 @@ export default function Post() {
       <Head>
         <title>Understanding Your Dreams: Messages from the Unseen — The Clarity Institute</title>
         <meta name="description" content="Dreams are not random. They are a language — your subconscious and spiritual self communicating what your waking mind can't yet see." />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

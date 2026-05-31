@@ -33,7 +33,6 @@ export default function Post() {
             { "@type": "Question", "name": "How do you know when you've found your purpose?", "acceptedAnswer": { "@type": "Answer", "text": "Purpose is recognisable by its quality: it feels both deeply personal and larger than personal. It requires your specific gifts and wounds in a way that generic paths do not. It is often both the thing you are most drawn to and the thing you have most resisted — because purpose carries responsibility. When you are living in alignment with it, there is a sense of rightness that is distinct from mere pleasure or comfort." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

@@ -73,7 +73,6 @@ export default function ImmersionPage() {
         <meta property="og:title" content="90-Day Immersion — The Clarity Institute" />
         <meta property="og:description" content="The deepest transformation container The Clarity Institute offers. 90 days with AS Davids. $299.99." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, color:C.text, fontFamily:sans }}>
 

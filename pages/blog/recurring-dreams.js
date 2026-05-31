@@ -35,7 +35,6 @@ export default function Post() {
             { "@type": "Question", "name": "How do you stop recurring dreams?", "acceptedAnswer": { "@type": "Answer", "text": "The most effective way to stop a recurring dream is to understand and engage with what it is communicating. Write it down in detail, identify the dominant feeling, and ask yourself where that feeling is present in your waking life. Once the underlying pattern or message is genuinely acknowledged and addressed, most recurring dreams stop on their own." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

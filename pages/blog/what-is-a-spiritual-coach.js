@@ -36,7 +36,6 @@ export default function Post() {
             { "@type": "Question", "name": "How do you choose a spiritual coach?", "acceptedAnswer": { "@type": "Answer", "text": "Look for someone whose own path and lineage resonates with you. Notice whether they have walked through the territory they are guiding you through — not just studied it. Pay attention to how you feel in their presence: do you feel seen, safe, and challenged in useful ways? Be wary of coaches who claim to have all the answers or who create dependency rather than developing your own inner authority." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

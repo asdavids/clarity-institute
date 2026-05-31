@@ -33,7 +33,6 @@ export default function Post() {
             { "@type": "Question", "name": "What is Kemetic spirituality?", "acceptedAnswer": { "@type": "Answer", "text": "Kemetic spirituality is the spiritual tradition of ancient Egypt (Kemet), one of the oldest recorded spiritual systems in human history. It includes sophisticated understanding of consciousness, the soul's journey, and inner faculties of perception — including the Eye of Horus, which represents spiritual sight, wholeness, and divine protection. Many scholars believe Kemetic philosophy significantly influenced both Eastern and Western mystical traditions." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

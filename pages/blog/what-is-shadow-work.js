@@ -35,7 +35,6 @@ export default function Post() {
             { "@type": "Question", "name": "Is shadow work dangerous?", "acceptedAnswer": { "@type": "Answer", "text": "Shadow work is not inherently dangerous, but it can be destabilising if done without sufficient support, especially if it surfaces significant trauma. It is always wise to work with a guide or therapist, particularly when engaging with deeply painful material. The shadow is part of every human being — the work is simply becoming conscious of what is already there, rather than allowing it to operate from the darkness of unconscious projection and behaviour." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

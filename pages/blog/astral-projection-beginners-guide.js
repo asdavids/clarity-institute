@@ -15,7 +15,6 @@ export default function Post() {
       <Head>
         <title>Astral Projection: A Beginner's Guide — The Clarity Institute</title>
         <meta name="description" content="Astral projection is the experience of consciousness separating from the physical body. Here's what it is, how it works, and how to begin safely." />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

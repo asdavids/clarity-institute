@@ -249,7 +249,6 @@ export default function Home() {
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <style>{`
           /* ── Logo pulse — premium golden glow ── */
           @keyframes glow {
@@ -435,7 +434,7 @@ export default function Home() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   padding: '1rem',
                 }}>
-                  <img src="/logo.png" alt="The Clarity Institute" className="logo-glow" style={{ width: 100, height: 100, objectFit: 'contain' }} />
+                  <picture><source srcSet="/logo.webp" type="image/webp" /><img src="/logo.png" alt="The Clarity Institute" className="logo-glow" width={100} height={100} style={{ width: 100, height: 100, objectFit: 'contain' }} /></picture>
                 </div>
                 <p style={{
                   fontFamily: serif, fontSize: '1.1rem', fontStyle: 'italic',
@@ -487,7 +486,7 @@ export default function Home() {
                   boxShadow: 'none',
                   position: 'relative',
                 }}>
-                  <img src="/logo.png" alt="The Clarity Institute" className="logo-glow" style={{ width: 220, height: 220, objectFit: 'contain' }} />
+                  <picture><source srcSet="/logo.webp" type="image/webp" /><img src="/logo.png" alt="The Clarity Institute" className="logo-glow" width={220} height={220} style={{ width: 220, height: 220, objectFit: 'contain' }} /></picture>
                   <div style={{ position: 'absolute', inset: -20, borderRadius: '50%', border: `1px dashed ${C.brown}30` }} />
                   <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', border: `1px dashed ${C.brown}15` }} />
                 </div>

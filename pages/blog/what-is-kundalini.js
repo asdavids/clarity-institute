@@ -33,7 +33,6 @@ export default function Post() {
             { "@type": "Question", "name": "How long does kundalini awakening last?", "acceptedAnswer": { "@type": "Answer", "text": "There is no fixed timeline. The initial activation can be sudden and intense, lasting days or weeks. The integration — the full passage of energy through the system and the stabilisation of a new baseline of consciousness — typically unfolds over months or years. The process cannot be rushed, though it can be supported." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

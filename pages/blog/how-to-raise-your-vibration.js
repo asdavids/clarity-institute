@@ -33,7 +33,6 @@ export default function Post() {
             { "@type": "Question", "name": "Is raising your vibration the same as spiritual bypassing?", "acceptedAnswer": { "@type": "Answer", "text": "Not if done correctly — but the two can be confused. Spiritual bypassing uses high-vibration language to avoid genuine emotional processing: performing positivity while suppressing pain. Genuine vibration work does the opposite: it processes what is low, releases it, and moves to higher states as a natural result. The sequence matters — process first, elevate second." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

@@ -37,7 +37,6 @@ export default function Post() {
             { "@type": "Question", "name": "What triggers spiritual awakening?", "acceptedAnswer": { "@type": "Answer", "text": "Spiritual awakening can be triggered by grief, trauma, near-death experiences, profound meditation, plant medicine experiences, or sometimes with no clear external cause at all. Often it arrives when the structures of the old self can no longer contain what is trying to emerge." } }
           ]
         })}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

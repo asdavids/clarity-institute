@@ -95,7 +95,6 @@ export default function Login() {
     <>
       <Head>
         <title>Sign In — The Clarity Institute</title>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, display:'flex', alignItems:'center', justifyContent:'center', padding:'2rem', fontFamily:"'Jost', sans-serif" }}>
         <div style={{ width:'100%', maxWidth:420 }}>
