@@ -23,6 +23,10 @@ export default function Post() {
         <meta property="og:description" content="The universe communicates through synchronicity and symbols. Here's how to recognise and interpret the signs you're receiving." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Signs from the Universe: How to Recognise and Interpret Them" />
+        <meta name="twitter:description" content="The universe communicates through synchronicity and symbols. Here's how to recognise and interpret the signs you're receiving." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/signs-from-the-universe" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

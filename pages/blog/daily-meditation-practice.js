@@ -15,6 +15,16 @@ export default function Post() {
       <Head>
         <title>How to Build a Daily Meditation Practice — The Clarity Institute</title>
         <meta name="description" content="The secret to a lasting meditation practice isn't discipline — it's design. Here's how to create one that fits your real life." />
+        <meta property="og:title" content="How to Build a Daily Meditation Practice — The Clarity Institute" />
+        <meta property="og:description" content="The secret to a lasting meditation practice isn't discipline — it's design. Here's how to create one that fits your real life." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/daily-meditation-practice" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Build a Daily Meditation Practice — The Clarity Institute" />
+        <meta name="twitter:description" content="The secret to a lasting meditation practice isn't discipline — it's design. Here's how to create one that fits your real life." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/daily-meditation-practice" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

@@ -25,6 +25,10 @@ export default function Post() {
         <meta property="og:description" content="A spiritual coach helps you navigate your inner life. Here's what they do, how they differ from therapists, and how to choose the right one." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What Is a Spiritual Coach and How Do You Choose One?" />
+        <meta name="twitter:description" content="A spiritual coach helps you navigate your inner life. Here's what they do, how they differ from therapists, and how to choose the right one." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-a-spiritual-coach" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

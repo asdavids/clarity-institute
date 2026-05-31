@@ -15,6 +15,16 @@ export default function Post() {
       <Head>
         <title>What Is the Third Eye? A Beginner's Guide — The Clarity Institute</title>
         <meta name="description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
+        <meta property="og:title" content="What Is the Third Eye? A Beginner's Guide — The Clarity Institute" />
+        <meta property="og:description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/what-is-the-third-eye" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What Is the Third Eye? A Beginner's Guide — The Clarity Institute" />
+        <meta name="twitter:description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-the-third-eye" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

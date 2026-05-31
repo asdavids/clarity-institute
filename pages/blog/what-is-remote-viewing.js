@@ -15,6 +15,16 @@ export default function Post() {
       <Head>
         <title>What Is Remote Viewing? — The Clarity Institute</title>
         <meta name="description" content="Remote viewing is the ability to perceive information about a distant location, person, or event using only the mind. Here's what science and spirituality say." />
+        <meta property="og:title" content="What Is Remote Viewing? — The Clarity Institute" />
+        <meta property="og:description" content="Remote viewing is the ability to perceive information about a distant location, person, or event using only the mind. Here's what science and spirituality say." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/what-is-remote-viewing" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What Is Remote Viewing? — The Clarity Institute" />
+        <meta name="twitter:description" content="Remote viewing is the ability to perceive information about a distant location, person, or event using only the mind. Here's what science and spirituality say." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-remote-viewing" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>

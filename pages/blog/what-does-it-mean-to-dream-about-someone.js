@@ -25,6 +25,10 @@ export default function Post() {
         <meta property="og:description" content="Dreaming about someone carries real meaning. Here's what your dream is most likely communicating." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What Does It Mean When You Dream About Someone?" />
+        <meta name="twitter:description" content="Dreaming about someone carries real meaning. Here's what your dream is most likely communicating." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-does-it-mean-to-dream-about-someone" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

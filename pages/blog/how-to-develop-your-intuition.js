@@ -25,6 +25,10 @@ export default function Post() {
         <meta property="og:description" content="Intuition is a faculty you can develop. Here's a practical, grounded guide to strengthening your inner knowing." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Develop Your Intuition: A Practical Guide" />
+        <meta name="twitter:description" content="Intuition is a faculty you can develop. Here's a practical, grounded guide to strengthening your inner knowing." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/how-to-develop-your-intuition" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

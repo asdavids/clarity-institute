@@ -15,6 +15,16 @@ export default function Post() {
       <Head>
         <title>Astral Projection: A Beginner's Guide — The Clarity Institute</title>
         <meta name="description" content="Astral projection is the experience of consciousness separating from the physical body. Here's what it is, how it works, and how to begin safely." />
+        <meta property="og:title" content="Astral Projection: A Beginner's Guide — The Clarity Institute" />
+        <meta property="og:description" content="Astral projection is the experience of consciousness separating from the physical body. Here's what it is, how it works, and how to begin safely." />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/astral-projection-beginners-guide" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Astral Projection: A Beginner's Guide — The Clarity Institute" />
+        <meta name="twitter:description" content="Astral projection is the experience of consciousness separating from the physical body. Here's what it is, how it works, and how to begin safely." />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/astral-projection-beginners-guide" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
         <nav style={{ background:C.white, borderBottom:`1px solid ${C.border}`, padding:'1rem 2rem', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
