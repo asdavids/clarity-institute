@@ -320,3 +320,21 @@ label {
     text-align: center;
   }
 }
+
+/* ── Performance: GPU acceleration for animated elements ── */
+.logo-glow,
+.splash-logo,
+.reveal-on-scroll,
+.typewriter-cursor {
+  will-change: transform, opacity;
+}
+
+/* ── Lazy image loading placeholder ── */
+img[loading="lazy"] {
+  background: #f0ebe3;
+}
+
+/* ── Smooth page transitions ── */
+#__next > div {
+  min-height: 100vh;
+}
