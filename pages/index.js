@@ -22,6 +22,44 @@ const C = {
 const serif  = "'Cormorant Garamond', serif"
 const sans   = "'Jost', sans-serif"
 
+const QUOTES = [
+  { text: "The eye that looks inward sees more than the eye that scans the horizon.", attr: "— AS Davids" },
+  { text: "You were not confused. You were being prepared for a clarity that demanded you slow down.", attr: "— AS Davids" },
+  { text: "Every door that closed was not rejection. It was redirection toward something your current self was not yet ready to hold.", attr: "— AS Davids" },
+  { text: "The question is never whether you have gifts. The question is whether you have the courage to name them.", attr: "— AS Davids" },
+  { text: "Awakening is not arriving somewhere new. It is recognising where you have always been.", attr: "— AS Davids" },
+]
+
+function QuoteBanner() {
+  const [idx, setIdx] = useState(0)
+  const [visible, setVisible] = useState(true)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => { setIdx(i => (i + 1) % QUOTES.length); setVisible(true) }, 500)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+  const q = QUOTES[idx]
+  return (
+    <div style={{ background: '#1a1a14', padding: '3.5rem 2rem', textAlign: 'center', overflow: 'hidden' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', transition: 'opacity 0.5s ease, transform 0.5s ease', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(8px)' }}>
+        <div style={{ width: 32, height: 1, background: '#C1581A', margin: '0 auto 1.5rem', opacity: 0.6 }} />
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', fontWeight: 300, color: '#e8dcc8', lineHeight: 1.7, fontStyle: 'italic', margin: '0 0 1rem' }}>
+          "{q.text}"
+        </p>
+        <span style={{ fontSize: '0.8rem', color: '#7a6a5a', letterSpacing: '0.1em', fontFamily: "'Jost', sans-serif" }}>{q.attr}</span>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: '1.5rem' }}>
+          {QUOTES.map((_, i) => (
+            <button key={i} onClick={() => { setIdx(i); setVisible(true) }} aria-label={`Quote ${i + 1}`}
+              style={{ width: i === idx ? 20 : 6, height: 6, borderRadius: 3, background: i === idx ? '#C1581A' : '#3a3020', border: 'none', cursor: 'pointer', transition: 'all 0.3s', padding: 0 }} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const [waitlistEmail, setWaitlistEmail] = useState('')
   const [waitlistStatus, setWaitlistStatus] = useState('')
@@ -32,10 +70,62 @@ export default function Home() {
   const [faqOpen, setFaqOpen] = useState(null)
   const [showTop, setShowTop] = useState(false)
 
+  // ── Scroll reveal ──
   useEffect(() => {
-    const onScroll = () => { setScrolled(window.scrollY > 40); setShowTop(window.scrollY > 600) }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    const els = document.querySelectorAll('.reveal-on-scroll')
+    if (!els.length) return
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target) } })
+    }, { threshold: 0.12 })
+    els.forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
+  // ── Typewriter ──
+  useEffect(() => {
+    const full = "See Beyond What You've Been Told"
+    const el = document.getElementById('typewriter-text')
+    if (!el) return
+    el.textContent = ''
+    let i = 0
+    const interval = setInterval(() => {
+      if (i < full.length) { el.textContent += full[i]; i++ }
+      else clearInterval(interval)
+    }, 45)
+    return () => clearInterval(interval)
+  }, [])
+
+  // ── Starfield canvas ──
+  useEffect(() => {
+    const canvas = document.getElementById('star-canvas')
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let w = canvas.offsetWidth, h = canvas.offsetHeight
+    canvas.width = w; canvas.height = h
+    const stars = Array.from({ length: 80 }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      r: Math.random() * 1.2 + 0.3,
+      a: Math.random(), speed: Math.random() * 0.003 + 0.001,
+    }))
+    let raf
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h)
+      stars.forEach(s => {
+        s.a += s.speed; if (s.a > 1) s.a = 0
+        ctx.beginPath()
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(193,88,26,${s.a * 0.6})`
+        ctx.fill()
+      })
+      raf = requestAnimationFrame(draw)
+    }
+    draw()
+    const resize = () => {
+      w = canvas.offsetWidth; h = canvas.offsetHeight
+      canvas.width = w; canvas.height = h
+    }
+    window.addEventListener('resize', resize)
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
   }, [])
 
   const handleWaitlist = async (e) => {
@@ -64,7 +154,12 @@ export default function Home() {
     } catch { setContactStatus('error') }
   }
 
-  // ── Shared style helpers ──
+  // ── Scroll listener ──
+  useEffect(() => {
+    const onScroll = () => { setScrolled(window.scrollY > 40); setShowTop(window.scrollY > 600) }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   const inp = {
     display: 'block', width: '100%', padding: '0.8rem 1rem',
     border: `1.5px solid ${C.border}`, borderRadius: 8,
@@ -156,12 +251,47 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <style>{`
+          /* ── Logo pulse — premium golden glow ── */
           @keyframes glow {
-            0%   { filter: drop-shadow(0 0 15px #00c6ff) drop-shadow(0 0 5px #ffd700); }
-            50%  { filter: drop-shadow(0 0 40px #00c6ff) drop-shadow(0 0 20px #ffd700); }
-            100% { filter: drop-shadow(0 0 15px #00c6ff) drop-shadow(0 0 5px #ffd700); }
+            0%   { filter: drop-shadow(0 0 8px rgba(193,88,26,0.4)) drop-shadow(0 0 20px rgba(255,215,0,0.2)); transform: scale(1); }
+            50%  { filter: drop-shadow(0 0 20px rgba(193,88,26,0.7)) drop-shadow(0 0 40px rgba(255,215,0,0.4)); transform: scale(1.03); }
+            100% { filter: drop-shadow(0 0 8px rgba(193,88,26,0.4)) drop-shadow(0 0 20px rgba(255,215,0,0.2)); transform: scale(1); }
           }
-          .logo-glow { animation: glow 3s ease-in-out infinite; }
+          .logo-glow { animation: glow 4s ease-in-out infinite; transform-origin: center; }
+
+          /* ── Scroll reveal ── */
+          .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+          }
+          .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
+          }
+
+          /* ── Typewriter ── */
+          .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            background: currentColor;
+            margin-left: 3px;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: middle;
+          }
+          @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+          /* ── Particle canvas ── */
+          #star-canvas {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+          }
         `}</style>
       </Head>
 
@@ -209,6 +339,8 @@ export default function Home() {
           background: `linear-gradient(160deg, ${C.white} 0%, ${C.cream} 50%, ${C.cream2} 100%)`,
           padding: '8rem 2rem 5rem', position: 'relative', overflow: 'hidden',
         }}>
+          {/* Starfield */}
+          <canvas id="star-canvas" style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:0 }} />
           {/* Decorative circles */}
           <div style={{ position: 'absolute', top: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: `radial-gradient(circle, ${C.orange}15 0%, transparent 70%)`, pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', bottom: '5%', left: '0%', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${C.green}10 0%, transparent 70%)`, pointerEvents: 'none' }} />
@@ -324,7 +456,7 @@ export default function Home() {
                   fontWeight: 300, color: C.green, margin: '0 0 1.5rem', lineHeight: 1.1,
                   letterSpacing: '-0.01em',
                 }}>
-                  See Beyond<br /><em style={{ color: C.brown }}>What You've<br />Been Told</em>
+                  <span id="typewriter-text">See Beyond What You've Been Told</span><span className="typewriter-cursor" aria-hidden="true" />
                 </h1>
                 <p style={{ fontSize: '1.1rem', color: C.muted, lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: 480 }}>
                   An 8-week journey to activate your third eye, sharpen your intuition,
@@ -427,7 +559,7 @@ export default function Home() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section id="about" style={sectionWrap(C.white)}>
+        <section id="about" className="reveal-on-scroll" style={sectionWrap(C.white)}>
           <div style={inner}>
             <div className="grid-about" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div>
@@ -463,8 +595,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── QUOTE BANNER ── */}
+        <QuoteBanner />
+
         {/* ── COHORT ── */}
-        <section id="cohort" style={sectionWrap(C.cream)}>
+        <section id="cohort" className="reveal-on-scroll" style={sectionWrap(C.cream)}>
           <div style={inner}>
             <div style={centeredHeader}>
               <span style={sectionLabel}>The Program</span>
@@ -594,7 +729,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="pricing" style={sectionWrap(C.cream)}>
+        <section id="pricing" className="reveal-on-scroll" style={sectionWrap(C.cream)}>
           <div style={inner}>
             <div style={centeredHeader}>
               <span style={sectionLabel}>Investment</span>
@@ -670,7 +805,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ── */}
-        <section id="faq" style={sectionWrap(C.white)}>
+        <section id="faq" className="reveal-on-scroll" style={sectionWrap(C.white)}>
           <div style={{ ...inner, maxWidth: 760 }}>
             <div style={centeredHeader}>
               <span style={sectionLabel}>Common Questions</span>
@@ -741,7 +876,7 @@ export default function Home() {
         </section>
 
         {/* ── CONTACT ── */}
-        <section id="contact" style={sectionWrap(C.white)}>
+        <section id="contact" className="reveal-on-scroll" style={sectionWrap(C.white)}>
           <div className="grid-contact" style={{ ...inner, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
             <div>
               <span style={sectionLabel}>Get in Touch</span>

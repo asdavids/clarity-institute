@@ -116,6 +116,7 @@ export default function AdminDashboard() {
     { id:'sessions',  label:'Sessions',  emoji:'🕯', count: pendingSessions.length },
     { id:'waitlist',  label:'Waitlist',  emoji:'📋', count: waitlist.length },
     { id:'contacts',  label:'Messages',  emoji:'💬', count: contacts.length },
+    { id:'dreams',    label:'Dreams',    emoji:'🌙' },
   ]
 
   return (
@@ -403,6 +404,10 @@ export default function AdminDashboard() {
 
         </div>
       </div>
+
+          {activeTab === 'dreams' && (
+            <DreamsTab />
+          )}
     </>
   )
 }
@@ -424,6 +429,102 @@ function NotAdmin() {
       <div style={{ textAlign:'center', background:'#fff', border:'1px solid #E0D5C5', borderRadius:12, padding:'2.5rem', maxWidth:400 }}>
         <h2 style={{ fontFamily:"'Cormorant Garamond', serif", color:'#3D5A3E' }}>Admin Only</h2>
         <p style={{ color:'#7A6A5A' }}>Please <Link href="/login" style={{ color:'#3D5A3E' }}>log in</Link> with your admin account.</p>
+      </div>
+    </div>
+  )
+}
+
+function DreamsTab() {
+  const [dreams, setDreams] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: 'clarity-institute.firebaseapp.com',
+    projectId: 'clarity-institute',
+  }
+  const app2 = getApps().length ? getApps()[0] : null
+  const db2 = app2 ? getFirestore(app2) : null
+
+  useEffect(() => {
+    if (!db2) { setLoading(false); return }
+    getDocs(query(collection(db2, 'dream_analytics'), orderBy('timestamp', 'desc')))
+      .then(snap => {
+        setDreams(snap.docs.map(d => ({ id: d.id, ...d.data() })))
+        setLoading(false)
+      })
+      .catch(() => setLoading(false))
+  }, [])
+
+  const themeCounts = {}
+  dreams.forEach(d => (d.themes || []).forEach(t => { themeCounts[t] = (themeCounts[t] || 0) + 1 }))
+  const moodCounts = {}
+  dreams.forEach(d => { const m = d.mood || 'unknown'; moodCounts[m] = (moodCounts[m] || 0) + 1 })
+
+  const C = { green:'#3D5A3E', orange:'#C1581A', cream:'#FAF6F0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
+  const serif = "'Cormorant Garamond', serif"
+  const sans = "'Jost', sans-serif"
+
+  if (loading) return <div style={{ padding:'2rem', color:C.muted, fontFamily:sans }}>Loading dream analytics…</div>
+
+  return (
+    <div style={{ fontFamily:sans }}>
+      <h2 style={{ fontFamily:serif, fontSize:'1.5rem', color:C.green, fontWeight:400, margin:'0 0 1.5rem' }}>Dream Interpreter Analytics ({dreams.length} total)</h2>
+
+      {/* Stats */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(140px, 1fr))', gap:'1rem', marginBottom:'2rem' }}>
+        {[
+          { label:'Total Interpretations', val:dreams.length },
+          { label:'This Week', val:dreams.filter(d => d.timestamp?.toDate && (Date.now() - d.timestamp.toDate() < 7*24*3600*1000)).length },
+          { label:'Mobile Users', val:dreams.filter(d => d.deviceHint === 'mobile').length },
+          { label:'Avg Word Count', val:dreams.length ? Math.round(dreams.reduce((s,d) => s + (d.wordCount||0), 0) / dreams.length) : 0 },
+        ].map(s => (
+          <div key={s.label} style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:12, padding:'1rem', textAlign:'center' }}>
+            <div style={{ fontSize:'1.75rem', fontWeight:600, color:C.green, fontFamily:serif }}>{s.val}</div>
+            <div style={{ fontSize:'0.75rem', color:C.muted, marginTop:'0.25rem' }}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Top themes */}
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.5rem', marginBottom:'2rem' }}>
+        <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:12, padding:'1.25rem' }}>
+          <h3 style={{ fontFamily:serif, fontSize:'1.1rem', color:C.text, fontWeight:400, margin:'0 0 1rem' }}>Top Dream Themes</h3>
+          {Object.entries(themeCounts).sort((a,b) => b[1]-a[1]).slice(0,6).map(([theme, count]) => (
+            <div key={theme} style={{ display:'flex', justifyContent:'space-between', padding:'0.4rem 0', borderBottom:`1px solid ${C.border}`, fontSize:'0.875rem' }}>
+              <span style={{ color:C.text, textTransform:'capitalize' }}>{theme}</span>
+              <span style={{ color:C.orange, fontWeight:600 }}>{count}</span>
+            </div>
+          ))}
+          {Object.keys(themeCounts).length === 0 && <p style={{ color:C.muted, fontSize:'0.875rem' }}>No themes tracked yet</p>}
+        </div>
+        <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:12, padding:'1.25rem' }}>
+          <h3 style={{ fontFamily:serif, fontSize:'1.1rem', color:C.text, fontWeight:400, margin:'0 0 1rem' }}>Moods on Waking</h3>
+          {Object.entries(moodCounts).sort((a,b) => b[1]-a[1]).map(([mood, count]) => (
+            <div key={mood} style={{ display:'flex', justifyContent:'space-between', padding:'0.4rem 0', borderBottom:`1px solid ${C.border}`, fontSize:'0.875rem' }}>
+              <span style={{ color:C.text, textTransform:'capitalize' }}>{mood}</span>
+              <span style={{ color:C.orange, fontWeight:600 }}>{count}</span>
+            </div>
+          ))}
+          {Object.keys(moodCounts).length === 0 && <p style={{ color:C.muted, fontSize:'0.875rem' }}>No mood data yet</p>}
+        </div>
+      </div>
+
+      {/* Recent activity */}
+      <div style={{ background:C.white, border:`1px solid ${C.border}`, borderRadius:12, padding:'1.25rem' }}>
+        <h3 style={{ fontFamily:serif, fontSize:'1.1rem', color:C.text, fontWeight:400, margin:'0 0 1rem' }}>Recent Activity</h3>
+        {dreams.slice(0, 20).map(d => (
+          <div key={d.id} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'0.6rem 0', borderBottom:`1px solid ${C.border}`, fontSize:'0.8rem' }}>
+            <div>
+              <span style={{ color:C.text }}>🌙 {d.deviceHint || 'unknown'} · mood: {d.mood || '—'}</span>
+              {d.themes?.length > 0 && <span style={{ color:C.muted, marginLeft:'0.5rem' }}>themes: {d.themes.join(', ')}</span>}
+            </div>
+            <span style={{ color:C.muted, whiteSpace:'nowrap', marginLeft:'1rem' }}>
+              {d.timestamp?.toDate ? d.timestamp.toDate().toLocaleDateString('en-ZA', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' }) : '—'}
+            </span>
+          </div>
+        ))}
+        {dreams.length === 0 && <p style={{ color:C.muted, fontSize:'0.875rem' }}>No interpretations tracked yet. They'll appear here after the first use.</p>}
       </div>
     </div>
   )

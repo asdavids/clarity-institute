@@ -1,3 +1,16 @@
+import admin from 'firebase-admin'
+
+// ── Firebase Admin init (shared across API routes) ──
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.FIREBASE_PROJECT_ID || 'clarity-institute',
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    }),
+  })
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -74,6 +87,39 @@ Dream: ${dream}${moodContext}`;
 
     const text = data.choices[0].message.content;
     const parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
+
+    // ── Analytics: track dream interpretation ──
+    try {
+      const db = admin.firestore()
+      const wordCount = dream.split(/\s+/).length
+      const dreamThemes = []
+      const themeKeywords = {
+        death: ['die', 'dead', 'death', 'killed', 'funeral', 'grave'],
+        water: ['ocean', 'sea', 'river', 'flood', 'drowning', 'water', 'lake'],
+        chase: ['chase', 'chased', 'running', 'escape', 'following', 'pursued'],
+        family: ['mother', 'father', 'sister', 'brother', 'family', 'parent', 'child'],
+        house: ['house', 'home', 'room', 'door', 'building', 'hallway'],
+        flying: ['fly', 'flying', 'float', 'soar', 'falling', 'fall'],
+        stranger: ['stranger', 'unknown', 'figure', 'shadow', 'person', 'someone'],
+      }
+      const dreamLower = dream.toLowerCase()
+      Object.entries(themeKeywords).forEach(([theme, words]) => {
+        if (words.some(w => dreamLower.includes(w))) dreamThemes.push(theme)
+      })
+      await db.collection('dream_analytics').add({
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        mood: mood || 'not_specified',
+        wordCount,
+        themes: dreamThemes,
+        deviceHint: req.headers['user-agent']?.includes('Mobile') ? 'mobile' : 'desktop',
+        referrer: req.headers['referer'] || null,
+        sessionId: req.headers['x-session-id'] || null,
+        // Never store the dream content itself — privacy first
+      })
+    } catch (trackErr) {
+      // Tracking failure must never block the response
+      console.error('Dream tracking error:', trackErr.message)
+    }
 
     return res.status(200).json(parsed);
   } catch (error) {
