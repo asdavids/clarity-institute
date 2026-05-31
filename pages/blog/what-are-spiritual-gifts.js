@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Spiritual gifts are innate capacities for perception, healing, and service that go beyond ordinary ability. Here's how to identify yours and begin developing them." />
         <meta property="og:title" content="What Are Spiritual Gifts? How to Identify and Develop Yours" />
         <meta property="og:description" content="Spiritual gifts are innate capacities for perception and service. Here's how to identify and develop yours." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Are Spiritual Gifts? How to Identify and Develop Yours" />
         <meta name="twitter:description" content="Spiritual gifts are innate capacities for perception and service. Here's how to identify and develop yours." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-are-spiritual-gifts" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

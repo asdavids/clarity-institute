@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Purpose is not found by searching outside yourself — it's already present, waiting to be recognised. Here's how to access it and how to know when you've found it." />
         <meta property="og:title" content="How to Find Your Life Purpose: A Practical Spiritual Guide" />
         <meta property="og:description" content="Purpose is not found by searching — it is already present, waiting to be recognised. Here's how to access yours." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Find Your Life Purpose: A Practical Spiritual Guide" />
         <meta name="twitter:description" content="Purpose is not found by searching — it is already present, waiting to be recognised. Here's how to access yours." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-your-life-purpose" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

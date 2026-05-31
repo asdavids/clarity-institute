@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Angel numbers are repeating number sequences that carry spiritual significance. Here's what 111, 222, 333, 444, 555, and other sequences actually mean." />
         <meta property="og:title" content="What Are Angel Numbers? Meaning of 111, 222, 333, 444, 555 and More" />
         <meta property="og:description" content="Angel numbers are repeating sequences that carry spiritual messages. Here's what each one means." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Are Angel Numbers? Meaning of 111, 222, 333, 444, 555 and More" />
         <meta name="twitter:description" content="Angel numbers are repeating sequences that carry spiritual messages. Here's what each one means." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-are-angel-numbers" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

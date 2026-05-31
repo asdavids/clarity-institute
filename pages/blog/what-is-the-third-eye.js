@@ -17,13 +17,13 @@ export default function Post() {
         <meta name="description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
         <meta property="og:title" content="What Is the Third Eye? A Beginner's Guide — The Clarity Institute" />
         <meta property="og:description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/what-is-the-third-eye" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Is the Third Eye? A Beginner's Guide — The Clarity Institute" />
         <meta name="twitter:description" content="The third eye, or Ajna chakra, is far more than a mystical concept. It's a gateway to intuition, clarity, and deeper awareness." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-the-third-eye" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>

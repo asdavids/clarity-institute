@@ -17,13 +17,13 @@ export default function Post() {
         <meta name="description" content="Dreams are not random. They are a language — your subconscious and spiritual self communicating what your waking mind can't yet see." />
         <meta property="og:title" content="Understanding Your Dreams: Messages from the Unseen — The Clarity Institute" />
         <meta property="og:description" content="Dreams are not random. They are a language — your subconscious and spiritual self communicating what your waking mind can't yet see." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/understanding-your-dreams" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Understanding Your Dreams: Messages from the Unseen — The Clarity Institute" />
         <meta name="twitter:description" content="Dreams are not random. They are a language — your subconscious and spiritual self communicating what your waking mind can't yet see." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/understanding-your-dreams" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>

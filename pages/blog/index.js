@@ -193,7 +193,7 @@ export default function Blog() {
         <meta name="description" content="Articles on third eye awakening, meditation, intuition, astral projection, dreams, and spiritual growth from The Clarity Institute." />
         <meta property="og:title" content="The Clarity Blog — The Clarity Institute" />
         <meta property="og:description" content="Reflections on awakening, intuition, and the inner life." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
 

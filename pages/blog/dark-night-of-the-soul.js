@@ -23,12 +23,12 @@ export default function Post() {
         <meta name="description" content="The dark night of the soul is not depression — it's a profound spiritual passage. Here's what it actually is, how to recognise it, and how to navigate it." />
         <meta property="og:title" content="Dark Night of the Soul: What It Is and How to Move Through It" />
         <meta property="og:description" content="The dark night of the soul is a profound spiritual passage, not just depression. Here's how to recognise it and move through it." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dark Night of the Soul: What It Is and How to Move Through It" />
         <meta name="twitter:description" content="The dark night of the soul is a profound spiritual passage, not just depression. Here's how to recognise it and move through it." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/dark-night-of-the-soul" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

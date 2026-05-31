@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Manifestation is real — but not the way most people teach it. Here's what actually works, why most people fail, and the spiritual truth behind conscious creation." />
         <meta property="og:title" content="How to Manifest: What Actually Works (and What Doesn't)" />
         <meta property="og:description" content="Manifestation is real but not the way most people teach it. Here's what actually works and why most people fail." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Manifest: What Actually Works (and What Doesn't)" />
         <meta name="twitter:description" content="Manifestation is real but not the way most people teach it. Here's what actually works and why most people fail." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/how-to-manifest" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

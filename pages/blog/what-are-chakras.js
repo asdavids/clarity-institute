@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Chakras are the seven energy centers of the body. Here's what each one governs, how to know when they're blocked, and how to bring them back into alignment." />
         <meta property="og:title" content="What Are Chakras? A Complete Guide to the 7 Energy Centers" />
         <meta property="og:description" content="Chakras are the seven energy centers of the body. Here's what each one governs and how to bring them into alignment." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Are Chakras? A Complete Guide to the 7 Energy Centers" />
         <meta name="twitter:description" content="Chakras are the seven energy centers of the body. Here's what each one governs and how to bring them into alignment." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-are-chakras" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

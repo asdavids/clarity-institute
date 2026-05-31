@@ -23,12 +23,12 @@ export default function Post() {
         <meta name="description" content="Spiritual awakening is a profound shift in how you perceive yourself and reality. Learn the signs, the stages, and how to navigate what comes next." />
         <meta property="og:title" content="What Is Spiritual Awakening? Signs, Stages and What Comes Next" />
         <meta property="og:description" content="Spiritual awakening is a profound shift in how you perceive yourself and reality. Learn the signs, the stages, and how to navigate what comes next." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Is Spiritual Awakening? Signs, Stages and What Comes Next" />
         <meta name="twitter:description" content="Spiritual awakening is a profound shift in how you perceive yourself and reality. Learn the signs, the stages, and how to navigate what comes next." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-spiritual-awakening" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

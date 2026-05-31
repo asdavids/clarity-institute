@@ -22,12 +22,12 @@ export default function Post() {
         <meta name="description" content="Long before the third eye became a western spiritual concept, African traditions understood and cultivated inner sight. Here's what those traditions reveal — and why it matters." />
         <meta property="og:title" content="African Spirituality and the Third Eye: An Ancient Perspective" />
         <meta property="og:description" content="Long before western spirituality adopted the third eye concept, African traditions held a deep understanding of inner sight. Here's what they reveal." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="African Spirituality and the Third Eye: An Ancient Perspective" />
         <meta name="twitter:description" content="Long before western spirituality adopted the third eye concept, African traditions held a deep understanding of inner sight. Here's what they reveal." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/african-spirituality-and-the-third-eye" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

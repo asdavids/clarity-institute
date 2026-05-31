@@ -17,13 +17,13 @@ export default function Post() {
         <meta name="description" content="Starting a spiritual journey can feel overwhelming. Here's a grounded, honest guide to beginning — no jargon, no gatekeeping, just the essentials." />
         <meta property="og:title" content="Spiritual Growth: Where to Begin — The Clarity Institute" />
         <meta property="og:description" content="Starting a spiritual journey can feel overwhelming. Here's a grounded, honest guide to beginning — no jargon, no gatekeeping, just the essentials." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/spiritual-growth-where-to-begin" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Spiritual Growth: Where to Begin — The Clarity Institute" />
         <meta name="twitter:description" content="Starting a spiritual journey can feel overwhelming. Here's a grounded, honest guide to beginning — no jargon, no gatekeeping, just the essentials." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/spiritual-growth-where-to-begin" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>

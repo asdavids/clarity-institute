@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Kundalini is a powerful spiritual energy that, when awakened, can radically transform your life. Here's what it is, what awakening feels like, and how to move through it safely." />
         <meta property="og:title" content="What Is Kundalini? Signs of Awakening, Symptoms, and How to Navigate It" />
         <meta property="og:description" content="Kundalini awakening is one of the most powerful spiritual experiences. Here's what it is and how to navigate it." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Is Kundalini? Signs of Awakening, Symptoms, and How to Navigate It" />
         <meta name="twitter:description" content="Kundalini awakening is one of the most powerful spiritual experiences. Here's what it is and how to navigate it." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-kundalini" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

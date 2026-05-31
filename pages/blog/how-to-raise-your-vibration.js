@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Raising your vibration isn't about toxic positivity — it's about genuine energetic alignment. Here's what it actually means and the practices that create real change." />
         <meta property="og:title" content="How to Raise Your Vibration: What It Means and What Actually Works" />
         <meta property="og:description" content="Raising your vibration is about genuine energetic alignment, not toxic positivity. Here's what actually works." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Raise Your Vibration: What It Means and What Actually Works" />
         <meta name="twitter:description" content="Raising your vibration is about genuine energetic alignment, not toxic positivity. Here's what actually works." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/how-to-raise-your-vibration" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",

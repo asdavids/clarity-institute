@@ -22,12 +22,12 @@ export default function Post() {
         <meta name="description" content="Shadow work is the process of integrating the hidden, rejected parts of yourself. Here's what the shadow actually is, why it matters, and how to begin working with it." />
         <meta property="og:title" content="What Is Shadow Work? A Beginner's Guide to the Shadow Self" />
         <meta property="og:description" content="Shadow work is the process of integrating the hidden, rejected parts of yourself. Here's what the shadow is and how to begin working with it." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What Is Shadow Work? A Beginner's Guide to the Shadow Self" />
         <meta name="twitter:description" content="Shadow work is the process of integrating the hidden, rejected parts of yourself. Here's what the shadow is and how to begin working with it." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/what-is-shadow-work" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

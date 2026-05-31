@@ -17,13 +17,13 @@ export default function Post() {
         <meta name="description" content="Many people experience subtle shifts when their third eye begins to activate. Here are five common signs and what they mean." />
         <meta property="og:title" content="5 Signs Your Third Eye Is Opening — The Clarity Institute" />
         <meta property="og:description" content="Many people experience subtle shifts when their third eye begins to activate. Here are five common signs and what they mean." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.theclarityinstitute.guru/blog/5-signs-your-third-eye-is-opening" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="5 Signs Your Third Eye Is Opening — The Clarity Institute" />
         <meta name="twitter:description" content="Many people experience subtle shifts when their third eye begins to activate. Here are five common signs and what they mean." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/5-signs-your-third-eye-is-opening" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>

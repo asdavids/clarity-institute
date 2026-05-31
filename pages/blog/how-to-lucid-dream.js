@@ -21,12 +21,12 @@ export default function Post() {
         <meta name="description" content="Lucid dreaming — becoming conscious inside a dream — is a learnable skill. Here's how to do it, the most effective techniques, and what it can teach you about your inner world." />
         <meta property="og:title" content="How to Lucid Dream: A Step-by-Step Guide for Beginners" />
         <meta property="og:description" content="Lucid dreaming is a learnable skill. Here's how to become conscious inside your dreams and what it reveals about your inner world." />
-        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Lucid Dream: A Step-by-Step Guide for Beginners" />
         <meta name="twitter:description" content="Lucid dreaming is a learnable skill. Here's how to become conscious inside your dreams and what it reveals about your inner world." />
-        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-image.png" />
+        <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/how-to-lucid-dream" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",
