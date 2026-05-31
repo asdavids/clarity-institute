@@ -1,16 +1,3 @@
-import admin from 'firebase-admin'
-
-// ── Firebase Admin init (shared across API routes) ──
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert({
-      projectId: process.env.FIREBASE_PROJECT_ID || 'clarity-institute',
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-    }),
-  })
-}
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -56,14 +43,16 @@ FOR POSITIVE/BRIGHT/TRIUMPHANT DREAMS — speak of confirmed divine favor:
 OUTPUT FORMAT — respond ONLY with a valid JSON object, no markdown, no backticks, no preamble.
 
 The JSON must have exactly these keys:
-- "prophetic_interpretation": string (3-5 sentences — the core prophetic reading, ominous and authoritative, sets the tone for everything)
-- "spiritual_revelation": string (3-4 sentences — what spiritual forces or realities are being revealed, name them directly)
-- "symbols": array of 3-5 objects each with "name" (string) and "verdict" (string, 1-2 sentences of prophetic declaration about this symbol)
-- "warning_or_blessing": string (2-3 sentences — the hidden warning if negative, or the sealed blessing if positive — the thing they must hear)
-- "final_declaration": string (2-3 short, punchy, prophetic sentences — the closing verdict, unforgettable, like the last words of a seer)
+- "prophetic_interpretation": string (3-5 sentences — the core prophetic reading, ominous and authoritative)
+- "spiritual_revelation": string (3-4 sentences — what spiritual forces or realities are being revealed)
+- "symbols": array of 3-5 objects each with "name" (string) and "verdict" (string, 1-2 prophetic sentences)
+- "warning_or_blessing": string (2-3 sentences — the hidden warning if negative, or the sealed blessing if positive)
+- "final_declaration": string (2-3 short punchy prophetic sentences — the closing verdict)
 
 Dream: ${dream}${moodContext}`;
 
+  // ── Call Groq ──
+  let parsed;
   try {
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -86,44 +75,54 @@ Dream: ${dream}${moodContext}`;
     }
 
     const text = data.choices[0].message.content;
-    const parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
-
-    // ── Analytics: track dream interpretation ──
-    try {
-      const db = admin.firestore()
-      const wordCount = dream.split(/\s+/).length
-      const dreamThemes = []
-      const themeKeywords = {
-        death: ['die', 'dead', 'death', 'killed', 'funeral', 'grave'],
-        water: ['ocean', 'sea', 'river', 'flood', 'drowning', 'water', 'lake'],
-        chase: ['chase', 'chased', 'running', 'escape', 'following', 'pursued'],
-        family: ['mother', 'father', 'sister', 'brother', 'family', 'parent', 'child'],
-        house: ['house', 'home', 'room', 'door', 'building', 'hallway'],
-        flying: ['fly', 'flying', 'float', 'soar', 'falling', 'fall'],
-        stranger: ['stranger', 'unknown', 'figure', 'shadow', 'person', 'someone'],
-      }
-      const dreamLower = dream.toLowerCase()
-      Object.entries(themeKeywords).forEach(([theme, words]) => {
-        if (words.some(w => dreamLower.includes(w))) dreamThemes.push(theme)
-      })
-      await db.collection('dream_analytics').add({
-        timestamp: admin.firestore.FieldValue.serverTimestamp(),
-        mood: mood || 'not_specified',
-        wordCount,
-        themes: dreamThemes,
-        deviceHint: req.headers['user-agent']?.includes('Mobile') ? 'mobile' : 'desktop',
-        referrer: req.headers['referer'] || null,
-        sessionId: req.headers['x-session-id'] || null,
-        // Never store the dream content itself — privacy first
-      })
-    } catch (trackErr) {
-      // Tracking failure must never block the response
-      console.error('Dream tracking error:', trackErr.message)
-    }
-
-    return res.status(200).json(parsed);
+    parsed = JSON.parse(text.replace(/```json|```/g, "").trim());
   } catch (error) {
     console.error("Dream API error:", error.message);
     return res.status(500).json({ error: "Interpretation failed", debug: error.message });
   }
+
+  // ── Analytics tracking — completely isolated, never blocks response ──
+  try {
+    const hasAdminCreds = process.env.FIREBASE_CLIENT_EMAIL && process.env.FIREBASE_PRIVATE_KEY;
+    if (hasAdminCreds) {
+      const admin = (await import('firebase-admin')).default;
+      if (!admin.apps.length) {
+        admin.initializeApp({
+          credential: admin.credential.cert({
+            projectId: process.env.FIREBASE_PROJECT_ID || 'clarity-institute',
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+            privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+          }),
+        });
+      }
+      const db = admin.firestore();
+      const themeKeywords = {
+        death: ['die','dead','death','killed','funeral','grave'],
+        water: ['ocean','sea','river','flood','drowning','water','lake'],
+        chase: ['chase','chased','running','escape','following','pursued'],
+        family: ['mother','father','sister','brother','family','parent','child'],
+        house: ['house','home','room','door','building','hallway'],
+        flying: ['fly','flying','float','soar','falling','fall'],
+        stranger: ['stranger','unknown','figure','shadow','person','someone'],
+      };
+      const dreamLower = dream.toLowerCase();
+      const themes = Object.entries(themeKeywords)
+        .filter(([, words]) => words.some(w => dreamLower.includes(w)))
+        .map(([theme]) => theme);
+
+      // Fire and forget — don't await
+      db.collection('dream_analytics').add({
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        mood: mood || 'not_specified',
+        wordCount: dream.split(/\s+/).length,
+        themes,
+        deviceHint: req.headers['user-agent']?.includes('Mobile') ? 'mobile' : 'desktop',
+        referrer: req.headers['referer'] || null,
+      }).catch(e => console.error('Dream tracking silent fail:', e.message));
+    }
+  } catch (trackErr) {
+    console.error('Dream tracking error (non-blocking):', trackErr.message);
+  }
+
+  return res.status(200).json(parsed);
 }
