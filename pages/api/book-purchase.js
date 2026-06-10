@@ -141,7 +141,12 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true })
   } catch (error) {
-    console.error('[Book Purchase] Error:', error)
+    console.error('[Book Purchase] Error name:', error?.name)
+    console.error('[Book Purchase] Error message:', error?.message)
+    console.error('[Book Purchase] Error stack:', error?.stack?.slice(0, 500))
+    console.error('[Book Purchase] RESEND_API_KEY set:', !!process.env.RESEND_API_KEY)
+    console.error('[Book Purchase] BOOK_LINK set:', !!process.env.RULES_OF_LIFE_BOOK_LINK)
+    console.error('[Book Purchase] FIREBASE_KEY set:', !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY)
     return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru' })
   }
 }
