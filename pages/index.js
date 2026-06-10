@@ -847,6 +847,29 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* ── BOOK PROMO ── */}
+        <section className="reveal-on-scroll" style={{ padding: '4rem 1.5rem', background: C.text }}>
+          <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', alignItems: 'center', gap: '3rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <img
+              src="/rules-of-life-cover.webp"
+              alt="The Rules of Life by AS Davids"
+              style={{ width: 130, borderRadius: '4px 10px 10px 4px', boxShadow: '12px 12px 40px rgba(0,0,0,0.6)', flexShrink: 0 }}
+            />
+            <div style={{ flex: 1, minWidth: 260 }}>
+              <span style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4A843', display: 'block', marginBottom: '0.5rem' }}>Now Available</span>
+              <h2 style={{ fontFamily: serif, fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', color: C.white, fontWeight: 400, margin: '0 0 0.5rem', lineHeight: 1.2 }}>The Rules of Life</h2>
+              <p style={{ fontFamily: serif, fontSize: '0.95rem', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', margin: '0 0 1rem' }}>by AS Davids</p>
+              <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, fontSize: '0.92rem', margin: '0 0 1.5rem', maxWidth: 460 }}>
+                382 pages of prophetic clarity on life, purpose, relationships, and the laws most people never learn. A book that does not comfort — it awakens.
+              </p>
+              <Link href="/shop" style={{ display: 'inline-block', background: '#C1581A', color: C.white, padding: '0.8rem 2rem', borderRadius: 8, textDecoration: 'none', fontFamily: sans, fontSize: '0.95rem', fontWeight: 600 }}>
+                Get the Book — $7 →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── WAITLIST ── */}
         <section style={{ padding: '4rem 1.5rem', background: C.cream2, textAlign: 'center' }}>
           <div style={{ maxWidth: 520, margin: '0 auto' }}>
@@ -922,6 +945,7 @@ export default function Home() {
               {[['#about','About'],['#cohort','Cohort'],['#mentorship','Mentorship'],['#pricing','Pricing']].map(([href,label]) => (
                 <a key={href} href={href} style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>{label}</a>
               ))}
+              <Link href="/shop" style={{ color: '#D4A843', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>Shop</Link>
               <Link href="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Student Login</Link>
               <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>Blog</Link>
               <Link href="/about" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>About AS Davids</Link>

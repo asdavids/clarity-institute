@@ -102,6 +102,7 @@ export default function Navbar() {
           <Link href="/#about" style={linkStyle} onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/#cohort" style={linkStyle} onClick={() => setMenuOpen(false)}>Cohort</Link>
           <Link href="/dream-interpreter" style={linkStyle} onClick={() => setMenuOpen(false)}>Dream Interpreter</Link>
+          <Link href="/shop" style={{ fontSize: '0.875rem', color: C.green, textDecoration: 'none', fontWeight: 500 }} onClick={() => setMenuOpen(false)}>Shop</Link>
           <Link href="/waitlist" style={linkStyle} onClick={() => setMenuOpen(false)}>Waitlist</Link>
           {user ? (
             <>
