@@ -322,6 +322,7 @@ export default function Home() {
             ))}
             <Link href="/blog" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Blog</Link>
             <Link href="/dream-interpreter" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Dream Interpreter</Link>
+            <Link href="/shop" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.green, textDecoration: 'none', fontWeight: 600, letterSpacing: '0.03em' }}>Shop</Link>
             <Link href="/waitlist" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.text, textDecoration: 'none', fontWeight: 400, letterSpacing: '0.03em', opacity: 0.8 }}>Waitlist</Link>
             <Link href="/login" onClick={() => setMenuOpen(false)} style={{ fontSize: '0.875rem', color: C.muted, textDecoration: 'none' }}>Sign In</Link>
             <a href="#pricing" onClick={() => setMenuOpen(false)} style={{
