@@ -28,7 +28,7 @@ export default async function handler(req, res) {
   // Debug env vars
   const resendKey = process.env.RESEND_API_KEY
   if (!resendKey) {
-    return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru', debug: 'RESEND_API_KEY missing' })
+    console.error('[Book Purchase] RESEND_API_KEY missing'); return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru' })
   }
 
   const resend = new Resend(resendKey)
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
     })
 
     if (sendErr) {
-      return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru', debug: sendErr })
+      console.error('[Book Purchase] Resend error:', sendErr); return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru' })
     }
 
     // 3. Notify AS Davids
@@ -108,9 +108,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true })
   } catch (error) {
-    return res.status(500).json({
-      error: 'Failed to process. Please contact david@theclarityinstitute.guru',
-      debug: { message: error?.message, name: error?.name }
-    })
+    console.error('[Book Purchase] Error:', error?.message)
+    return res.status(500).json({ error: 'Failed to process. Please contact david@theclarityinstitute.guru' })
   }
 }
