@@ -8,6 +8,12 @@ const sans = "'Jost', sans-serif"
 
 const posts = [
   {
+    slug: 'who-is-as-davids',
+    title: 'Who Is AS Davids? Writer, Spiritual Guide & Founder of The Clarity Institute',
+    excerpt: 'AS Davids (A.S. Davids, sometimes Prophet AS Davids) is the writer and spiritual guide behind The Clarity Institute. Here\'s his story, his teachings, and his full catalog of books.',
+    date: '2026-07-15', readTime: '8 min read', emoji: '👁',
+  },
+  {
     slug: 'what-are-chakras',
     title: 'What Are Chakras? A Complete Guide to the 7 Energy Centers',
     excerpt: 'Chakras are seven energy centers located along the spine. Here\'s what each one governs, how to know when they\'re blocked, and how to bring them back into alignment.',
