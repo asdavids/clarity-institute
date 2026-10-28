@@ -11,7 +11,7 @@ export default function About() {
     <>
       <Head>
         <title>About AS Davids — The Clarity Institute</title>
-        <meta name="description" content="AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology." />
+        <meta name="description" content="I'm AS Davids, a writer and spiritual guide. I write about faith, the unseen and African wisdom, and I founded The Clarity Institute for people called to go deeper." />
         <meta property="og:title" content="About AS Davids — The Clarity Institute" />
         <meta property="og:description" content="Writer, spiritual guide, and founder of The Clarity Institute." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
@@ -105,12 +105,17 @@ export default function About() {
 
           {/* CTA */}
           <div style={{ background: `linear-gradient(135deg, ${C.green} 0%, #2e4530 100%)`, borderRadius: 16, padding: '2.5rem', textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>👁</div>
+            <div style={{ width: 72, height: 72, borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1rem', border: '2px solid rgba(255,255,255,0.6)' }}>
+              <picture>
+                <source srcSet="/as-davids.webp" type="image/webp" />
+                <img src="/as-davids.jpg" alt="AS Davids" width={72} height={72} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '55% 30%', display: 'block' }} />
+              </picture>
+            </div>
             <h2 style={{ fontFamily: serif, fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 300, color: 'white', margin: '0 0 0.75rem', lineHeight: 1.2 }}>
               Something in you already knows it's time.
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1.75rem', maxWidth: 440, marginLeft: 'auto', marginRight: 'auto' }}>
-              A single Clarity Session is where it begins — one hour with AS Davids that meets you exactly where you are.
+              A single Clarity Session is where it begins. One hour with me, meeting you exactly where you are.
             </p>
             <div className="about-cta-buttons" style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/clarity-session" style={{ background: 'white', color: C.green, padding: '0.85rem 1.75rem', borderRadius: 8, textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
