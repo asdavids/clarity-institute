@@ -27,14 +27,18 @@ export default function About() {
         {/* Hero */}
         <div style={{ background:`linear-gradient(160deg, ${C.white} 0%, ${C.cream} 50%, ${C.cream2} 100%)`, padding:'4rem 2rem 3rem', textAlign:'center' }}>
           <div style={{
-            width:140, height:140, borderRadius:'50%', margin:'0 auto 1.5rem',
-            background:`radial-gradient(circle at 40% 40%, ${C.cream2}, ${C.cream})`,
-            border:`1px solid ${C.border}`, display:'flex', alignItems:'center', justifyContent:'center',
-            fontSize:'4rem', boxShadow:`0 12px 40px ${C.brown}15`,
-          }}>👁</div>
-          <span style={{ fontSize:'0.75rem', fontWeight:600, letterSpacing:'0.15em', textTransform:'uppercase', color:C.orange, display:'block', marginBottom:'0.75rem' }}>About the Guide</span>
-          <h1 style={{ fontFamily:serif, fontSize:'clamp(2.2rem, 5vw, 3.2rem)', color:C.green, fontWeight:300, margin:'0 0 0.5rem' }}>AS Davids</h1>
-          <p style={{ color:C.muted, fontSize:'1.05rem', maxWidth:480, margin:'0 auto', lineHeight:1.7 }}>Writer, spiritual thinker, and founder of The Clarity Institute</p>
+            width:180, height:180, borderRadius:'50%', margin:'0 auto 1.5rem',
+            border:`3px solid ${C.white}`, outline:`1px solid ${C.border}`,
+            overflow:'hidden', boxShadow:`0 14px 44px ${C.brown}30`,
+          }}>
+            <picture>
+              <source srcSet="/as-davids.webp" type="image/webp" />
+              <img src="/as-davids.jpg" alt="AS Davids" width={180} height={180} style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'55% 30%', display:'block' }} />
+            </picture>
+          </div>
+          <span style={{ fontSize:'0.75rem', fontWeight:600, letterSpacing:'0.15em', textTransform:'uppercase', color:C.orange, display:'block', marginBottom:'0.75rem' }}>Meet Your Guide</span>
+          <h1 style={{ fontFamily:serif, fontSize:'clamp(2.2rem, 5vw, 3.2rem)', color:C.green, fontWeight:300, margin:'0 0 0.5rem' }}>Hi, I'm AS Davids.</h1>
+          <p style={{ color:C.muted, fontSize:'1.05rem', maxWidth:480, margin:'0 auto', lineHeight:1.7 }}>Writer. Spiritual guide. Founder of The Clarity Institute.</p>
         </div>
 
         {/* Main content */}
@@ -43,17 +47,18 @@ export default function About() {
           {/* Bio */}
           <div style={{ marginBottom:'3rem' }}>
             <p style={{ fontSize:'1.1rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
-              AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology.
+              I write about faith, the unseen, and the wisdom Africa has carried for generations. I have spent over a decade in third eye activation, intuitive development and consciousness expansion.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
-              Through books, teachings, and digital platforms, he reflects on spiritual perception, the mysteries of the human mind, and the deep wisdom found in African and biblical traditions. His writing blends storytelling with spiritual reflection, seeking to awaken deeper awareness, challenge conventional thinking, and guide readers toward greater understanding of themselves and the unseen dimensions of life.
+              I built The Clarity Institute for people who feel called to go deeper. Past the noise. Into the quiet knowing that already lives inside you.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
-              With over a decade of practice in third eye activation, intuitive development, and consciousness expansion, AS Davids founded The Clarity Institute as a sacred space for those called to go deeper — beyond the noise of everyday life into the quiet knowing that lives within.
+              My books, my teaching and my sessions do one thing. They wake up awareness. They challenge what you were told. They point you back to yourself.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9 }}>
-              Whether through the 8-week cohort, private mentorship, or one-on-one clarity sessions, AS Davids meets each person exactly where they are — with warmth, directness, and a commitment to genuine transformation.
+              Join the cohort, book a session, or just send me a message. I meet you where you are, with warmth and directness. And I answer every message myself.
             </p>
+            <p style={{ fontFamily:serif, fontSize:'1.6rem', fontStyle:'italic', fontWeight:400, color:C.green, margin:'1.75rem 0 0' }}>— AS Davids</p>
           </div>
 
           {/* Divider */}
@@ -119,9 +124,9 @@ export default function About() {
 
           {/* Connect */}
           <div style={{ textAlign:'center', marginBottom:'2rem' }}>
-            <h2 style={{ fontFamily:serif, fontSize:'1.6rem', color:C.green, fontWeight:300, margin:'0 0 0.75rem' }}>Connect with AS Davids</h2>
+            <h2 style={{ fontFamily:serif, fontSize:'1.6rem', color:C.green, fontWeight:300, margin:'0 0 0.75rem' }}>Let's Connect</h2>
             <p style={{ color:C.muted, fontSize:'0.95rem', lineHeight:1.7, marginBottom:'1.5rem' }}>
-              Whether you're curious about the cohort, ready to book a session, or just want to say hello — AS Davids personally responds to every message.
+              Curious about the cohort? Ready to book a session? Just want to say hello? I personally respond to every message.
             </p>
             <div style={{ display:'flex', gap:'0.75rem', justifyContent:'center', flexWrap:'wrap' }}>
               <a href="https://wa.me/27817904941" target="_blank" rel="noopener noreferrer" style={{
