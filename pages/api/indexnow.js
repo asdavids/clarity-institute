@@ -29,6 +29,16 @@ const urls = [
   `https://${HOST}/blog/understanding-your-dreams`,
   `https://${HOST}/blog/what-is-remote-viewing`,
   `https://${HOST}/blog/spiritual-growth-where-to-begin`,
+  `https://${HOST}/blog/who-is-as-davids`,
+  `https://${HOST}/blog/what-are-chakras`,
+  `https://${HOST}/blog/what-are-angel-numbers`,
+  `https://${HOST}/blog/how-to-manifest`,
+  `https://${HOST}/blog/what-is-kundalini`,
+  `https://${HOST}/blog/how-to-lucid-dream`,
+  `https://${HOST}/blog/what-are-spiritual-gifts`,
+  `https://${HOST}/blog/how-to-raise-your-vibration`,
+  `https://${HOST}/blog/signs-from-the-universe`,
+  `https://${HOST}/blog/what-is-your-life-purpose`,
 ]
 
 export default async function handler(req, res) {
