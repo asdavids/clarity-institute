@@ -43,7 +43,7 @@ export default function Post() {
     <>
       <Head>
         <title>Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute</title>
-        <meta name="description" content="AS Davids (also written A.S Davids and Prophet AS Davids) is a prophet, author and spiritual teacher who founded The Clarity Institute. Here is who he is, what he teaches, and his books, including The Eight Prophetic Prayer Watches." />
+        <meta name="description" content="AS Davids (A.S Davids, Prophet AS Davids) is a prophet, author and founder of The Clarity Institute. His story, teaching and books, including The Eight Prophetic Prayer Watches." />
         <meta property="og:title" content="Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute" />
         <meta property="og:description" content="AS Davids is a prophet, author and spiritual teacher. Founder of The Clarity Institute and author of The Eight Prophetic Prayer Watches." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />

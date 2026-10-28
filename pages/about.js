@@ -21,7 +21,7 @@ export default function About() {
             prayerWatchesBook,
           ],
         })}} />
-        <meta name="description" content="AS Davids (A.S Davids) is a prophet, author and spiritual teacher, and the founder of The Clarity Institute. Meet the man behind the books, the prayer teaching and the work." />
+        <meta name="description" content="AS Davids (A.S Davids) is a prophet, author and spiritual teacher, and founder of The Clarity Institute. Meet the man behind the books and the prayer teaching." />
         <meta property="og:title" content="AS Davids — Prophet, Author & Spiritual Teacher" />
         <meta property="og:description" content="Prophet, author and spiritual teacher. Founder of The Clarity Institute." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
