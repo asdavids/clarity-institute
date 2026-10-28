@@ -1,6 +1,7 @@
 // pages/blog/who-is-as-davids.js
 import Head from 'next/head'
 import Link from 'next/link'
+import { SITE, PERSON_ID, personSchema, prayerWatchesBook } from '../../lib/personSchema'
 
 const C = { green:'#3D5A3E', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
 const serif = "'Cormorant Garamond', serif"
@@ -29,7 +30,7 @@ const BookRow = ({ title, format }) => (
 )
 
 const faqs = [
-  { q: "Is AS Davids the same person as Prophet AS Davids?", a: "Yes. \"Prophet AS Davids\" and \"A.S. Davids\" are name variations used interchangeably online to refer to the same writer and spiritual guide who founded The Clarity Institute." },
+  { q: "Is AS Davids the same person as Prophet AS Davids?", a: "Yes. \"Prophet AS Davids\", \"A.S Davids\" and \"AS Davids Muyunda\" all refer to the same person: AS Davids, a prophet, author and spiritual teacher who founded The Clarity Institute." },
   { q: "What is The Clarity Institute?", a: "The Clarity Institute is a spiritual coaching and education platform founded by AS Davids. It offers a Single Clarity Session, an 8-week cohort, Cohort + Mentorship, and a 90-Day Immersion, along with a free dream interpreter and an ebook, The Rules of Life." },
   { q: "Where can I follow AS Davids?", a: "AS Davids shares teachings and student stories on TikTok at @asdavids1, and personally responds to messages via WhatsApp." },
   { q: "What makes AS Davids' approach different?", a: "He combines third eye activation and intuitive development with African spiritual traditions, biblical wisdom, and psychology — writing and teaching in a way that's direct rather than purely comforting, meant to awaken rather than simply soothe." },
@@ -41,15 +42,15 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>Who Is AS Davids? Writer, Spiritual Guide & Founder of The Clarity Institute</title>
-        <meta name="description" content="AS Davids (also written A.S. Davids, sometimes referred to as Prophet AS Davids) is a writer and spiritual guide who founded The Clarity Institute. Here's his story, his teachings, and his books." />
-        <meta property="og:title" content="Who Is AS Davids? Writer, Spiritual Guide & Founder of The Clarity Institute" />
-        <meta property="og:description" content="AS Davids is a writer and spiritual thinker whose work explores faith, prophetic insight, African history, and human psychology. Founder of The Clarity Institute." />
+        <title>Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute</title>
+        <meta name="description" content="AS Davids (also written A.S Davids and Prophet AS Davids) is a prophet, author and spiritual teacher who founded The Clarity Institute. Here is who he is, what he teaches, and his books, including The Eight Prophetic Prayer Watches." />
+        <meta property="og:title" content="Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute" />
+        <meta property="og:description" content="AS Davids is a prophet, author and spiritual teacher. Founder of The Clarity Institute and author of The Eight Prophetic Prayer Watches." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Who Is AS Davids? Writer, Spiritual Guide & Founder of The Clarity Institute" />
-        <meta name="twitter:description" content="AS Davids is a writer and spiritual thinker whose work explores faith, prophetic insight, African history, and human psychology. Founder of The Clarity Institute." />
+        <meta name="twitter:title" content="Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute" />
+        <meta name="twitter:description" content="AS Davids is a prophet, author and spiritual teacher. Founder of The Clarity Institute and author of The Eight Prophetic Prayer Watches." />
         <meta name="twitter:image" content="https://www.theclarityinstitute.guru/og-blog.png" />
         <link rel="canonical" href="https://www.theclarityinstitute.guru/blog/who-is-as-davids" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -59,21 +60,11 @@ export default function Post() {
         })}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "AS Davids",
-          "alternateName": ["A.S. Davids", "AS Davids Muyunda", "Prophet AS Davids"],
-          "url": "https://www.theclarityinstitute.guru/about",
-          "sameAs": [
-            "https://www.tiktok.com/@asdavids1",
-            "https://www.amazon.com/stores/author/B0GD8SRT1B"
+          "@graph": [
+            { "@type": "WebPage", "@id": `${SITE}/blog/who-is-as-davids#page`, "url": `${SITE}/blog/who-is-as-davids`, "name": "Who Is AS Davids?", "about": { "@id": PERSON_ID } },
+            personSchema,
+            prayerWatchesBook,
           ],
-          "jobTitle": "Writer, Spiritual Guide, Founder",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "The Clarity Institute",
-            "url": "https://www.theclarityinstitute.guru"
-          },
-          "description": "AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology. He founded The Clarity Institute and is the author of over a dozen books, including The Rules of Life."
         })}} />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
@@ -91,26 +82,26 @@ export default function Post() {
             <h1 style={{ fontFamily:serif, fontSize:'clamp(2rem, 5vw, 2.8rem)', color:C.green, fontWeight:300, margin:'0 0 1rem', lineHeight:1.2 }}>
               Who Is AS Davids?
             </h1>
-            <p style={{ color:C.muted, fontSize:'1rem', margin:'0 0 1rem' }}>Also written A.S. Davids, AS Davids Muyunda, and sometimes referred to as Prophet AS Davids · TikTok: @asdavids1</p>
+            <p style={{ color:C.muted, fontSize:'1rem', margin:'0 0 1rem' }}>Also written A.S Davids, A.S. Davids and AS Davids Muyunda, and known as Prophet AS Davids · TikTok: @asdavids1</p>
             <div style={{ width:48, height:2, background:C.orange, marginBottom:'1.5rem' }} />
           </div>
 
-          <P><strong>AS Davids is a writer, spiritual thinker, and third eye activation guide who founded The Clarity Institute</strong> — a spiritual coaching and education platform. His work sits at the intersection of faith, spirituality, prophetic insight, African history, and human psychology. He is the author of more than a dozen books, and teaches through an 8-week cohort, private mentorship, one-on-one Clarity Sessions, a free dream interpreter tool, and a growing library of writing on TikTok and this blog.</P>
+          <P><strong>AS Davids is a prophet, author and spiritual teacher who founded The Clarity Institute</strong> — a spiritual coaching and education platform. His work sits at the intersection of faith, prayer, prophetic insight, and African spiritual wisdom. He is the author of more than a dozen books, and teaches through an 8-week cohort, private mentorship, one-on-one Clarity Sessions, a free dream interpreter tool, and a growing library of writing on TikTok and this blog.</P>
 
           <H2>Fast facts about AS Davids</H2>
           <div style={{ margin:'1rem 0 1.5rem' }}>
-            <Fact label="Full name / aliases" value="AS Davids, A.S. Davids, AS Davids Muyunda, sometimes referenced as Prophet AS Davids" />
-            <Fact label="Role" value="Writer, spiritual thinker, third eye and intuition guide" />
+            <Fact label="Full name / aliases" value="AS Davids, A.S Davids, A.S. Davids, AS Davids Muyunda, Prophet AS Davids" />
+            <Fact label="Role" value="Prophet, author and spiritual teacher" />
             <Fact label="Founded" value="The Clarity Institute" />
             <Fact label="Experience" value="Over a decade practicing third eye activation, intuitive development, and consciousness expansion" />
             <Fact label="Author of" value="12+ books on Amazon, spanning prophetic guides, personal development, and fiction" />
-            <Fact label="Core themes" value="Faith, spirituality, prophetic insight, African history, human psychology" />
+            <Fact label="Core themes" value="Faith, prayer, prophetic insight, spiritual awakening, African wisdom" />
             <Fact label="Platforms" value="The Clarity Institute website & blog, TikTok (@asdavids1), WhatsApp" />
           </div>
 
           <H2>Who is AS Davids, in detail?</H2>
-          <P>AS Davids is a writer and spiritual thinker whose work explores the intersection of faith, spirituality, prophetic insight, African history, and human psychology. Through books, teachings, and digital platforms, he reflects on spiritual perception, the mysteries of the human mind, and the deep wisdom found in African and biblical traditions.</P>
-          <P>His writing blends storytelling with spiritual reflection. Rather than offering comfort alone, it's designed to challenge conventional thinking and guide readers toward a deeper understanding of themselves and the unseen dimensions of life — a tone that has led some readers and followers to refer to him informally as <strong>Prophet AS Davids</strong>, reflecting the prophetic and revelatory nature of his teaching style.</P>
+          <P>AS Davids is a prophet, author and spiritual teacher whose work explores faith, prayer, prophetic insight and African spiritual wisdom. Through books, teachings, and digital platforms, he reflects on spiritual perception, the unseen, and the deep wisdom found in African and biblical traditions.</P>
+          <P>AS Davids is a prophet. His writing blends storytelling with spiritual reflection and prophetic teaching. Rather than offering comfort alone, it is designed to challenge conventional thinking and guide readers toward a deeper understanding of themselves and the unseen dimensions of life. His books on prayer and prophetic ministry, including <em>The Eight Prophetic Prayer Watches</em>, grew out of that calling.</P>
           <P>With more than ten years of practice in third eye activation, intuitive development, and consciousness expansion, AS Davids founded The Clarity Institute as a space for people who sense there's more beyond the noise of everyday life — a "quiet knowing" he believes lives within everyone.</P>
 
           <H2>What does AS Davids believe?</H2>
@@ -163,7 +154,7 @@ export default function Post() {
           <div style={{ marginTop:'2rem', padding:'1.25rem', background:C.white, border:`1px solid ${C.border}`, borderRadius:12 }}>
             <p style={{ fontSize:'0.78rem', color:C.muted, fontWeight:600, textTransform:'uppercase', letterSpacing:'0.08em', margin:'0 0 0.4rem' }}>About the author</p>
             <p style={{ fontSize:'0.875rem', color:C.text, lineHeight:1.75, margin:0 }}>
-              <strong>AS Davids (David)</strong> is the founder of The Clarity Institute — a spiritual coaching practice rooted in prophetic insight, African wisdom traditions, and depth psychology. He is the author of over a dozen books and works with individuals navigating awakening, calling, and the inner life. <Link href="/clarity-session" style={{ color:C.green }}>Book a session →</Link>
+              <strong>AS Davids (David)</strong> is a prophet and author, and the founder of The Clarity Institute — a spiritual coaching practice rooted in prophetic insight and African wisdom traditions. He is the author of over a dozen books and works with individuals navigating awakening, calling, and the inner life. <Link href="/clarity-session" style={{ color:C.green }}>Book a session →</Link>
             </p>
           </div>
         </article>

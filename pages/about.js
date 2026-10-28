@@ -1,6 +1,7 @@
 // pages/about.js
 import Head from 'next/head'
 import Link from 'next/link'
+import { SITE, PERSON_ID, personSchema, prayerWatchesBook } from '../lib/personSchema'
 
 const C = { green:'#3D5A3E', brown:'#6B4A2A', orange:'#C1581A', cream:'#FAF6F0', cream2:'#F2EBE0', text:'#2C1F14', muted:'#7A6A5A', border:'#E0D5C5', white:'#ffffff' }
 const serif = "'Cormorant Garamond', serif"
@@ -10,10 +11,19 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About AS Davids — The Clarity Institute</title>
-        <meta name="description" content="I'm AS Davids, a writer and spiritual guide. I write about faith, the unseen and African wisdom, and I founded The Clarity Institute for people called to go deeper." />
-        <meta property="og:title" content="About AS Davids — The Clarity Institute" />
-        <meta property="og:description" content="Writer, spiritual guide, and founder of The Clarity Institute." />
+        <title>AS Davids — Prophet, Author & Spiritual Teacher | The Clarity Institute</title>
+        <link rel="canonical" href={`${SITE}/about`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'ProfilePage', '@id': `${SITE}/about#profile`, url: `${SITE}/about`, name: 'AS Davids — Prophet, Author & Spiritual Teacher', mainEntity: { '@id': PERSON_ID } },
+            personSchema,
+            prayerWatchesBook,
+          ],
+        })}} />
+        <meta name="description" content="AS Davids (A.S Davids) is a prophet, author and spiritual teacher, and the founder of The Clarity Institute. Meet the man behind the books, the prayer teaching and the work." />
+        <meta property="og:title" content="AS Davids — Prophet, Author & Spiritual Teacher" />
+        <meta property="og:description" content="Prophet, author and spiritual teacher. Founder of The Clarity Institute." />
         <meta property="og:image" content="https://www.theclarityinstitute.guru/og-image.png" />
       </Head>
       <div style={{ minHeight:'100vh', background:C.cream, fontFamily:sans }}>
@@ -38,7 +48,7 @@ export default function About() {
           </div>
           <span style={{ fontSize:'0.75rem', fontWeight:600, letterSpacing:'0.15em', textTransform:'uppercase', color:C.orange, display:'block', marginBottom:'0.75rem' }}>Meet Your Guide</span>
           <h1 style={{ fontFamily:serif, fontSize:'clamp(2.2rem, 5vw, 3.2rem)', color:C.green, fontWeight:300, margin:'0 0 0.5rem' }}>Hi, I'm AS Davids.</h1>
-          <p style={{ color:C.muted, fontSize:'1.05rem', maxWidth:480, margin:'0 auto', lineHeight:1.7 }}>Writer. Spiritual guide. Founder of The Clarity Institute.</p>
+          <p style={{ color:C.muted, fontSize:'1.05rem', maxWidth:480, margin:'0 auto', lineHeight:1.7 }}>Prophet. Author. Spiritual teacher. Founder of The Clarity Institute.</p>
         </div>
 
         {/* Main content */}
@@ -47,7 +57,7 @@ export default function About() {
           {/* Bio */}
           <div style={{ marginBottom:'3rem' }}>
             <p style={{ fontSize:'1.1rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
-              I write about faith, the unseen, and the wisdom Africa has carried for generations. I have spent over a decade in third eye activation, intuitive development and consciousness expansion.
+              I am a prophet and an author. I write about faith, prayer, the unseen, and the wisdom Africa has carried for generations. I have spent over a decade in third eye activation, intuitive development and consciousness expansion.
             </p>
             <p style={{ fontSize:'1.05rem', color:C.text, lineHeight:1.9, marginBottom:'1.25rem' }}>
               I built The Clarity Institute for people who feel called to go deeper. Past the noise. Into the quiet knowing that already lives inside you.

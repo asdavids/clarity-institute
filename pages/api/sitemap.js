@@ -16,6 +16,7 @@ const staticPages = [
 ]
 
 const blogPosts = [
+  { slug: 'who-is-as-davids', date: '2026-10-28' },
   { slug: 'what-are-chakras', date: '2026-05-20' },
   { slug: 'what-are-angel-numbers', date: '2026-05-19' },
   { slug: 'how-to-manifest', date: '2026-05-18' },

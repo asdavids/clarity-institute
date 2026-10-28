@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { personSchema } from '../lib/personSchema'
 
 const WHATSAPP = '27817904941'
 const C = {
@@ -222,20 +223,11 @@ export default function Home() {
               "name": "The Clarity Institute",
               "url": "https://www.theclarityinstitute.guru",
               "logo": "https://www.theclarityinstitute.guru/logo.png",
-              "description": "A spiritual coaching and awakening platform rooted in prophetic insight, African wisdom traditions, and depth psychology.",
+              "description": "A spiritual coaching and awakening platform rooted in prophetic insight and African wisdom traditions, founded by the prophet and author AS Davids.",
               "founder": { "@type": "Person", "@id": "https://www.theclarityinstitute.guru/#david" },
               "sameAs": ["https://www.tiktok.com/@asdavids1"]
             },
-            {
-              "@type": "Person",
-              "@id": "https://www.theclarityinstitute.guru/#david",
-              "name": "AS Davids",
-              "alternateName": "AS Davids",
-              "jobTitle": "Spiritual Coach & Founder",
-              "url": "https://www.theclarityinstitute.guru/about",
-              "worksFor": { "@id": "https://www.theclarityinstitute.guru/#organization" },
-              "knowsAbout": ["Spiritual Awakening", "Third Eye Activation", "Dream Interpretation", "Intuition Development", "African Spirituality", "Shadow Work"]
-            },
+            personSchema,
             {
               "@type": "Service",
               "name": "Single Clarity Session",
