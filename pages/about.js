@@ -11,7 +11,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>AS Davids — Prophet, Author & Spiritual Teacher | The Clarity Institute</title>
+        <title>AS Davids: Prophet, Author & Spiritual Teacher</title>
         <link rel="canonical" href={`${SITE}/about`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',

@@ -42,7 +42,7 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute</title>
+        <title>Who Is AS Davids? Prophet, Author & Founder</title>
         <meta name="description" content="AS Davids (A.S Davids, Prophet AS Davids) is a prophet, author and founder of The Clarity Institute. His story, teaching and books on prayer." />
         <meta property="og:title" content="Who Is AS Davids? Prophet, Author & Founder of The Clarity Institute" />
         <meta property="og:description" content="AS Davids is a prophet, author and spiritual teacher. Founder of The Clarity Institute and author of The Eight Prophetic Prayer Watches." />
